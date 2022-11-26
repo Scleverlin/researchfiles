@@ -1,4 +1,8 @@
-open(DATA, ">nan15_exu.tcl") or die "nan15_exu.tcl 文件无法打开, $!";
+
+$top_module = $ARGV[2];
+$lefnumber =  $ARGV[1];
+
+open(DATA, ">nan15_${top_module}_${lefnumber}x.tcl") or die "nan15_${top_module}-${lefnumber}x.tcl 文件无法打开, $!";
 
 print DATA "set_global _enable_mmmc_by_default_flow      \$CTE::mmmc_default 
 suppressMessage ENCEXT-2799 
@@ -53,20 +57,20 @@ set_flowkit_db flow_step_last_msg {}
 set_flowkit_db flow_step_last_status not_run 
 set_flowkit_db flow_step_next {} 
 set_flowkit_db flow_working_directory .    
-set init_verilog /home/shi/op_from_black/nan15_exu.vSyn 
+set init_verilog /home/shi/op_from_black/nan15_$top_module.vSyn 
 set init_design_netlisttype Verilog 
 set init_design_settop 1 
-set init_top_cell exu \n" ;
+set init_top_cell $top_module \n" ;
 
 
 
-open(DATA2, ">nan15_exu_mmode.tcl") or die "nan15_exu_mmode.tcl 文件无法打开, $!";
+open(DATA2, ">nan15_${top_module}_mmode.tcl") or die "nan15_${top_module}_mmode.tcl 文件无法打开, $!";
 
 print DATA2 "create_library_set -name default_library_set -timing /home/shi/Tmp/NanGate_15nm_OCL_v0.1_2014_06_Apache.A/front_end/timing_power_noise/CCS/NanGate_15nm_OCL_typical_conditional_ccs.lib
 create_rc_corner -name _default_rc_corner_ -T 25.0
 create_delay_corner -name _default_delay_corner_ -library_set default_library_set -opcond typical  -opcond_library NanGate_15nm_OCL -rc_corner _default_rc_corner_
 
-create_constraint_mode -name _default_constraint_mode_ -sdc_files {/home/shi/op_from_black/nan15_exu.sdc}
+create_constraint_mode -name _default_constraint_mode_ -sdc_files {/home/shi/op_from_black/nan15_${top_module}.sdc}
 
 create_analysis_view -name _default_view_  -constraint_mode _default_constraint_mode_ -delay_corner _default_delay_corner_
  
@@ -76,7 +80,7 @@ set_analysis_view -setup _default_view_  -hold _default_view_
 
 close(DATA2);
 
-print DATA "set init_mmmc_file ./nan15_exu_mmode.tcl
+print DATA "set init_mmmc_file ./nan15_${top_module}_mmode.tcl
 set lef_1x \"/home/shi/newlef/NanGate_15nm_OCL.tech.lef /home/shi/newlef/NanGate_15nm_OCL.macro.lef\"
 set lef_4x \"/home/shi/newlef/NanGate_15nm_OCL.tech_4x.lef /home/shi/Tmp/NanGate_15nm_OCL_v0.1_2014_06_Apache.A/back_end/lef/ocl15_4x_macro.lef\" \n ";
 
@@ -96,7 +100,7 @@ set extract_shrink_factor 1.0
 set init_assign_buffer 0
 set init_cpf_file {}
 init_design
-um::read_metric -id current /home/shi/cadence/GENUS_ocl15/genus2invs__28214exu/genus2invs.metrics.json
+um::read_metric -id current /home/shi/cadence/GENUS_ocl15/genus2invs__28214${top_module}/genus2invs.metrics.json
 
 set_global timing_apply_default_primary_input_assertion false
 set_global timing_clock_phase_propagation both
@@ -130,8 +134,8 @@ place_opt_design -phys_syn
 setMultiCpuUsage -localCpu 16 -cpuPerRemoteHost 16 -remoteHost 1 -keepLicense true
 if {\$init_lef_file==\$lef_1x} \\
 { \\
-    setDesignMode -process 60 \\
-} else {setDesignMode -process 15}
+    setDesignMode -process 15 \\
+} else {setDesignMode -process 60}
 
 setNanoRouteMode -quiet -routeTdrEffort 5
 setNanoRouteMode -routeTopRoutingLayer 8 -routeBottomRoutingLayer 3
@@ -151,4 +155,16 @@ setAnalysisMode -analysisType onChipVariation
 
 optDesign -postRoute \n" ;
 
-close(DATA)
+
+open(DATA3, ">report_${top_module}_${lefnumber}x.tcl") or die "report_${top_module}_${lefnumber}x.tcl 文件无法打开, $!";
+
+print DATA3 "
+saveNetlist ./${top_module}_${lefnumber}x.v 
+defOut -allLayers -floorplan -netlist -routing -scanChain -usedVia ./${top_module}_${lefnumber}x.def
+exit" ;
+
+close(DATA3);
+
+print DATA "source report_${top_module}_${lefnumber}x.tcl";
+
+close(DATA);
