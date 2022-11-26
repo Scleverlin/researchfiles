@@ -2,7 +2,7 @@
 $top_module = $ARGV[2];
 $lefnumber =  $ARGV[1];
 
-open(DATA, ">nan15_${top_module}_${lefnumber}x.tcl") or die "nan15_${top_module}-${lefnumber}x.tcl 文件无法打开, $!";
+open(DATA, ">nan15_${top_module}_${lefnumber}x.tcl") or die "nan15_${top_module}-${lefnumber}x.tcl Open  FAILED!  ";
 
 print DATA "set_global _enable_mmmc_by_default_flow      \$CTE::mmmc_default 
 suppressMessage ENCEXT-2799 
@@ -64,7 +64,7 @@ set init_top_cell $top_module \n" ;
 
 
 
-open(DATA2, ">nan15_${top_module}_mmode.tcl") or die "nan15_${top_module}_mmode.tcl 文件无法打开, $!";
+open(DATA2, ">nan15_${top_module}_mmode.tcl") or die "nan15_${top_module}_mmode.tcl  Open FAILED! , $!";
 
 print DATA2 "create_library_set -name default_library_set -timing /home/shi/Tmp/NanGate_15nm_OCL_v0.1_2014_06_Apache.A/front_end/timing_power_noise/CCS/NanGate_15nm_OCL_typical_conditional_ccs.lib
 create_rc_corner -name _default_rc_corner_ -T 25.0
@@ -156,7 +156,7 @@ setAnalysisMode -analysisType onChipVariation
 optDesign -postRoute \n" ;
 
 
-open(DATA3, ">report_${top_module}_${lefnumber}x.tcl") or die "report_${top_module}_${lefnumber}x.tcl 文件无法打开, $!";
+open(DATA3, ">report_${top_module}_${lefnumber}x.tcl") or die "report_${top_module}_${lefnumber}x.tcl  Open FAILED!";
 
 print DATA3 "
 saveNetlist ./${top_module}_${lefnumber}x.v 
