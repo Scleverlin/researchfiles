@@ -2,7 +2,7 @@
 $top_module = $ARGV[2];
 $lefnumber =  $ARGV[1];
 
-open(DATA, ">nan15_${top_module}_${lefnumber}x.tcl") or die "nan15_${top_module}-${lefnumber}x.tcl Open  FAILED!  ";
+open(DATA, ">ASAP7_${top_module}_${lefnumber}x.tcl") or die "ASAP7_${top_module}-${lefnumber}x.tcl 文件无法打开, $!";
 
 print DATA "set_global _enable_mmmc_by_default_flow      \$CTE::mmmc_default 
 suppressMessage ENCEXT-2799 
@@ -13,6 +13,7 @@ getMultiCpuUsage -cpuPerRemoteHost
 setMultiCpuUsage -localcpu 2 
 set allowMultiplePortPinWithoutMustjoin 1 
 setMultiCpuUsage -localCpu 16 
+setDesignMode -process 28
 set ::db::AllowSoftMatching 1  
 set ::db::AllowNewLefPorts 1 
 set_flowkit_db flow_edit_end_steps {} 
@@ -57,32 +58,30 @@ set_flowkit_db flow_step_last_msg {}
 set_flowkit_db flow_step_last_status not_run 
 set_flowkit_db flow_step_next {} 
 set_flowkit_db flow_working_directory .    
-set init_verilog /home/shi/op_from_black/nan15_$top_module.vSyn 
+set init_verilog /home/shi/op_from_black/spc/${top_module}/synopsys/innovus/ASAP7_${top_module}.vSyn 
 set init_design_netlisttype Verilog 
 set init_design_settop 1 
 set init_top_cell $top_module \n" ;
 
 
 
-open(DATA2, ">nan15_${top_module}_mmode.tcl") or die "nan15_${top_module}_mmode.tcl  Open FAILED! , $!";
+open(DATA2, ">ASAP7_${top_module}_mmode.tcl") or die "ASAP7_${top_module}_mmode.tcl 文件无法打开, $!";
 
-print DATA2 "create_library_set -name default_library_set -timing /home/shi/Tmp/NanGate_15nm_OCL_v0.1_2014_06_Apache.A/front_end/timing_power_noise/CCS/NanGate_15nm_OCL_typical_conditional_ccs.lib
+print DATA2 "
+create_library_set -name default_library_set -timing {/home/shi/asap7/asap7sc7p5t_27/LIB/CCS/asap7sc7p5t_AO_SLVT_TT_ccs_201020.lib /home/shi/asap7/asap7sc7p5t_27/LIB/CCS/asap7sc7p5t_INVBUF_SLVT_TT_ccs_201020.lib /home/shi/asap7/asap7sc7p5t_27/LIB/CCS/asap7sc7p5t_OA_SLVT_TT_ccs_201020.lib /home/shi/asap7/asap7sc7p5t_27/LIB/CCS/asap7sc7p5t_SEQ_SLVT_TT_ccs_201020.lib /home/shi/asap7/asap7sc7p5t_27/LIB/CCS/asap7sc7p5t_SIMPLE_SLVT_TT_ccs_201020.lib}
 create_rc_corner -name _default_rc_corner_ -T 25.0
-create_delay_corner -name _default_delay_corner_ -library_set default_library_set -opcond typical  -opcond_library NanGate_15nm_OCL -rc_corner _default_rc_corner_
-
-create_constraint_mode -name _default_constraint_mode_ -sdc_files {/home/shi/op_from_black/nan15_${top_module}.sdc}
-
+update_rc_corner -name _default_rc_corner_ -qx_tech_file /home/shi/asap7/asap7sc7p5t_27/qrc/qrcTechFile_typ03_scaled4xV06
+create_delay_corner -name _default_delay_corner_ -library_set default_library_set -opcond PVT_0P7V_25C  -opcond_library asap7sc7p5t_AO_SLVT_TT_ccs_201020 -rc_corner _default_rc_corner_
+create_constraint_mode -name _default_constraint_mode_ -sdc_files {/home/shi/op_from_black/spc/${top_module}/synopsys/innovus/ASAP7_${top_module}.sdc }
 create_analysis_view -name _default_view_  -constraint_mode _default_constraint_mode_ -delay_corner _default_delay_corner_
- 
- 
 set_analysis_view -setup _default_view_  -hold _default_view_
  ";
 
 close(DATA2);
 
-print DATA "set init_mmmc_file ./nan15_${top_module}_mmode.tcl
-set lef_1x \"/home/shi/newlef/NanGate_15nm_OCL.tech.lef /home/shi/newlef/NanGate_15nm_OCL.macro.lef\"
-set lef_4x \"/home/shi/newlef/NanGate_15nm_OCL.tech_4x.lef /home/shi/Tmp/NanGate_15nm_OCL_v0.1_2014_06_Apache.A/back_end/lef/ocl15_4x_macro.lef\" \n ";
+print DATA "set init_mmmc_file ./ASAP7_${top_module}_mmode.tcl
+set lef_1x \"/home/shi/newlef/ASAP7_1x.8.15.lef /home/shi/newlef/CNFET_cell.lef\"
+set lef_4x \"/home/shi/asap7/asap7sc7p5t_27/techlef_misc/asap7_tech_4x_201209.lef /home/shi/asap7/asap7sc7p5t_27/LEF/scaled/asap7sc7p5t_27_SL_4x_201211.lef\" \n ";
 
 
 if ($ARGV[1]== '1'){
@@ -100,7 +99,7 @@ set extract_shrink_factor 1.0
 set init_assign_buffer 0
 set init_cpf_file {}
 init_design
-um::read_metric -id current /home/shi/cadence/GENUS_ocl15/genus2invs__28214${top_module}/genus2invs.metrics.json
+um::read_metric -id current /home/shi/cadence/GENUS_rvt/genus2invs${top_module}/genus2invs.metrics.json
 
 set_global timing_apply_default_primary_input_assertion false
 set_global timing_clock_phase_propagation both
@@ -119,7 +118,7 @@ setPlaceMode -reorderScan false
 setPlaceMode -ignoreScan false
 setPlaceMode -checkPinLayerForAccess {1 2}
 setPlaceMode -checkRoute true
- setPlaceMode -maxRouteLayer 8
+setPlaceMode -maxRouteLayer 8
 setOptMode -allEndPoints true
 setPlanDesignMode -fixPlacedMacros true
 planDesign
@@ -134,15 +133,33 @@ place_opt_design -phys_syn
 setMultiCpuUsage -localCpu 16 -cpuPerRemoteHost 16 -remoteHost 1 -keepLicense true
 if {\$init_lef_file==\$lef_1x} \\
 { \\
-    setDesignMode -process 15 \\
-} else {setDesignMode -process 60}
+    setDesignMode -process 7 \\
+} else {setDesignMode -process 28}
+
+
+optDesign -preCTS 
+
+
+set_ccopt_property target_skew 5ps 
+set_ccopt_property target_max_trans 50ps
+create_route_type -name ccopt_route_group -bottom_preferred_layer 3 -top_preferred_layer 9
+create_ccopt_clock_tree -name  clk -source scan_in -no_skew_group
+
+set_ccopt_property clock_period -pin scan_in 1000
+set_ccopt_property update_io_latency true
+ccopt_design
+
+
+optDesign -postCTS 
+set_interactive_constraint_modes [all_constraint_modes -active]
+set_propagated_clock [all_clocks]
 
 setNanoRouteMode -quiet -routeTdrEffort 5
-setNanoRouteMode -routeTopRoutingLayer 8 -routeBottomRoutingLayer 3
+setNanoRouteMode -quiet -routeTopRoutingLayer 9
+setNanoRouteMode -quiet -routeBottomRoutingLayer 3
 setNanoRouteMode -quiet -drouteEndIteration default
 setNanoRouteMode -quiet -routeWithTimingDriven true
 setNanoRouteMode -quiet -routeWithSiDriven true
-setNanoRouteMode -routeWithViaInPin  false 
 
 setNanoRouteMode -quiet -drouteFixAntenna true
 setNanoRouteMode -quiet -routeInsertAntennaDiode true
@@ -152,13 +169,17 @@ setNanoRouteMode -quiet -routeInsertDiodeForClockNets true
 routeDesign
 
 setAnalysisMode -analysisType onChipVariation
+optDesign -postRoute
+ \n" ;
 
-optDesign -postRoute \n" ;
 
-
-open(DATA3, ">report_${top_module}_${lefnumber}x.tcl") or die "report_${top_module}_${lefnumber}x.tcl  Open FAILED!";
+open(DATA3, ">report_${top_module}_${lefnumber}x.tcl") or die "report_${top_module}_${lefnumber}x.tcl 文件无法打开, $!";
 
 print DATA3 "
+set_interactive_constraint_modes [all_constraint_modes -active]
+set_propagated_clock [all_clocks]
+report_timing -net
+report_power
 saveNetlist ./${top_module}_${lefnumber}x.v 
 defOut -allLayers -floorplan -netlist -routing -scanChain -usedVia ./${top_module}_${lefnumber}x.def
 exit" ;
