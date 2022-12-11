@@ -6,3 +6,5 @@ Use Makefile can easily do place and route in Innovus, change nan15.pl to fit ot
 Use via.py and resistivity.py and easily calculate the via resistance and Cu resistivity only with inputing witdh. 
 
 Use linear_regression.py can do a simple linear-regression job.
+
+Use spef.pl can generate the script for StarRC to generate SPEF file.
