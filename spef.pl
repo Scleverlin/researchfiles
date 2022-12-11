@@ -4,34 +4,34 @@ $process    = $ARGV[1];
 open(DATA, ">${top_module}_${process}.cmd") or die "${top_module}-${process}.cmd 文件无法打开, $!";
 
 print DATA "
-
 * TechReport
 BLOCK: $top_module 
 HIERARCHICAL_SEPARATOR: /
-BUS_BIT: [] \n" ;
+BUS_BIT: [] \n";
+print "the process is $process \n";
 
-if     ($process == 'ASAP7'){
-  print DATA "LEF_FILE: /home/shi/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_1x_201209.lef  /home/shi/asap7/asap7sc7p5t_28/LEF/asap7sc7p5t_28_SL_1x_220121a.lef
-TOP_DEF_FILE: /home/shi/newtest/asap7_slvt/$top_module.def
-ENHANCED_CCP_FLOW: YES
-TCAD_GRD_FILE: /home/shi/nxtgrd/asap7/asap7.nxtgrd
-MAPPING_FILE: /home/shi/nxtgrd/asap7/asap7.map";
-}elsif ($process == 'CNFET7'){
+if ($process eq $asap7 ) {
+  print DATA "LEF_FILE: /home/shi/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_1x_201209.lef  /home/shi/asap7/asap7sc7p5t_28/LEF/asap7sc7p5t_28_SL_1x_220121a.lef\n";
+  print DATA "TOP_DEF_FILE: /home/shi/newtest/asap7_slvt/$top_module.def\n";
+  print DATA "ENHANCED_CCP_FLOW: YES\n TCAD_GRD_FILE: /home/shi/nxtgrd/asap7/asap7.nxtgrd \nMAPPING_FILE: /home/shi/nxtgrd/asap7/asap7.map\n";
+  print "The process is ASAP7\n" ;
+} elsif ($process eq "CNFET7"){
   print DATA "LEF_FILE: /home/shi/newlef/cnfet7_1x_8.9.lef  /home/shi/newlef/CNFET_cell.lef
 TOP_DEF_FILE: /home/shi/newtest/cnfet7/$top_module.def
 ENHANCED_CCP_FLOW: YES
 TCAD_GRD_FILE: /home/shi/nxtgrd/cnfet7_asap7/9.7/CNFET7_asap7_base.nxtgrd
 MAPPING_FILE: /home/shi/nxtgrd/map.file";
-}elsif($process == 'CNFET5'){
+ print "The process is CNFET7\n";
+}elsif($process eq "CNFET5"){
   print DATA "LEF_FILE: /home/shi/newlef/cnfet5_1x.8.15.lef  /home/shi/newlef/CNFET_cell.lef
 TOP_DEF_FILE: /home/shi/newtest/cnfet5/$top_module.def
 ENHANCED_CCP_FLOW: YES
 TCAD_GRD_FILE: /home/shi/nxtgrd/cnfet5/9.7/CNFET5_asap7_base.nxtgrd
 MAPPING_FILE: /home/shi/nxtgrd/map.file";
+ print "The process is CNFET5\n";
 }else{
-  print "no process definition";
+  print "no process definition\n";
 }
-
 print DATA "
 EXTRACTION: RC
 COUPLE_TO_GROUND: NO
