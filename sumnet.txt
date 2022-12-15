@@ -1,0 +1,10 @@
+t_c=0
+w_c=0
+
+awk '{sum8 += $8};END {print sum8}' CNFET7_.net
+awk '{sum6 += $6};END {print sum6}' CNFET7_.net
+
+#cat CNFET7_.net | awk '{sum8 += $8};END {print sum8}'
+#cat CNFET7_.net | awk '{sum6 += $6};END {print sum6}'
+
+

@@ -1,0 +1,1 @@
+cat CNFET5_dec.net | awk '{if ($6 == "Spef") { printf "%s %s %s %s %s %s %s %s   \n", $1,$2,$3,$4,$5, $7,$8,$9 }  else { if ($1 == "SPACING"&&$3=="BY") {  printf "%s %.3f %s %.3f ; \n", $1,$2*4,$3,$4*4} else {print $0}}}'>CNFET7_.net
