@@ -6,9 +6,8 @@ import pandas as pd
 df = pd.DataFrame(columns=['Module', 'Frequency', 'Type', 'Value'])
 
 # 指定模块名数组
-modules = ['kogge_stone_adder_64_bit', 'BK_64_with_8_block']  # 请根据实际情况修改
+modules = ['kogge_stone_adder_64_bit', 'BK_64_with_8_block'] 
 
-# 指定频率范围
 start_frequency = 0.5  # 初始频率
 end_frequency = 24.0  # 最大频率
 step = 0.5  # 频率步长
@@ -42,7 +41,7 @@ for module in modules:
                     elif type == 'area':
                         matches = re.findall(r'Total cell area:\s+([\d\.]+)', lines[-3])[0]
                         print (matches)
-                    # 如果找到了至少一个匹配的值
+               
                     if matches:
                         value = matches
                         
@@ -55,5 +54,4 @@ for module in modules:
             # 更新频率
             frequency += step
 
-# 将DataFrame输出到Excel文件
 df.to_excel('output.xlsx', index=False)
