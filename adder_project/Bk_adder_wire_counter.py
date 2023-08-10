@@ -89,8 +89,46 @@ def BK_SA (N_bit,depthofbk):
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
     return bkwirelength+post_processing_wire+SA_width_wire+N_bit*(total_depth+depthof_post)
 
-for i in range (0,9):
+for i in range (0,7):
     print ("\n now is",i,"\n")
     print ("-----------------------------")
-    print ("Total Wire length of this couple is ",BK_SA (256,i))
+    print ("Total Wire length of this couple is ",BK_SA (64,i))
+
+def KS_wire (depthofks,N_bit):
+    total_depth=log2(N_bit)
+    depthofbk=total_depth-depthofks
+    num_of_node=2**depthofks
+    wire_num=num_of_node
+    width_of_first_level=2**(depthofbk)
+    total_wire_length=0
+    for i in range(1,depthofks+1):
+            length=1
+            index=2**(i-1)
+            c=index*width_of_first_level*index*width_of_first_level+length*length
+            wire_length=math.sqrt(c)
+            total_wire_length+=wire_length*(wire_num-index)
+            
+    return total_wire_length
     
+print (KS_wire(4,16))
+def HC_adder(N_bit,depthofbk):
+    total_depth=log2(N_bit)
+    depthofks=int(total_depth-depthofbk)
+    print ("depth of bk is",depthofbk)
+    bkwirelength=bk_tree_count_with_N_bit (depthofbk,N_bit)
+    print ("bkwirelength is",bkwirelength)
+    post_processing_wire=post_processing_stage(depthofbk,N_bit)
+    print ("post_processing_wire is",post_processing_wire)
+    KS_wire_length = KS_wire(depthofks,N_bit)
+    print ("KS_wire_length is",KS_wire_length)
+    depthof_post=depthofbk
+    if depthofbk==total_depth-1 or depthofbk==total_depth:
+         depthof_post=total_depth-1
+    print ("depth of post processing is",depthof_post)
+    print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
+    return bkwirelength+post_processing_wire+KS_wire_length+N_bit*(total_depth+depthof_post)
+
+for i in range (0,7):
+    print ("\n now is",i,"\n")
+    print ("-----------------------------")
+    print ("Total Wire length of this couple is ",HC_adder (64,i))
