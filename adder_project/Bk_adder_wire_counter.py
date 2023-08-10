@@ -75,20 +75,22 @@ def SA_width (depthofSA,N_bit):
 def BK_SA (N_bit,depthofbk):
     total_depth=log2(N_bit)
     depthofSA=int(total_depth-depthofbk)
-    print ("depthofSA is",depthofSA)
+    print ("depth of bk is",depthofbk)
     bkwirelength=bk_tree_count_with_N_bit (depthofbk,N_bit)
     print ("bkwirelength is",bkwirelength)
     post_processing_wire=post_processing_stage(depthofbk,N_bit)
     print ("post_processing_wire is",post_processing_wire)
     SA_width_wire=SA_width (depthofSA,N_bit)
     print ("SA_width_wire is",SA_width_wire)
-    if depthofbk==total_depth-1:
-        depthofbk=depthofbk+1
-    print ("wire from depth of the tree",N_bit*(total_depth+depthofbk))
-    return bkwirelength+post_processing_wire+SA_width_wire+N_bit*(total_depth+depthofbk)
+    depthof_post=depthofbk
+    if depthofbk==total_depth-1 or depthofbk==total_depth:
+        depthof_post=total_depth-1
+    print ("depth of post processing is",depthof_post)
+    print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
+    return bkwirelength+post_processing_wire+SA_width_wire+N_bit*(total_depth+depthof_post)
 
-for i in range (0,7):
-    print ("now is",i,"\n")
+for i in range (0,9):
+    print ("\n now is",i,"\n")
     print ("-----------------------------")
-    print (BK_SA (64,i))
+    print ("Total Wire length of this couple is ",BK_SA (256,i))
     
