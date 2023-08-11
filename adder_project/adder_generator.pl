@@ -146,7 +146,7 @@ $skip_index=2**($depthofbk+1)-1;
             print DATA"
             //KS 
             generate
-              for (i = 0;i<${bit} ;i=i+${add_index}) begin
+              for (i = 0;i<(${bit}-${skip_index}) ;i=i+${add_index}) begin
                 assign gnpg_level${assign_index}[${skip_index}+i]=gnpg_level${last_index}[${skip_index}+i]|pp_level${last_index}[${skip_index}+i]&gnpg_level${last_index}[${skip_index}+i-${i}*${add_index}];
                 assign pp_level${assign_index}[${skip_index}+i]=pp_level${last_index}[${skip_index}+i]&pp_level${last_index}[${skip_index}+i-${i}*${add_index}];
                end

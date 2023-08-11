@@ -48,7 +48,7 @@ wire [63:0] pp_level6;
             endgenerate
             //KS 
             generate
-              for (i = 0;i<64 ;i=i+2) begin
+              for (i = 0;i<(64-3) ;i=i+2) begin
                 assign gnpg_level2[3+i]=gnpg_level1[3+i]|pp_level1[3+i]&gnpg_level1[3+i-1*2];
                 assign pp_level2[3+i]=pp_level1[3+i]&pp_level1[3+i-1*2];
                end
@@ -272,7 +272,7 @@ wire [63:0] pp_level6;
         
             //KS 
             generate
-              for (i = 0;i<64 ;i=i+2) begin
+              for (i = 0;i<(64-5) ;i=i+2) begin
                 assign gnpg_level3[5+i]=gnpg_level2[5+i]|pp_level2[5+i]&gnpg_level2[5+i-2*2];
                 assign pp_level3[5+i]=pp_level2[5+i]&pp_level2[5+i-2*2];
                end
@@ -489,7 +489,7 @@ wire [63:0] pp_level6;
         
             //KS 
             generate
-              for (i = 0;i<64 ;i=i+2) begin
+              for (i = 0;i<(64-9) ;i=i+2) begin
                 assign gnpg_level4[9+i]=gnpg_level3[9+i]|pp_level3[9+i]&gnpg_level3[9+i-3*2];
                 assign pp_level4[9+i]=pp_level3[9+i]&pp_level3[9+i-3*2];
                end
@@ -692,7 +692,7 @@ wire [63:0] pp_level6;
         
             //KS 
             generate
-              for (i = 0;i<64 ;i=i+2) begin
+              for (i = 0;i<(64-17) ;i=i+2) begin
                 assign gnpg_level5[17+i]=gnpg_level4[17+i]|pp_level4[17+i]&gnpg_level4[17+i-4*2];
                 assign pp_level5[17+i]=pp_level4[17+i]&pp_level4[17+i-4*2];
                end
@@ -867,7 +867,7 @@ wire [63:0] pp_level6;
         
             //KS 
             generate
-              for (i = 0;i<64 ;i=i+2) begin
+              for (i = 0;i<(64-33) ;i=i+2) begin
                 assign gnpg_level6[33+i]=gnpg_level5[33+i]|pp_level5[33+i]&gnpg_level5[33+i-5*2];
                 assign pp_level6[33+i]=pp_level5[33+i]&pp_level5[33+i-5*2];
                end
@@ -983,19 +983,6 @@ wire [63:0] pp_level6;
                assign pp_level6[i]=pp_level5[i];
             end
             endgenerate
-
-assign cout= g[64]|p[64]&gnpg_level6[63];
-
-wire gnpg_level7[63:0];
-generate
-   for (i = 1;i<65 ;i=i+1 ) begin
-           gnpg_level7[2*i]=gnpg_level6[2*i]|pp_level6[2*i]&gnpg_level6[2*i-1];
-           gnpg_level7[2*i-1]=gnpg_level6[2*i-1];           
-   end
-endgenerate
-assign gnpg_level7[0]=gnpg_level6[0];
-
-assign sum[64:1]=gnpg_level7[63:0]^p[64:1];
-
+        
 endmodule
 
