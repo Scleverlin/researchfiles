@@ -77,11 +77,11 @@ def BK_SA (N_bit,depthofbk):
     depthofSA=int(total_depth-depthofbk)
     print ("depth of bk is",depthofbk)
     bkwirelength=bk_tree_count_with_N_bit (depthofbk,N_bit)
-    print ("bkwirelength is",bkwirelength)
+    print ("Wire from Bk is",bkwirelength)
     post_processing_wire=post_processing_stage(depthofbk,N_bit)
     print ("post_processing_wire is",post_processing_wire)
     SA_width_wire=SA_width (depthofSA,N_bit)
-    print ("SA_width_wire is",SA_width_wire)
+    print ("Wire from SA is",SA_width_wire)
     depthof_post=depthofbk
     if depthofbk==total_depth-1 or depthofbk==total_depth:
         depthof_post=total_depth-1
@@ -110,7 +110,8 @@ def KS_wire (depthofks,N_bit):
             
     return total_wire_length
     
-print (KS_wire(4,16))
+# print (KS_wire(4,16))
+
 def HC_adder(N_bit,depthofbk):
     total_depth=log2(N_bit)
     depthofks=int(total_depth-depthofbk)
@@ -128,7 +129,69 @@ def HC_adder(N_bit,depthofbk):
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
     return bkwirelength+post_processing_wire+KS_wire_length+N_bit*(total_depth+depthof_post)
 
-for i in range (0,7):
-    print ("\n now is",i,"\n")
-    print ("-----------------------------")
-    print ("Total Wire length of this couple is ",HC_adder (64,i))
+# for i in range (0,7):
+#     print ("\n now is",i,"\n")
+#     print ("-----------------------------")
+#     print ("Total Wire length of this couple is ",HC_adder (64,i))
+
+def knowles_BK_wire (N_bit,depthofbk,fanout):
+    total_depth = log2(N_bit)
+    depthofknowles=int(total_depth-depthofbk)
+    widthoffirstlevel=2**(depthofbk)
+    num_of_nodes=2**depthofknowles
+    length=1
+    total_wire_length=0
+    if log2(fanout)+depthofbk>=total_depth:
+        print ("fanout is too large")
+        return 0
+    else:
+        for i in range (1,int(log2(fanout)+1)):
+           wire_num_of_pre_process= num_of_nodes/fanout*(fanout-2**(i-1))
+           index=2**(i-1)
+           c=index*widthoffirstlevel*index*widthoffirstlevel+length*length
+           wirelength=math.sqrt(c)
+           print ("wirelength of pre process is",wirelength)
+           print ("wire_num_of_pre_process is",wire_num_of_pre_process)
+           total_wire_length+=wirelength*wire_num_of_pre_process
+        #finsih pre process
+        print ("total_wire_length of pre process is",total_wire_length)  
+        first_level_width_of_knowless=fanout*widthoffirstlevel
+        for i in range (1,int(depthofknowles-log2(fanout)+1)):
+            wire_length_of_each_cluster=0
+            wire_cluster_num=num_of_nodes/fanout - 2**(i-1)
+            for j in range (0,fanout):
+                each_wire_length=first_level_width_of_knowless-j
+                c=each_wire_length*each_wire_length+length*length
+                wirelength=math.sqrt(c)
+                wire_length_of_each_cluster+=wirelength*wire_cluster_num
+            total_wire_length+=wire_length_of_each_cluster
+            first_level_width_of_knowless=first_level_width_of_knowless*2
+    return total_wire_length    
+
+# print (knowles_BK_wire (64,2,4))
+
+def BK_KL_with_post_processing (N_bit,depthofbk,fanout):
+    total_depth=log2(N_bit)
+    kb_wire=knowles_BK_wire (N_bit,depthofbk,fanout)
+    post_wire=post_processing_stage(depthofbk,N_bit)
+    depthof_post=depthofbk
+    if depthofbk==total_depth-1 or depthofbk==total_depth:
+         depthof_post=total_depth-1
+    print ("depth of post processing is",depthof_post)
+    print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
+    return kb_wire+post_wire+N_bit*(total_depth+depthof_post)
+
+c=[]
+for  i in range (2,33):
+   for j in range (0,7):
+    if log2(i)%1==0 and log2(i)+ j <6: 
+      print ("\n now fanout is",i,"\n")
+      print ("\n now BK depth is",j,"\n")
+      print ("-----------------------------")
+      print ("Total Wire length of this couple is ",BK_KL_with_post_processing(64,j,i) ) 
+      c.append([i,j])
+
+print (c)  
+                     
+               
+    
