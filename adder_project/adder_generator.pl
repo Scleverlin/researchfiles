@@ -207,8 +207,11 @@ assign cout =g[${bit}]|p[${bit}]&gnpg_level${final_index}[${bit}-1];
 
 }
 elsif($depthofbk>1) {
-   if ($depthofbk==$bit){
-       $depthofbk=$bit-1;
+   print ("index!\n");
+   if ($depthofbk== int($log2_bit)){
+       $depthofbk=int($log2_bit)-1;
+       print ("${depthofbk}\n");
+       $final_index=$final_index-1;
    }
     print DATA"
     wire [${max_of_pg}:0] gnpg_level${final_index};  
@@ -251,17 +254,17 @@ $max_nodes= 2*($bit-2**$j)/2**$j;
 $before_index=$current_index-1;
 if ($before_index!=$depthoftree){
 print DATA"
-//1111
+
 assign gnpg_level${current_index}[0]=gnpg_level${depthoftree}[${start_point}];
 assign gnpg_level${current_index}[1]=gnpg_level${depthoftree}[${mul_index}+${start_point}]|pp_level${depthoftree}[${mul_index}+${start_point}]&gnpg_level${depthoftree}[${mul_index}+${start_point}-${mul_index}];
 generate 
-//1111
+
    for (i = 3;i<${max_nodes};i=i+2 ) begin
       assign gnpg_level${current_index}[i]=gnpg_level${depthoftree}[${mul_index}*i+${start_point}]|pp_level${depthoftree}[${mul_index}*i+${start_point}]&gnpg_level${before_index}[(i-3)/2];
    end
 endgenerate
 generate 
-//1111
+
    for (i = 2;i<${max_nodes} ;i=i+2 ) begin
       assign gnpg_level${current_index}[i]=gnpg_level${before_index}[i/2-1];
    end

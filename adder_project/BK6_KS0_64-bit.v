@@ -231,5 +231,103 @@ wire [63:0] pp_level6;
                 assign pp_level6[ 64*0+i]=pp_level5[ 64*0+i];
                end
             endgenerate 
+    wire [63:0] gnpg_level11;  
+    
+    wire [30-1:0] gnpg_level10;   
+    wire [30-1:0] pp_level10; 
+    
+    wire [14-1:0] gnpg_level9;   
+    wire [14-1:0] pp_level9; 
+    
+    wire [6-1:0] gnpg_level8;   
+    wire [6-1:0] pp_level8; 
+    
+    wire [2-1:0] gnpg_level7;   
+    wire [2-1:0] pp_level7; 
+    
+assign sum[64:1]=p[64:1]^gnpg_level11[64-1:0];
+assign cout =g[64]|p[64]&gnpg_level11[64-1];
+assign gnpg_level11[0]=gnpg_level6[0];
+assign gnpg_level11[1]=gnpg_level6[1];
+assign gnpg_level11[2]=gnpg_level6[2]|pp_level6[2]&gnpg_level6[1];
+assign gnpg_level11[63]=gnpg_level6[63];
+generate 
+   for (i = 1;i<(64-2)/2 ;i=i+1 ) begin
+      assign gnpg_level11[2*i+1]=gnpg_level10[i-1];
+   end
+endgenerate
+generate 
+   for (i = 2;i<64/2 ;i=i+1 ) begin
+      assign gnpg_level11[2*i]=gnpg_level6[2*i]|pp_level6[2*i]&gnpg_level10[i-2];
+   end
+endgenerate
+
+
+assign gnpg_level10[0]=gnpg_level6[3];
+assign gnpg_level10[1]=gnpg_level6[2+3]|pp_level6[2+3]&gnpg_level6[2+3-2];
+generate 
+
+   for (i = 3;i<30;i=i+2 ) begin
+      assign gnpg_level10[i]=gnpg_level6[2*i+3]|pp_level6[2*i+3]&gnpg_level9[(i-3)/2];
+   end
+endgenerate
+generate 
+
+   for (i = 2;i<30 ;i=i+2 ) begin
+      assign gnpg_level10[i]=gnpg_level9[i/2-1];
+   end
+endgenerate
+
+
+
+assign gnpg_level9[0]=gnpg_level6[7];
+assign gnpg_level9[1]=gnpg_level6[4+7]|pp_level6[4+7]&gnpg_level6[4+7-4];
+generate 
+
+   for (i = 3;i<14;i=i+2 ) begin
+      assign gnpg_level9[i]=gnpg_level6[4*i+7]|pp_level6[4*i+7]&gnpg_level8[(i-3)/2];
+   end
+endgenerate
+generate 
+
+   for (i = 2;i<14 ;i=i+2 ) begin
+      assign gnpg_level9[i]=gnpg_level8[i/2-1];
+   end
+endgenerate
+
+
+
+assign gnpg_level8[0]=gnpg_level6[15];
+assign gnpg_level8[1]=gnpg_level6[8+15]|pp_level6[8+15]&gnpg_level6[8+15-8];
+generate 
+
+   for (i = 3;i<6;i=i+2 ) begin
+      assign gnpg_level8[i]=gnpg_level6[8*i+15]|pp_level6[8*i+15]&gnpg_level7[(i-3)/2];
+   end
+endgenerate
+generate 
+
+   for (i = 2;i<6 ;i=i+2 ) begin
+      assign gnpg_level8[i]=gnpg_level7[i/2-1];
+   end
+endgenerate
+
+
+//1111
+assign gnpg_level7[0]=gnpg_level6[31];
+assign gnpg_level7[1]=gnpg_level6[16+31]|pp_level6[16+31]&gnpg_level6[16+31-16];
+generate 
+//1111
+   for (i = 3;i<2;i=i+2 ) begin
+      assign gnpg_level7[i]=gnpg_level6[16*i+31]|pp_level6[16*i+31]&gnpg_level6[16*i+31-16];
+   end
+endgenerate
+generate 
+//1111
+   for (i = 2;i<2 ;i=i+2 ) begin
+      assign gnpg_level7[i]=gnpg_level6[16*i+31];
+   end
+endgenerate
+
 endmodule
 
