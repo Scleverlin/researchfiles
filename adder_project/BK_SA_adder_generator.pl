@@ -128,14 +128,14 @@ wire [${max_of_pg}:0] pp_level${i};";}
             print DATA"
              generate
                for (i = 1;i<${bit} ;i=i+${skip_index} ) begin
-                assign gnpg_level${i}[i]=g${j}[i]|p${j}[i]&g${j}[i-${minus_index}];  
-                assign pp_level${i}[i]=p${j}[i]&p${j}[i-${minus_index}];     
+                assign gnpg_level${i}[i]=g[i]|p${j}[i]&g[i-${minus_index}];  
+                assign pp_level${i}[i]=p[i]&p[i-${minus_index}];     
                end
             endgenerate
              generate
                 for (i = 0;i<${bit} ;i=i+${skip_index}) begin
-                 assign gnpg_level${i}[i]=g${j}[i];  
-                 assign pp_level${i}[i]=p${j}[i];     
+                 assign gnpg_level${i}[i]=g[i];  
+                 assign pp_level${i}[i]=p[i];     
                end
             endgenerate";}
          else {
@@ -156,46 +156,56 @@ wire [${max_of_pg}:0] pp_level${i};";}
                end
             endgenerate ";
             } }  }
-
-$skip_index=2**($depthofbk+1)-1;
-    for (my $i = 1; $i <$depthofsa+1 ; $i++){
+#SA tree begins
+$w=2**$depthofbk;
+#start point in the first level of SK tree
+$a=2**$depthofbk-1;
+    print ("The starting width caused by BK tree is ${w}\n");
+     for (my $i=1;$i<$depthofsa+1;$i++){
         $assign_index=$depthofbk+$i;
-        $last_index=$depthofbk+$i-1;
-        $add_index=2**$depthofbk;
-        print ("${skip_index}\n");
-            print DATA"
-            //SA 
-            generate
-              for (i = 0;i<(${bit}-${skip_index}) ;i=i+${add_index}) begin
-                assign gnpg_level${assign_index}[${skip_index}+i]=gnpg_level${last_index}[${skip_index}+i]|pp_level${last_index}[${skip_index}+i]&gnpg_level${last_index}[${skip_index}+i-${i}*${add_index}];
-                assign pp_level${assign_index}[${skip_index}+i]=pp_level${last_index}[${skip_index}+i]&pp_level${last_index}[${skip_index}+i-${i}*${add_index}];
-               end
-            endgenerate";
-            print DATA"
-            generate
-              for (i = 0;i<${skip_index};i=i+1) begin
-                assign gnpg_level${assign_index}[i]=gnpg_level${last_index}[i];
-                assign pp_level${assign_index}[i]=pp_level${last_index}[i];
-               end
-            endgenerate
-            ";
-     
-     $loop_index=($bit-1-$skip_index)/$add_index;
-      for ( my $j = 0; $j <$loop_index ; $j++)
-      {
-        $start=$skip_index+$add_index*$j;
-        $end=$skip_index+$add_index*($j+1);
-        print DATA "
+        print ("Hybird work!\n");
+        $j=$assign_index-1;
+        $initial_index=$a+$w*(2**($i-1));
+        $initial_fanout_point=$initial_index-$w;
+        $expand_index=$w*(2**($i-1));
+        $add_index=$w*(2**$i);
+        $old_pass_starting_point=$a+$w*(2**$i);
+     for (my $k=0;$k<$expand_index;$k=$k+$w){
+           print DATA "
         generate
-            for (i = ${start}+1;i<${end};i=i+1) begin
-               assign gnpg_level${assign_index}[i]=gnpg_level${last_index}[i];
-               assign pp_level${assign_index}[i]=pp_level${last_index}[i];
-            end
-            endgenerate
-        "
+             for (i = ${initial_index};i<${for_index} ;i=i+${add_index}) begin
+             assign gnpg_level${assign_index}[i+${k}]=gnpg_level${j}[i+${k}]|pp_level${j}[i+${k}]&gnpg_level${j}[i-${w}];  
+             assign pp_level${assign_index}[i+${k}]=pp_level${j}[i+${k}]&pp_level${j}[i-${w}];            
+         end
+       endgenerate
+       //old_value_pass
+       generate
+             for (i = ${old_pass_starting_point};i<${for_index} ;i=i+${add_index}) begin
+             assign gnpg_level${assign_index}[i+${k}]=gnpg_level${j}[i+${k}];  
+             assign pp_level${assign_index}[i+${k}]=pp_level${j}[i+${k}];            
+         end
+       endgenerate
+       ";} 
+         print DATA "
+         generate
+             for (i = 0;i<${initial_index} ;i=i+1) begin
+             assign gnpg_level${assign_index}[i]=gnpg_level${j}[i];  
+             assign pp_level${assign_index}[i]=pp_level${j}[i];           
+         end
+       endgenerate ";
+    $index_for_pass=$initial_index;
+    for (my $k=$index_for_pass; $k<$bit-1;$k=$k+$w){
+        print ("k=${k},bit=${bit}\n");
+         print DATA "
+         //k
+         generate
+             for (i = ${k}+1;i<${k}+$w ;i=i+1) begin
+             assign gnpg_level${assign_index}[i]=gnpg_level${j}[i];  
+             assign pp_level${assign_index}[i]=pp_level${j}[i];           
+         end
+       endgenerate ";
     }
-    $skip_index+=$add_index*2**($i-1);
-    print("${skip_index}\n");
+
 }}
 
 #post process
