@@ -11,7 +11,7 @@ if ($depthofks + $depthofbk != int($log2_bit)) {
     die "Error: a + b is not equal to log2(c)\n";
 }
 
-open(DATA, ">BK${depthofbk}_KS${depthofks}_${bit}-bit.v") or die "${depthofbk}_${depthofks}.v 文件无法打开, $!";
+open(DATA, ">./adder_gen/BK${depthofbk}_KS${depthofks}_${bit}-bit.v") or die "${depthofbk}_${depthofks}.v 文件无法打开, $!";
 
 $max_of_pg=$bit-1;
 
@@ -105,6 +105,7 @@ wire [${max_of_pg}:0] pp_level${i};";}
          $skip_index=2**$i;
          $minus_index=$skip_index/2;
          if ($i==1) {
+            # j is meaningless here and ignored by the compiler, so just ignore it. It is a copy-paste error.
             print DATA"
              generate
                for (i = 1;i<${bit} ;i=i+${skip_index} ) begin
