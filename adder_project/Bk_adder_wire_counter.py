@@ -24,7 +24,8 @@ def bk_tree_count_with_N_bit (depth,N_bit):
 
 depth=6
 
-N_bit=64
+N
+_bit=64
 # print(bk_tree_count_with_N_bit(depth,N_bit))
 
 def post_processing_stage(depthofbk,N_bit):

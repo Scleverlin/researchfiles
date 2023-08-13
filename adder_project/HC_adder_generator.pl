@@ -11,7 +11,7 @@ if ($depthofks + $depthofbk != int($log2_bit)) {
     die "Error: a + b is not equal to log2(c)\n";
 }
 
-open(DATA, ">./adder_gen/BK${depthofbk}_KS${depthofks}_${bit}-bit.v") or die "${depthofbk}_${depthofks}.v 文件无法打开, $!";
+open(DATA, ">./adder_gen/HC_${bit}_BK${depthofbk}_KS${depthofks}.v") or die "${depthofbk}_${depthofks}.v 文件无法打开, $!";
 
 $max_of_pg=$bit-1;
 
