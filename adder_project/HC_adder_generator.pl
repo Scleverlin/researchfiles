@@ -12,10 +12,40 @@ if ($depthofks + $depthofbk != int($log2_bit)) {
 }
 
 open(DATA, ">./adder_gen/HC_${bit}_BK${depthofbk}_KS${depthofks}.v") or die "${depthofbk}_${depthofks}.v 文件无法打开, $!";
+open(DATA2 , ">>./adder_names.txt");
+print DATA2 "HC_${bit}_BK${depthofbk}_KS${depthofks}_top\n";
+open(DATA3 , ">>./adder_path.txt");
+print DATA3 "./adder_gen/HC_${bit}_BK${depthofbk}_KS${depthofks}.v\n";
 
 $max_of_pg=$bit-1;
 
-print DATA "module P_G_gen_hc_${bit} (a,b,cin,p,g);
+print DATA "
+module HC_${bit}_BK${depthofbk}_KS${depthofks}_top (a,b,cin,sum,cout,clk,rst);
+input [63:0]a;
+input [63:0]b;
+input cin;
+output reg [63:0]sum;
+output reg cout;
+input clk;
+input rst;
+wire [63:0] sum_w;
+wire cout_w;
+reg cin_r;
+HC_${bit}_BK${depthofbk}_KS${depthofks} u0 (a,b,cin_r,sum_w,cout_w);
+always @(posedge clk ) begin
+    if (rst) begin
+        sum<=0;
+        cout<=0;
+    end
+    else begin
+        sum<=sum_w;
+        cout<=cout_w; 
+        cin_r <= cin;
+    end
+end
+endmodule
+
+module P_G_gen_hc_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
 input cin;
@@ -305,4 +335,3 @@ endmodule
 
 ";
     
-

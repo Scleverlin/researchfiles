@@ -24,8 +24,7 @@ def bk_tree_count_with_N_bit (depth,N_bit):
 
 depth=6
 
-N
-_bit=64
+N_bit=64
 # print(bk_tree_count_with_N_bit(depth,N_bit))
 
 def post_processing_stage(depthofbk,N_bit):
@@ -90,10 +89,10 @@ def BK_SA (N_bit,depthofbk):
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
     return bkwirelength+post_processing_wire+SA_width_wire+N_bit*(total_depth+depthof_post)
 
-for i in range (0,7):
-    print ("\n now is",i,"\n")
-    print ("-----------------------------")
-    print ("Total Wire length of this couple is ",BK_SA (64,i))
+# for i in range (0,7):
+#     print ("\n now is BK SA, Bk depth is",i,"\n")
+#     print ("-----------------------------")
+#     print ("Total Wire length of this couple is ",BK_SA (64,i))
 
 def KS_wire (depthofks,N_bit):
     total_depth=log2(N_bit)
@@ -130,10 +129,10 @@ def HC_adder(N_bit,depthofbk):
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
     return bkwirelength+post_processing_wire+KS_wire_length+N_bit*(total_depth+depthof_post)
 
-# for i in range (0,7):
-#     print ("\n now is",i,"\n")
-#     print ("-----------------------------")
-#     print ("Total Wire length of this couple is ",HC_adder (64,i))
+for i in range (0,7):
+    print ("\n now is hc_adder, BK depth is ",i,"\n")
+    print ("-----------------------------")
+    print ("Total Wire length of this couple is ",HC_adder (64,i))
 
 def knowles_BK_wire (N_bit,depthofbk,fanout):
     total_depth = log2(N_bit)
@@ -182,17 +181,17 @@ def BK_KL_with_post_processing (N_bit,depthofbk,fanout):
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
     return kb_wire+post_wire+N_bit*(total_depth+depthof_post)
 
-c=[]
-for  i in range (2,33):
-   for j in range (0,7):
-    if log2(i)%1==0 and log2(i)+ j <6: 
-      print ("\n now fanout is",i,"\n")
-      print ("\n now BK depth is",j,"\n")
-      print ("-----------------------------")
-      print ("Total Wire length of this couple is ",BK_KL_with_post_processing(64,j,i) ) 
-      c.append([i,j])
+# c=[]
+# for  i in range (2,33):
+#    for j in range (0,7):
+#     if log2(i)%1==0 and log2(i)+ j <6: 
+#       print ("\n now fanout is",i,"\n")
+#       print ("\n now BK depth is",j,"\n")
+#       print ("-----------------------------")
+#       print ("Total Wire length of this couple is ",BK_KL_with_post_processing(64,j,i) ) 
+#       c.append([i,j])
 
-print (c)  
+# print (c)  
                      
                
     

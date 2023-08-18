@@ -1,5 +1,5 @@
 
-module Hybrid_64_BK2_KL4_Fanout4_top (a,b,cin,sum,cout,clk,rst);
+module Hybrid_64_BK2_KL4_Fanout8_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
 input cin;
@@ -10,7 +10,7 @@ input rst;
 wire [63:0] sum_w;
 wire cout_w;
 reg cin_r;
-Hybrid_64_BK2_KL4_Fanout4 u0 (a,b,cin_r,sum_w,cout_w);
+Hybrid_64_BK2_KL4_Fanout8 u0 (a,b,cin_r,sum_w,cout_w);
 always @(posedge clk ) begin
     if (rst) begin
         sum<=0;
@@ -36,7 +36,7 @@ assign p[64:1]=a^b;
 assign g[64:1]=a&b;
 endmodule
 
-module Hybrid_64_BK2_KL4_Fanout4 (a,b,cin,sum,cout);
+module Hybrid_64_BK2_KL4_Fanout8 (a,b,cin,sum,cout);
 
 input [64:1]a;
 input [64:1]b;
@@ -158,57 +158,27 @@ wire [63:0] pp_level6;
                 assign pp_level2[ 4*15+i]=pp_level1[ 4*15+i];
                end
             endgenerate 
-          // pre process continue last 2
+          // pre process continue last 3
            generate
-            for (i = 4;i<4*4 ;i=i+4) begin
+            for (i = 4;i<4*8 ;i=i+4) begin
               assign  gnpg_level3[3+i]=gnpg_level2[3+i]|pp_level2[3+i]&gnpg_level2[i+3-4]; 
               assign  pp_level3[3+i]=pp_level2[3+i]&pp_level2[i+3-4];
             end
            endgenerate
           
-          // pre process continue last 2
+          // pre process continue last 3
            generate
-            for (i = 4;i<4*4 ;i=i+4) begin
-              assign  gnpg_level3[19+i]=gnpg_level2[19+i]|pp_level2[19+i]&gnpg_level2[i+19-4]; 
-              assign  pp_level3[19+i]=pp_level2[19+i]&pp_level2[i+19-4];
-            end
-           endgenerate
-          
-          // pre process continue last 2
-           generate
-            for (i = 4;i<4*4 ;i=i+4) begin
+            for (i = 4;i<4*8 ;i=i+4) begin
               assign  gnpg_level3[35+i]=gnpg_level2[35+i]|pp_level2[35+i]&gnpg_level2[i+35-4]; 
               assign  pp_level3[35+i]=pp_level2[35+i]&pp_level2[i+35-4];
             end
            endgenerate
           
-          // pre process continue last 2
-           generate
-            for (i = 4;i<4*4 ;i=i+4) begin
-              assign  gnpg_level3[51+i]=gnpg_level2[51+i]|pp_level2[51+i]&gnpg_level2[i+51-4]; 
-              assign  pp_level3[51+i]=pp_level2[51+i]&pp_level2[i+51-4];
-            end
-           endgenerate
-          
-         // strange part
-            generate
-            for (i = 0;i<4 ;i=i+4 ) begin
-              assign  gnpg_level3[19+i]=gnpg_level2[19+i]; 
-              assign  pp_level3[19+i]=pp_level2[19+i];
-            end 
-            endgenerate
          // strange part
             generate
             for (i = 0;i<4 ;i=i+4 ) begin
               assign  gnpg_level3[35+i]=gnpg_level2[35+i]; 
               assign  pp_level3[35+i]=pp_level2[35+i];
-            end 
-            endgenerate
-         // strange part
-            generate
-            for (i = 0;i<4 ;i=i+4 ) begin
-              assign  gnpg_level3[51+i]=gnpg_level2[51+i]; 
-              assign  pp_level3[51+i]=pp_level2[51+i];
             end 
             endgenerate
           // before start point
@@ -331,57 +301,27 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
-          // pre process continue last 1
+          // pre process continue last 2
            generate
-            for (i = 8;i<4*4 ;i=i+4) begin
+            for (i = 8;i<4*8 ;i=i+4) begin
               assign  gnpg_level4[3+i]=gnpg_level3[3+i]|pp_level3[3+i]&gnpg_level3[i+3-8]; 
               assign  pp_level4[3+i]=pp_level3[3+i]&pp_level3[i+3-8];
             end
            endgenerate
           
-          // pre process continue last 1
+          // pre process continue last 2
            generate
-            for (i = 8;i<4*4 ;i=i+4) begin
-              assign  gnpg_level4[19+i]=gnpg_level3[19+i]|pp_level3[19+i]&gnpg_level3[i+19-8]; 
-              assign  pp_level4[19+i]=pp_level3[19+i]&pp_level3[i+19-8];
-            end
-           endgenerate
-          
-          // pre process continue last 1
-           generate
-            for (i = 8;i<4*4 ;i=i+4) begin
+            for (i = 8;i<4*8 ;i=i+4) begin
               assign  gnpg_level4[35+i]=gnpg_level3[35+i]|pp_level3[35+i]&gnpg_level3[i+35-8]; 
               assign  pp_level4[35+i]=pp_level3[35+i]&pp_level3[i+35-8];
             end
            endgenerate
           
-          // pre process continue last 1
-           generate
-            for (i = 8;i<4*4 ;i=i+4) begin
-              assign  gnpg_level4[51+i]=gnpg_level3[51+i]|pp_level3[51+i]&gnpg_level3[i+51-8]; 
-              assign  pp_level4[51+i]=pp_level3[51+i]&pp_level3[i+51-8];
-            end
-           endgenerate
-          
-         // strange part
-            generate
-            for (i = 0;i<8 ;i=i+4 ) begin
-              assign  gnpg_level4[19+i]=gnpg_level3[19+i]; 
-              assign  pp_level4[19+i]=pp_level3[19+i];
-            end 
-            endgenerate
          // strange part
             generate
             for (i = 0;i<8 ;i=i+4 ) begin
               assign  gnpg_level4[35+i]=gnpg_level3[35+i]; 
               assign  pp_level4[35+i]=pp_level3[35+i];
-            end 
-            endgenerate
-         // strange part
-            generate
-            for (i = 0;i<8 ;i=i+4 ) begin
-              assign  gnpg_level4[51+i]=gnpg_level3[51+i]; 
-              assign  pp_level4[51+i]=pp_level3[51+i];
             end 
             endgenerate
           // before start point
@@ -496,37 +436,38 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
-          // old pass
-         generate
-          for (i = 0;i<19 ;i=i+1) begin
+          // pre process continue last 1
+           generate
+            for (i = 16;i<4*8 ;i=i+4) begin
+              assign  gnpg_level5[3+i]=gnpg_level4[3+i]|pp_level4[3+i]&gnpg_level4[i+3-16]; 
+              assign  pp_level5[3+i]=pp_level4[3+i]&pp_level4[i+3-16];
+            end
+           endgenerate
+          
+          // pre process continue last 1
+           generate
+            for (i = 16;i<4*8 ;i=i+4) begin
+              assign  gnpg_level5[35+i]=gnpg_level4[35+i]|pp_level4[35+i]&gnpg_level4[i+35-16]; 
+              assign  pp_level5[35+i]=pp_level4[35+i]&pp_level4[i+35-16];
+            end
+           endgenerate
+          
+         // strange part
+            generate
+            for (i = 0;i<16 ;i=i+4 ) begin
+              assign  gnpg_level5[35+i]=gnpg_level4[35+i]; 
+              assign  pp_level5[35+i]=pp_level4[35+i];
+            end 
+            endgenerate
+          // before start point
+            generate
+            for (i = 0;i<19 ;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
               assign  pp_level5[i]=pp_level4[i];
-          end 
-         endgenerate
-         // Multiple fanout stage
-         generate
-           for (i = 19;i<4*4+19 ;i=i+4) begin
-              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[19-4];
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[19-4];
-           end 
-         endgenerate
-         
-         // Multiple fanout stage
-         generate
-           for (i = 35;i<4*4+35 ;i=i+4) begin
-              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[35-4];
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[35-4];
-           end 
-         endgenerate
-         
-         // Multiple fanout stage
-         generate
-           for (i = 51;i<4*4+51 ;i=i+4) begin
-              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[51-4];
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[51-4];
-           end 
-         endgenerate
-         
+            end 
+            endgenerate  
+          
+          // space between point and next point
             generate
             for (i = 19+1;i<19+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -534,6 +475,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 23+1;i<23+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -541,6 +483,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 27+1;i<27+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -548,6 +491,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 31+1;i<31+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -555,6 +499,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 35+1;i<35+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -562,6 +507,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 39+1;i<39+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -569,6 +515,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 43+1;i<43+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -576,6 +523,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 47+1;i<47+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -583,6 +531,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 51+1;i<51+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -590,6 +539,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 55+1;i<55+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -597,6 +547,7 @@ wire [63:0] pp_level6;
             end 
             endgenerate  
           
+          // space between point and next point
             generate
             for (i = 59+1;i<59+4;i=i+1 ) begin
               assign  gnpg_level5[i]=gnpg_level4[i]; 
@@ -613,17 +564,9 @@ wire [63:0] pp_level6;
          endgenerate
          // Multiple fanout stage
          generate
-           for (i = 35;i<4*4+35 ;i=i+4) begin
+           for (i = 35;i<4*8+35 ;i=i+4) begin
               assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[35-4];
               assign  pp_level6[i]=pp_level5[i]&pp_level5[35-4];
-           end 
-         endgenerate
-         
-         // Multiple fanout stage
-         generate
-           for (i = 51;i<4*4+51 ;i=i+4) begin
-              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[51-4];
-              assign  pp_level6[i]=pp_level5[i]&pp_level5[51-4];
            end 
          endgenerate
          

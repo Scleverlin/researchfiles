@@ -12,10 +12,39 @@ if ($depthofsa + $depthofbk != int($log2_bit)) {
 }
 
 open(DATA, ">./adder_gen/Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}.v") or die "BK${depthofbk}_SA${depthofsa}.v 文件无法打开, $!";
-
+open(DATA2 , ">>./adder_names.txt");
+print DATA2 "Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top\n";
+open(DATA3 , ">>./adder_path.txt");
+print DATA3 "./adder_gen/Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}.v\n";
 $max_of_pg=$bit-1;
 
-print DATA "module pg_gen_bk_sa_${bit} (a,b,cin,p,g);
+print DATA "
+module Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top (a,b,cin,sum,cout,clk,rst);
+input [63:0]a;
+input [63:0]b;
+input cin;
+output reg [63:0]sum;
+output reg cout;
+input clk;
+input rst;
+wire [63:0] sum_w;
+wire cout_w;
+reg cin_r;
+Hybrid_${bit}_BK${depthofbk}_SA${depthofsa} u0 (a,b,cin_r,sum_w,cout_w);
+always @(posedge clk ) begin
+    if (rst) begin
+        sum<=0;
+        cout<=0;
+    end
+    else begin
+        sum<=sum_w;
+        cout<=cout_w; 
+        cin_r <= cin;
+    end
+end
+endmodule
+
+module pg_gen_bk_sa_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
 input cin;
