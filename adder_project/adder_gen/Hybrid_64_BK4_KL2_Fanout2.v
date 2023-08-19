@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_64_BK4_KL2_Fanout2_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -287,8 +288,8 @@ wire [63:0] pp_level6;
          // Multiple fanout stage
          generate
            for (i = 47;i<16*2+47 ;i=i+16) begin
-              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[47-16];
-              assign  pp_level6[i]=pp_level5[i]&pp_level5[47-16];
+              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[47+16*2-16-16*2];
+              assign  pp_level6[i]=pp_level5[i]&pp_level5[47+16*2-16-16*2];
            end 
          endgenerate
          

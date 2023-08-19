@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_64_BK2_KS4_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -378,8 +379,8 @@ wire [63:0] pp_level6;
             //KS 
             generate
               for (i = 0;i<(64-19) ;i=i+4) begin
-                assign gnpg_level5[19+i]=gnpg_level4[19+i]|pp_level4[19+i]&gnpg_level4[19+i-3*4];
-                assign pp_level5[19+i]=pp_level4[19+i]&pp_level4[19+i-3*4];
+                assign gnpg_level5[19+i]=gnpg_level4[19+i]|pp_level4[19+i]&gnpg_level4[19+i-4*4];
+                assign pp_level5[19+i]=pp_level4[19+i]&pp_level4[19+i-4*4];
                end
             endgenerate
             generate
@@ -469,8 +470,8 @@ wire [63:0] pp_level6;
             //KS 
             generate
               for (i = 0;i<(64-35) ;i=i+4) begin
-                assign gnpg_level6[35+i]=gnpg_level5[35+i]|pp_level5[35+i]&gnpg_level5[35+i-4*4];
-                assign pp_level6[35+i]=pp_level5[35+i]&pp_level5[35+i-4*4];
+                assign gnpg_level6[35+i]=gnpg_level5[35+i]|pp_level5[35+i]&gnpg_level5[35+i-8*4];
+                assign pp_level6[35+i]=pp_level5[35+i]&pp_level5[35+i-8*4];
                end
             endgenerate
             generate

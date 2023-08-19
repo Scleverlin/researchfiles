@@ -21,9 +21,14 @@ open(DATA2 , ">>./adder_names.txt");
 print DATA2 "Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}_top\n";
 open(DATA3 , ">>./adder_path.txt");
 print DATA3 "./adder_gen/Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}.v\n";
+
+open(DATA4 , ">>./adder_veri.txt");
+print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout} \n";
+
 $max_of_pg=$bit-1;
 
 print DATA "
+/* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -153,12 +158,13 @@ if ($depthofbk==0){
           end 
          endgenerate";         
          for (my $k = $fanout_start; $k < $bit  ; $k=$k+$fanout){
+         $tmp=$fanout*(2**($fanout_stage-1));
          print DATA "
          // Multiple fanout stage
          generate
            for (i = ${k};i<${fanout}+${k} ;i=i+1) begin
-              assign  gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[${k}-1];
-              assign  pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[${k}-1];
+              assign  gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[${k}+${fanout}-1-${tmp}];
+              assign  pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[${k}+${fanout}-1-${tmp}];
            end 
          endgenerate
          ";
@@ -299,12 +305,14 @@ for (my $i=1;$i<$depthofkl+1;$i++) {
          endgenerate";         
          $fanout_add_index=2**($fanout_stage-1);
          for (my $k = $fanout_start; $k < $bit  ; $k=$k+$w*$fanout){
+         $tmp=$fanout*(2**($fanout_stage-1));
+ 
          print DATA "
          // Multiple fanout stage
          generate
            for (i = ${k};i<${w}*${fanout}+${k} ;i=i+${w}) begin
-              assign  gnpg_level${assign_index}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[${k}-${w}];
-              assign  pp_level${assign_index}[i]=pp_level${j}[i]&pp_level${j}[${k}-${w}];
+              assign  gnpg_level${assign_index}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}];
+              assign  pp_level${assign_index}[i]=pp_level${j}[i]&pp_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}];
            end 
          endgenerate
          ";
@@ -350,7 +358,7 @@ assign gnpg_level${final_index}[0]=gnpg_level${depthoftree}[0];
 assign gnpg_level${final_index}[${bit}-1]=gnpg_level${depthoftree}[${bit}-1];
 
 generate
-    for (i = 0 ;i<${bit}/2;i=i+1) begin
+    for (i = 1 ;i<${bit}/2;i=i+1) begin
       assign gnpg_level${final_index}[2*i]=gnpg_level${depthoftree}[2*i]|pp_level${depthoftree}[2*i]&gnpg_level${depthoftree}[2*i-1];
       assign gnpg_level${final_index}[2*i-1]=gnpg_level${depthoftree}[2*i-1];
    end

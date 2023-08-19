@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_64_BK0_KS6_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;

@@ -16,10 +16,13 @@ open(DATA2 , ">>./adder_names.txt");
 print DATA2 "HC_${bit}_BK${depthofbk}_KS${depthofks}_top\n";
 open(DATA3 , ">>./adder_path.txt");
 print DATA3 "./adder_gen/HC_${bit}_BK${depthofbk}_KS${depthofks}.v\n";
+open(DATA4 , ">>./adder_veri.txt");
+print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w HC_${bit}_BK${depthofbk}_KS${depthofks} \n";
 
 $max_of_pg=$bit-1;
 
 print DATA "
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_${bit}_BK${depthofbk}_KS${depthofks}_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -173,13 +176,14 @@ $skip_index=2**($depthofbk+1)-1;
         $assign_index=$depthofbk+$i;
         $last_index=$depthofbk+$i-1;
         $add_index=2**$depthofbk;
+        $mul=2**($i-1);
         print ("${skip_index}\n");
             print DATA"
             //KS 
             generate
               for (i = 0;i<(${bit}-${skip_index}) ;i=i+${add_index}) begin
-                assign gnpg_level${assign_index}[${skip_index}+i]=gnpg_level${last_index}[${skip_index}+i]|pp_level${last_index}[${skip_index}+i]&gnpg_level${last_index}[${skip_index}+i-${i}*${add_index}];
-                assign pp_level${assign_index}[${skip_index}+i]=pp_level${last_index}[${skip_index}+i]&pp_level${last_index}[${skip_index}+i-${i}*${add_index}];
+                assign gnpg_level${assign_index}[${skip_index}+i]=gnpg_level${last_index}[${skip_index}+i]|pp_level${last_index}[${skip_index}+i]&gnpg_level${last_index}[${skip_index}+i-${mul}*${add_index}];
+                assign pp_level${assign_index}[${skip_index}+i]=pp_level${last_index}[${skip_index}+i]&pp_level${last_index}[${skip_index}+i-${mul}*${add_index}];
                end
             endgenerate";
             print DATA"
@@ -227,7 +231,7 @@ assign gnpg_level${final_index}[0]=gnpg_level${depthoftree}[0];
 assign gnpg_level${final_index}[${bit}-1]=gnpg_level${depthoftree}[${bit}-1];
 
 generate
-    for (i = 0 ;i<${bit}/2;i=i+1) begin
+    for (i = 1 ;i<${bit}/2;i=i+1) begin
       assign gnpg_level${final_index}[2*i]=gnpg_level${depthoftree}[2*i]|pp_level${depthoftree}[2*i]&gnpg_level${depthoftree}[2*i-1];
       assign gnpg_level${final_index}[2*i-1]=gnpg_level${depthoftree}[2*i-1];
    end

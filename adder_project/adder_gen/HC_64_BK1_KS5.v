@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_64_BK1_KS5_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -516,8 +517,8 @@ wire [63:0] pp_level6;
             //KS 
             generate
               for (i = 0;i<(64-9) ;i=i+2) begin
-                assign gnpg_level4[9+i]=gnpg_level3[9+i]|pp_level3[9+i]&gnpg_level3[9+i-3*2];
-                assign pp_level4[9+i]=pp_level3[9+i]&pp_level3[9+i-3*2];
+                assign gnpg_level4[9+i]=gnpg_level3[9+i]|pp_level3[9+i]&gnpg_level3[9+i-4*2];
+                assign pp_level4[9+i]=pp_level3[9+i]&pp_level3[9+i-4*2];
                end
             endgenerate
             generate
@@ -719,8 +720,8 @@ wire [63:0] pp_level6;
             //KS 
             generate
               for (i = 0;i<(64-17) ;i=i+2) begin
-                assign gnpg_level5[17+i]=gnpg_level4[17+i]|pp_level4[17+i]&gnpg_level4[17+i-4*2];
-                assign pp_level5[17+i]=pp_level4[17+i]&pp_level4[17+i-4*2];
+                assign gnpg_level5[17+i]=gnpg_level4[17+i]|pp_level4[17+i]&gnpg_level4[17+i-8*2];
+                assign pp_level5[17+i]=pp_level4[17+i]&pp_level4[17+i-8*2];
                end
             endgenerate
             generate
@@ -894,8 +895,8 @@ wire [63:0] pp_level6;
             //KS 
             generate
               for (i = 0;i<(64-33) ;i=i+2) begin
-                assign gnpg_level6[33+i]=gnpg_level5[33+i]|pp_level5[33+i]&gnpg_level5[33+i-5*2];
-                assign pp_level6[33+i]=pp_level5[33+i]&pp_level5[33+i-5*2];
+                assign gnpg_level6[33+i]=gnpg_level5[33+i]|pp_level5[33+i]&gnpg_level5[33+i-16*2];
+                assign pp_level6[33+i]=pp_level5[33+i]&pp_level5[33+i-16*2];
                end
             endgenerate
             generate
@@ -1015,7 +1016,7 @@ assign gnpg_level7[0]=gnpg_level6[0];
 assign gnpg_level7[64-1]=gnpg_level6[64-1];
 
 generate
-    for (i = 0 ;i<64/2;i=i+1) begin
+    for (i = 1 ;i<64/2;i=i+1) begin
       assign gnpg_level7[2*i]=gnpg_level6[2*i]|pp_level6[2*i]&gnpg_level6[2*i-1];
       assign gnpg_level7[2*i-1]=gnpg_level6[2*i-1];
    end

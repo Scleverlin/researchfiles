@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_64_BK6_SA0_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;

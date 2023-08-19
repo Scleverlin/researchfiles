@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_64_BK0_KL6_Fanout16_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -300,24 +301,24 @@ genvar i;
          // Multiple fanout stage
          generate
            for (i = 16;i<16+16 ;i=i+1) begin
-              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[16-1];
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[16-1];
+              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[16+16-1-16];
+              assign  pp_level5[i]=pp_level4[i]&pp_level4[16+16-1-16];
            end 
          endgenerate
          
          // Multiple fanout stage
          generate
            for (i = 32;i<16+32 ;i=i+1) begin
-              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[32-1];
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[32-1];
+              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[32+16-1-16];
+              assign  pp_level5[i]=pp_level4[i]&pp_level4[32+16-1-16];
            end 
          endgenerate
          
          // Multiple fanout stage
          generate
            for (i = 48;i<16+48 ;i=i+1) begin
-              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[48-1];
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[48-1];
+              assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[48+16-1-16];
+              assign  pp_level5[i]=pp_level4[i]&pp_level4[48+16-1-16];
            end 
          endgenerate
          
@@ -333,16 +334,16 @@ genvar i;
          // Multiple fanout stage
          generate
            for (i = 32;i<16+32 ;i=i+1) begin
-              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[32-1];
-              assign  pp_level6[i]=pp_level5[i]&pp_level5[32-1];
+              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[32+16-1-32];
+              assign  pp_level6[i]=pp_level5[i]&pp_level5[32+16-1-32];
            end 
          endgenerate
          
          // Multiple fanout stage
          generate
            for (i = 48;i<16+48 ;i=i+1) begin
-              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[48-1];
-              assign  pp_level6[i]=pp_level5[i]&pp_level5[48-1];
+              assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[48+16-1-32];
+              assign  pp_level6[i]=pp_level5[i]&pp_level5[48+16-1-32];
            end 
          endgenerate
          

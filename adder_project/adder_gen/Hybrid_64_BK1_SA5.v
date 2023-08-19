@@ -1,4 +1,5 @@
 
+/* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_64_BK1_SA5_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -1409,7 +1410,7 @@ assign gnpg_level7[0]=gnpg_level6[0];
 assign gnpg_level7[64-1]=gnpg_level6[64-1];
 
 generate
-    for (i = 0 ;i<64/2;i=i+1) begin
+    for (i = 1 ;i<64/2;i=i+1) begin
       assign gnpg_level7[2*i]=gnpg_level6[2*i]|pp_level6[2*i]&gnpg_level6[2*i-1];
       assign gnpg_level7[2*i-1]=gnpg_level6[2*i-1];
    end

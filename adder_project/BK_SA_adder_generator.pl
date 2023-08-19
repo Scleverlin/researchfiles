@@ -17,8 +17,10 @@ print DATA2 "Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top\n";
 open(DATA3 , ">>./adder_path.txt");
 print DATA3 "./adder_gen/Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}.v\n";
 $max_of_pg=$bit-1;
-
+open(DATA4 , ">>./adder_veri.txt");
+print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_SA${depthofsa} \n";
 print DATA "
+/* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -255,7 +257,7 @@ assign gnpg_level${final_index}[0]=gnpg_level${depthoftree}[0];
 assign gnpg_level${final_index}[${bit}-1]=gnpg_level${depthoftree}[${bit}-1];
 
 generate
-    for (i = 0 ;i<${bit}/2;i=i+1) begin
+    for (i = 1 ;i<${bit}/2;i=i+1) begin
       assign gnpg_level${final_index}[2*i]=gnpg_level${depthoftree}[2*i]|pp_level${depthoftree}[2*i]&gnpg_level${depthoftree}[2*i-1];
       assign gnpg_level${final_index}[2*i-1]=gnpg_level${depthoftree}[2*i-1];
    end
