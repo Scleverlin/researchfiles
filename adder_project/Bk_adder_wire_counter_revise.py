@@ -1,11 +1,12 @@
 import math
 import sympy as sp
-length = sp.symbols('b')
-width_sym=sp.symbols('a')
+# length = sp.symbols('b')
+# width_sym=sp.symbols('a')
 # bit_nums=sp.symbols('N')
 # depthofbk_nums=sp.symbols('K')
-# length = 1.00248135690729
-# width_sym=0.57
+length = 1.2
+width_sym=0.4
+
 def log2(x):
     return math.log(x)/math.log(2)
 def bk_tree_count_with_N_bit (depth,N_bit):
@@ -19,8 +20,8 @@ def bk_tree_count_with_N_bit (depth,N_bit):
             width=2**(i-1)*width_sym
             # print("width is",width)
             c=width*width+length*length
-            # wire_length=math.sqrt(c)
-            wire_length=sp.sqrt(c)
+            wire_length=math.sqrt(c)
+            # wire_length=sp.sqrt(c)
             # print ("wire length is",wire_length)
             wireofthislevel=temp_bit*wire_length
             # print ("wire of this level is",wireofthislevel)
@@ -68,8 +69,8 @@ def SA_width (depthofSA,N_bit):
         # print("now is loop of",i)
         for j in range (1,2**(i-1)+1):
             c=j*width_of_first_level*j*width_of_first_level+length*length
-            # wire_length=math.sqrt(c)
-            wire_length=sp.sqrt(c)
+            wire_length=math.sqrt(c)
+            # wire_length=sp.sqrt(c)
             # print ("wire_length is",wire_length)
             # print ("key index is",(num_of_wire_of_each_level/(2**(i-1))))
             total_wire_length_of_each_level+=(num_of_wire_of_each_level/(2**(i-1))) *wire_length
@@ -94,12 +95,12 @@ def BK_SA (N_bit,depthofbk):
         depthof_post=total_depth-1
     print ("depth of post processing is",depthof_post)
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
-    return bkwirelength+post_processing_wire+SA_width_wire+N_bit*(total_depth+depthof_post)
-
-# for i in range (0,7):
-#     print ("\n now is BK SA, Bk depth is",i,"\n")
-#     print ("-----------------------------")
-#     print ("Total Wire length of this couple is ",BK_SA (64,i))
+    return bkwirelength+post_processing_wire+SA_width_wire+N_bit*(total_depth+depthof_post)*length
+print ("\n now is BK SA ############################################################################################################################################################################################################################")
+for i in range (0,7):
+    print ("\n now is BK SA, Bk depth is",i,"\n")
+    print ("-----------------------------")
+    print ("Total Wire length of this couple is ",BK_SA (64,i))
 # print ("Total Wire length of this couple is ",BK_SA (64,0),"\n")
 # print ("Total Wire length of this couple is ",BK_SA (64,1),"\n")
 # print ("Total Wire length of this couple is ",BK_SA (64,1),"\n")
@@ -114,8 +115,8 @@ def KS_wire (depthofks,N_bit):
     for i in range(1,depthofks+1):
             index=2**(i-1)
             c=index*width_of_first_level*index*width_of_first_level+length*length
-            # wire_length=math.sqrt(c)
-            wire_length=sp.sqrt(c)
+            wire_length=math.sqrt(c)
+            # wire_length=sp.sqrt(c)
             total_wire_length+=wire_length*(wire_num-index)
             
     return total_wire_length
@@ -139,6 +140,8 @@ def HC_adder(N_bit,depthofbk):
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
     return bkwirelength+post_processing_wire+KS_wire_length+N_bit*(total_depth+depthof_post)*length
 
+print ("\n now is HCA ############################################################################################################################################################################################################################")
+
 equation=[]
 for i in range (0,7):
     print ("\n now is hc_adder, BK depth is ",i,"\n")
@@ -147,14 +150,20 @@ for i in range (0,7):
     equation.append(HC_adder (64,i))
     print("equation is",equation)
     
-a, b = sp.symbols('a b')
-# equation1 = 384.0*b + 1024.0*sp.sqrt(a**2 + 0.0009765625*b**2) + 768.0*sp.sqrt(a**2 + 0.00390625*b**2) + 448.0*sp.sqrt(a**2 + 0.015625*b**2) + 240.0*sp.sqrt(a**2 + 0.0625*b**2) + 124.0*sp.sqrt(a**2 + 0.25*b**2) + 63*sp.sqrt(1.0*a**2 + b**2) - 1994
+# a, b = sp.symbols('a b')
+# # equation1 = 384.0*b + 1024.0*sp.sqrt(a**2 + 0.0009765625*b**2) + 768.0*sp.sqrt(a**2 + 0.00390625*b**2) + 448.0*sp.sqrt(a**2 + 0.015625*b**2) + 240.0*sp.sqrt(a**2 + 0.0625*b**2) + 124.0*sp.sqrt(a**2 + 0.25*b**2) + 63*sp.sqrt(1.0*a**2 + b**2) - 1994
+# # equation[0]=equation[0]-1994
+# # equation[1]=equation[1]-1290
+# # equation[2]=equation[2]-1100
+# # equation[3]=equation[3]-1009
+# # equation[4]=equation[4]-1000
+# # equation[5]=equation[5]-998.3
 
-# equation2 = 448.0*b + 512.0*sp.sqrt(a**2 + 0.0009765625*b**2) + 384.0*sp.sqrt(a**2 + 0.00390625*b**2) + 224.0*sp.sqrt(a**2 + 0.015625*b**2) + 120.0*sp.sqrt(a**2 + 0.0625*b**2) + 62.0*sp.sqrt(a**2 + 0.25*b**2) + 63.0*sp.sqrt(a**2 + b**2) - 1290
 
-initial_guess = (1, 1)
-solutions = sp.nsolve([equation[1],equation[0]], [a, b], initial_guess)
-print(solutions)
+# # equation2 = 448.0*b + 512.0*sp.sqrt(a**2 + 0.0009765625*b**2) + 384.0*sp.sqrt(a**2 + 0.00390625*b**2) + 224.0*sp.sqrt(a**2 + 0.015625*b**2) + 120.0*sp.sqrt(a**2 + 0.0625*b**2) + 62.0*sp.sqrt(a**2 + 0.25*b**2) + 63.0*sp.sqrt(a**2 + b**2) - 1290
+# initial_guess = (10, 20)
+# solutions = sp.nsolve(equation[0:2], [a, b], initial_guess)
+# print(solutions)
 
 def knowles_BK_wire (N_bit,depthofbk,fanout):
     total_depth = log2(N_bit)
@@ -170,7 +179,8 @@ def knowles_BK_wire (N_bit,depthofbk,fanout):
            wire_num_of_pre_process= (num_of_nodes/fanout)*(fanout-2**(i-1))
            index=2**(i-1)
            c=index*widthoffirstlevel*index*widthoffirstlevel+length*length
-           wirelength=sp.sqrt(c)
+        #    wirelength=sp.sqrt(c)
+           wirelength=math.sqrt(c)
            print ("wirelength of pre process is",wirelength)
            print ("wire_num_of_pre_process is",wire_num_of_pre_process)
            total_wire_length+=wirelength*wire_num_of_pre_process
@@ -184,6 +194,7 @@ def knowles_BK_wire (N_bit,depthofbk,fanout):
                 each_wire_length=first_level_width_of_knowless-j*widthoffirstlevel
                 c=each_wire_length*each_wire_length+length*length
                 wirelength=math.sqrt(c)
+                # wirelength=sp.sqrt(c)
                 wire_length_of_each_cluster+=wirelength*wire_cluster_num
             total_wire_length+=wire_length_of_each_cluster
             first_level_width_of_knowless=first_level_width_of_knowless*2
@@ -200,19 +211,48 @@ def BK_KL_with_post_processing (N_bit,depthofbk,fanout):
          depthof_post=total_depth-1
     print ("depth of post processing is",depthof_post)
     print ("wire from depth of the tree",N_bit*(total_depth+depthof_post))
-    return kb_wire+post_wire+N_bit*(total_depth+depthof_post)
+    return kb_wire+post_wire+N_bit*(total_depth+depthof_post)*length
 
 c=[]
-# for  i in range (2,33):
-#    for j in range (0,7):
-#     if log2(i)%1==0 and log2(i)+ j <6: 
-#       print ("\n now fanout is",i,"\n")
-#       print ("\n now BK depth is",j,"\n")
-#       print ("-----------------------------")
-#       print ("Total Wire length of this couple is ",BK_KL_with_post_processing(64,j,i) ) 
-#       c.append([i,j])
+print ("\n now is KNOWLES ############################################################################################################################################################################################################################")
 
-# print (c)  
+# equation=[]
+for  i in range (2,33):
+   for j in range (0,7):
+    if log2(i)%1==0 and log2(i)+ j <6: 
+      print ("\n now fanout is",i,"\n")
+      print ("\n now BK depth is",j,"\n")
+      print ("-----------------------------")
+      print ("Total Wire length of this couple is ",BK_KL_with_post_processing(64,j,i) ) 
+    #   equation.append(BK_KL_with_post_processing(64,j,i))
+      c.append([i,j])
+print (c)  
                      
-               
-    
+# a, b = sp.symbols('a b')
+# equation[0]=equation[0]-1409
+# equation[1]=equation[1]-1193
+# equation[2]=equation[2]-1003
+# equation[3]=equation[3]-1000
+# equation[4]=equation[4]-998.3
+# equation[5]=equation[5]-1095
+
+# initial_guess = (1, 1)
+# solutions = sp.nsolve(equation[0:2], [a, b], initial_guess)
+# print(solutions)
+# i=0
+# j=0
+# min=-1
+# while i<=2.0:
+#    i=i+0.1
+#    length=i
+#    j=0
+#    while j<=2.0:
+#        j=j+0.1 
+#        width_sym=j
+#        ssr=(HC_adder(64,0)-1994)**2+(BK_SA(64,0)-991.5)**2+ (BK_KL_with_post_processing(64,0,2)-1409)**2+(BK_KL_with_post_processing(64,0,4)-1095)**2 +(BK_KL_with_post_processing(64,0,8)-1626)**2+(BK_KL_with_post_processing(64,0,32)-1508)**2+(HC_adder(64,6)-998.3)**2 
+#        if min == -1:
+#            min=ssr
+#        elif ssr<min:
+#            min=ssr
+#            print ("now is",i,j)
+#            print ("min is",min)    
