@@ -1,0 +1,127 @@
+
+ now is hc_adder, BK depth is  0 
+
+-----------------------------
+depth of bk is 0
+bkwirelength is 0
+post_processing_wire is 0.0
+KS_wire_length is 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2)
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2)
+depth of bk is 0
+bkwirelength is 0
+post_processing_wire is 0.0
+KS_wire_length is 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2)
+depth of post processing is 0
+wire from depth of the tree 384.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2)]
+
+ now is hc_adder, BK depth is  1 
+
+-----------------------------
+depth of bk is 1
+bkwirelength is 32.0*sqrt(a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2)
+KS_wire_length is 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2)
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2)
+depth of bk is 1
+bkwirelength is 32.0*sqrt(a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2)
+KS_wire_length is 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2)
+depth of post processing is 1
+wire from depth of the tree 448.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2), 448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2)]
+
+ now is hc_adder, BK depth is  2 
+
+-----------------------------
+depth of bk is 2
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2)
+KS_wire_length is 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2)
+depth of post processing is 2
+wire from depth of the tree 512.0
+Total Wire length of this couple is  512.0*b + 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2)
+depth of bk is 2
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2)
+KS_wire_length is 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2)
+depth of post processing is 2
+wire from depth of the tree 512.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2), 448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2), 512.0*b + 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2)]
+
+ now is hc_adder, BK depth is  3 
+
+-----------------------------
+depth of bk is 3
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2)
+KS_wire_length is 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2)
+depth of post processing is 3
+wire from depth of the tree 576.0
+Total Wire length of this couple is  576.0*b + 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2)
+depth of bk is 3
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2)
+KS_wire_length is 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2)
+depth of post processing is 3
+wire from depth of the tree 576.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2), 448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2), 512.0*b + 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2), 576.0*b + 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2)]
+
+ now is hc_adder, BK depth is  4 
+
+-----------------------------
+depth of bk is 4
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2) + 4.0*sqrt(64*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2) + 3.0*sqrt(64*a**2 + b**2)
+KS_wire_length is 64.0*sqrt(a**2 + 0.0009765625*b**2) + 48.0*sqrt(a**2 + 0.00390625*b**2)
+depth of post processing is 4
+wire from depth of the tree 640.0
+Total Wire length of this couple is  640.0*b + 64.0*sqrt(a**2 + 0.0009765625*b**2) + 48.0*sqrt(a**2 + 0.00390625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2)
+depth of bk is 4
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2) + 4.0*sqrt(64*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2) + 3.0*sqrt(64*a**2 + b**2)
+KS_wire_length is 64.0*sqrt(a**2 + 0.0009765625*b**2) + 48.0*sqrt(a**2 + 0.00390625*b**2)
+depth of post processing is 4
+wire from depth of the tree 640.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2), 448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2), 512.0*b + 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2), 576.0*b + 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2), 640.0*b + 64.0*sqrt(a**2 + 0.0009765625*b**2) + 48.0*sqrt(a**2 + 0.00390625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2)]
+
+ now is hc_adder, BK depth is  5 
+
+-----------------------------
+depth of bk is 5
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2) + 4.0*sqrt(64*a**2 + b**2) + 2.0*sqrt(256*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2) + 3.0*sqrt(64*a**2 + b**2) + 1.0*sqrt(256*a**2 + b**2)
+KS_wire_length is 32.0*sqrt(a**2 + 0.0009765625*b**2)
+depth of post processing is 5.0
+wire from depth of the tree 704.0
+Total Wire length of this couple is  704.0*b + 32.0*sqrt(a**2 + 0.0009765625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2) + 3.0*sqrt(256*a**2 + b**2)
+depth of bk is 5
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2) + 4.0*sqrt(64*a**2 + b**2) + 2.0*sqrt(256*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2) + 3.0*sqrt(64*a**2 + b**2) + 1.0*sqrt(256*a**2 + b**2)
+KS_wire_length is 32.0*sqrt(a**2 + 0.0009765625*b**2)
+depth of post processing is 5.0
+wire from depth of the tree 704.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2), 448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2), 512.0*b + 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2), 576.0*b + 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2), 640.0*b + 64.0*sqrt(a**2 + 0.0009765625*b**2) + 48.0*sqrt(a**2 + 0.00390625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2), 704.0*b + 32.0*sqrt(a**2 + 0.0009765625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2) + 3.0*sqrt(256*a**2 + b**2)]
+
+ now is hc_adder, BK depth is  6 
+
+-----------------------------
+depth of bk is 6
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2) + 4.0*sqrt(64*a**2 + b**2) + 2.0*sqrt(256*a**2 + b**2) + 1.0*sqrt(1024*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2) + 3.0*sqrt(64*a**2 + b**2) + 1.0*sqrt(256*a**2 + b**2)
+KS_wire_length is 0
+depth of post processing is 5.0
+wire from depth of the tree 704.0
+Total Wire length of this couple is  704.0*b + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2) + 3.0*sqrt(256*a**2 + b**2) + 1.0*sqrt(1024*a**2 + b**2)
+depth of bk is 6
+bkwirelength is 32.0*sqrt(a**2 + b**2) + 16.0*sqrt(4*a**2 + b**2) + 8.0*sqrt(16*a**2 + b**2) + 4.0*sqrt(64*a**2 + b**2) + 2.0*sqrt(256*a**2 + b**2) + 1.0*sqrt(1024*a**2 + b**2)
+post_processing_wire is 31.0*sqrt(a**2 + b**2) + 15.0*sqrt(4*a**2 + b**2) + 7.0*sqrt(16*a**2 + b**2) + 3.0*sqrt(64*a**2 + b**2) + 1.0*sqrt(256*a**2 + b**2)
+KS_wire_length is 0
+depth of post processing is 5.0
+wire from depth of the tree 704.0
+equation is [384.0*b + 1024.0*sqrt(a**2 + 0.0009765625*b**2) + 768.0*sqrt(a**2 + 0.00390625*b**2) + 448.0*sqrt(a**2 + 0.015625*b**2) + 240.0*sqrt(a**2 + 0.0625*b**2) + 124.0*sqrt(a**2 + 0.25*b**2) + 63*sqrt(1.0*a**2 + b**2), 448.0*b + 512.0*sqrt(a**2 + 0.0009765625*b**2) + 384.0*sqrt(a**2 + 0.00390625*b**2) + 224.0*sqrt(a**2 + 0.015625*b**2) + 120.0*sqrt(a**2 + 0.0625*b**2) + 62.0*sqrt(a**2 + 0.25*b**2) + 63.0*sqrt(a**2 + b**2), 512.0*b + 256.0*sqrt(a**2 + 0.0009765625*b**2) + 192.0*sqrt(a**2 + 0.00390625*b**2) + 112.0*sqrt(a**2 + 0.015625*b**2) + 60.0*sqrt(a**2 + 0.0625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2), 576.0*b + 128.0*sqrt(a**2 + 0.0009765625*b**2) + 96.0*sqrt(a**2 + 0.00390625*b**2) + 56.0*sqrt(a**2 + 0.015625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2), 640.0*b + 64.0*sqrt(a**2 + 0.0009765625*b**2) + 48.0*sqrt(a**2 + 0.00390625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2), 704.0*b + 32.0*sqrt(a**2 + 0.0009765625*b**2) + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2) + 3.0*sqrt(256*a**2 + b**2), 704.0*b + 63.0*sqrt(a**2 + b**2) + 31.0*sqrt(4*a**2 + b**2) + 15.0*sqrt(16*a**2 + b**2) + 7.0*sqrt(64*a**2 + b**2) + 3.0*sqrt(256*a**2 + b**2) + 1.0*sqrt(1024*a**2 + b**2)]
+Matrix([[-6.80943472507841e-44], [-7.79472270780679e-44]])

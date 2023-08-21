@@ -1,0 +1,329 @@
+depth of bk is 0
+Wire from Bk is 0
+post_processing_wire is 0.0
+Wire from SA is 1145.2311951442264
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  1529.2311951442264 
+
+depth of bk is 1
+Wire from Bk is 45.254833995939045
+post_processing_wire is 43.84062043356595
+Wire from SA is 586.8205483629995
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  1123.9160027925045 
+
+
+ now is hc_adder, BK depth is  0 
+
+-----------------------------
+depth of bk is 0
+bkwirelength is 0
+post_processing_wire is 0.0
+KS_wire_length is 2720.6028564758335
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  3104.6028564758335
+
+ now is hc_adder, BK depth is  1 
+
+-----------------------------
+depth of bk is 1
+bkwirelength is 45.254833995939045
+post_processing_wire is 43.84062043356595
+KS_wire_length is 1315.753701023164
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  1852.849155452669
+
+ now is hc_adder, BK depth is  2 
+
+-----------------------------
+depth of bk is 2
+bkwirelength is 81.03192163593567
+post_processing_wire is 77.38164009606278
+KS_wire_length is 623.2177968603353
+depth of post processing is 2
+wire from depth of the tree 512.0
+Total Wire length of this couple is  1293.6313585923338
+
+ now is hc_adder, BK depth is  3 
+
+-----------------------------
+depth of bk is 3
+bkwirelength is 114.01676664087697
+post_processing_wire is 106.24337947538642
+KS_wire_length is 280.68560623803523
+depth of post processing is 3
+wire from depth of the tree 576.0
+Total Wire length of this couple is  1076.9457523542987
+
+ now is hc_adder, BK depth is  4 
+
+-----------------------------
+depth of bk is 4
+bkwirelength is 146.26579763407116
+post_processing_wire is 130.43015272028205
+KS_wire_length is 112.12490099997268
+depth of post processing is 4
+wire from depth of the tree 640.0
+Total Wire length of this couple is  1028.820851354326
+
+ now is hc_adder, BK depth is  5 
+
+-----------------------------
+depth of bk is 5
+bkwirelength is 178.32823671783396
+post_processing_wire is 146.46137226216348
+KS_wire_length is 32.01562118716424
+depth of post processing is 5.0
+wire from depth of the tree 704.0
+Total Wire length of this couple is  1060.8052301671617
+
+ now is hc_adder, BK depth is  6 
+
+-----------------------------
+depth of bk is 6
+bkwirelength is 210.3438579049982
+post_processing_wire is 146.46137226216348
+KS_wire_length is 0
+depth of post processing is 5.0
+wire from depth of the tree 704.0
+Total Wire length of this couple is  1060.8052301671617
+
+ now fanout is 2 
+
+
+ now BK depth is 0 
+
+-----------------------------
+wirelength of pre process is 1.4142135623730951
+wire_num_of_pre_process is 32.0
+total_wire_length of pre process is 45.254833995939045
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  2938.76449448757
+
+ now fanout is 2 
+
+
+ now BK depth is 1 
+
+-----------------------------
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 16.0
+total_wire_length of pre process is 35.77708763999664
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  1678.0965225088464
+
+ now fanout is 2 
+
+
+ now BK depth is 2 
+
+-----------------------------
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 8.0
+total_wire_length of pre process is 32.984845004941285
+depth of post processing is 2
+wire from depth of the tree 512.0
+Total Wire length of this couple is  1116.234804000092
+
+ now fanout is 2 
+
+
+ now BK depth is 3 
+
+-----------------------------
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 4.0
+total_wire_length of pre process is 32.2490309931942
+depth of post processing is 3
+wire from depth of the tree 576.0
+Total Wire length of this couple is  898.8457333113063
+
+ now fanout is 2 
+
+
+ now BK depth is 4 
+
+-----------------------------
+wirelength of pre process is 16.0312195418814
+wire_num_of_pre_process is 2.0
+total_wire_length of pre process is 32.0624390837628
+depth of post processing is 4
+wire from depth of the tree 640.0
+Total Wire length of this couple is  850.5394325330905
+
+ now fanout is 4 
+
+
+ now BK depth is 0 
+
+-----------------------------
+wirelength of pre process is 1.4142135623730951
+wire_num_of_pre_process is 48.0
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 32.0
+total_wire_length of pre process is 139.43642627390184
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  2730.0711346341454
+
+ now fanout is 4 
+
+
+ now BK depth is 1 
+
+-----------------------------
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 24.0
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 16.0
+total_wire_length of pre process is 119.63532146987752
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  1532.2328839780423
+
+ now fanout is 4 
+
+
+ now BK depth is 2 
+
+-----------------------------
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 12.0
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 8.0
+total_wire_length of pre process is 113.97532949380032
+depth of post processing is 2
+wire from depth of the tree 512.0
+Total Wire length of this couple is  1032.2900647393078
+
+ now fanout is 4 
+
+
+ now BK depth is 3 
+
+-----------------------------
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 6.0
+wirelength of pre process is 16.0312195418814
+wire_num_of_pre_process is 4.0
+total_wire_length of pre process is 112.49842465731689
+depth of post processing is 3
+wire from depth of the tree 576.0
+Total Wire length of this couple is  874.8717269089761
+
+ now fanout is 8 
+
+
+ now BK depth is 0 
+
+-----------------------------
+wirelength of pre process is 1.4142135623730951
+wire_num_of_pre_process is 56.0
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 48.0
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 32.0
+total_wire_length of pre process is 318.4666024326484
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  2477.7717395048294
+
+ now fanout is 8 
+
+
+ now BK depth is 1 
+
+-----------------------------
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 28.0
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 24.0
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 16.0
+total_wire_length of pre process is 290.56056235759473
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  1400.7201181201922
+
+ now fanout is 8 
+
+
+ now BK depth is 2 
+
+-----------------------------
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 14.0
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 12.0
+wirelength of pre process is 16.0312195418814
+wire_num_of_pre_process is 8.0
+total_wire_length of pre process is 282.72032807328105
+depth of post processing is 2
+wire from depth of the tree 512.0
+Total Wire length of this couple is  1016.4394269967711
+
+ now fanout is 16 
+
+
+ now BK depth is 0 
+
+-----------------------------
+wirelength of pre process is 1.4142135623730951
+wire_num_of_pre_process is 60.0
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 56.0
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 48.0
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 32.0
+total_wire_length of pre process is 665.9739384575752
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  2247.396099740274
+
+ now fanout is 16 
+
+
+ now BK depth is 1 
+
+-----------------------------
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 30.0
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 28.0
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 24.0
+wirelength of pre process is 16.0312195418814
+wire_num_of_pre_process is 16.0
+total_wire_length of pre process is 632.5226954715557
+depth of post processing is 1
+wire from depth of the tree 448.0
+Total Wire length of this couple is  1397.1915073340738
+
+ now fanout is 32 
+
+
+ now BK depth is 0 
+
+-----------------------------
+wirelength of pre process is 1.4142135623730951
+wire_num_of_pre_process is 62.0
+wirelength of pre process is 2.23606797749979
+wire_num_of_pre_process is 60.0
+wirelength of pre process is 4.123105625617661
+wire_num_of_pre_process is 56.0
+wirelength of pre process is 8.06225774829855
+wire_num_of_pre_process is 48.0
+wirelength of pre process is 16.0312195418814
+wire_num_of_pre_process is 32.0
+total_wire_length of pre process is 1352.7266318102434
+depth of post processing is 0
+wire from depth of the tree 384.0
+Total Wire length of this couple is  2266.6469232699783
+[[2, 0], [2, 1], [2, 2], [2, 3], [2, 4], [4, 0], [4, 1], [4, 2], [4, 3], [8, 0], [8, 1], [8, 2], [16, 0], [16, 1], [32, 0]]
