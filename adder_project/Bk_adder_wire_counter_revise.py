@@ -28,6 +28,7 @@ def bk_tree_count_with_N_bit (depth,N_bit):
             temp_bit=temp_bit/2
     return total_wirelength
 
+print (bk_tree_count_with_N_bit(6,64))
 depth=6
 
 N_bit=64
