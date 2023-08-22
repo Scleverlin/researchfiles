@@ -17,7 +17,7 @@ print DATA2 "HC_${bit}_BK${depthofbk}_KS${depthofks}_top\n";
 open(DATA3 , ">>./adder_path.txt");
 print DATA3 "./adder_gen/HC_${bit}_BK${depthofbk}_KS${depthofks}.v\n";
 open(DATA4 , ">>./adder_veri.txt");
-print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w HC_${bit}_BK${depthofbk}_KS${depthofks} \n";
+print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w HC_${bit}_BK${depthofbk}_KS${depthofks} ${bit}  \n";
 
 $max_of_pg=$bit-1;
 

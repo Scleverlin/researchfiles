@@ -23,7 +23,7 @@ open(DATA3 , ">>./adder_path.txt");
 print DATA3 "./adder_gen/Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}.v\n";
 
 open(DATA4 , ">>./adder_veri.txt");
-print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout} \n";
+print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout} ${bit}  \n";
 
 $max_of_pg=$bit-1;
 

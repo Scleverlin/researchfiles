@@ -1,23 +1,39 @@
+#!/usr/bin/perl
 
-$name = $ARGV[1];
+my $name = $ARGV[1];
+my $bits = $ARGV[2];  # 输入的位数，如8、16、32、64、128等
+
+# 根据位数确定数据类型和随机数范围
+my $data_type = $bits > 64 ? "unsigned __int128" : "uint64_t";
+my $max_value = $bits > 64 ? "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" : ("0x" . ("F" x ($bits / 4)));
+my $print_format = "%20lu";
+
+if ($bits == 8) {
+    $print_format = "%3u";
+} elsif ($bits == 16) {
+    $print_format = "%5u";
+} elsif ($bits == 32) {
+    $print_format = "%10u";
+}
+
 open(DATA, ">./adder_veri/tb_${name}.cpp") or die ">./adder_veri/tb_${name}.cpp 文件无法打开, $!";
 
-print DATA "
+print DATA <<END;
 #include <cstdio>
 #include <iostream>
 #include <iomanip>
 #include <random>
-#include \"V${name}.h\"
-#include \"verilated.h\"
-#include \"verilated_vcd_c.h\"
+#include "V${name}.h"
+#include "verilated.h"
+#include "verilated_vcd_c.h"
 
 int main(int argc, char** argv) {
     Verilated::commandArgs(argc, argv);
     Verilated::traceEverOn(true);
-    V${name} * top = new V${name} ;
+    V${name} * top = new V${name};
 
     std::mt19937_64 rng(std::random_device{}());
-    std::uniform_int_distribution<uint64_t> distribution(0, UINT64_MAX);
+    std::uniform_int_distribution<$data_type> distribution(0, $max_value);
 
     for (int test = 0; test < 100000; ++test) {
         top->a = distribution(rng);
@@ -35,43 +51,41 @@ int main(int argc, char** argv) {
         top->clk = 1;
         top->eval();
 
-        unsigned __int128 expected_sum = static_cast<unsigned __int128>(top->a) + static_cast<unsigned __int128>(top->b) + static_cast<unsigned __int128>(top->cin);
-        uint8_t expected_cout = (expected_sum >> 64) & 0x1;
+        $data_type expected_sum = static_cast<$data_type>(top->a) + static_cast<$data_type>(top->b) + static_cast<$data_type>(top->cin);
+        uint8_t expected_cout = (expected_sum >> $bits) & 0x1;
 
-        printf(\"Test %4d: a = \%20lu, b = \%20lu, cin = \%u, sum = %20lu, cout = \%u, Pass\\n\",
+        printf("Test %4d: a = $print_format, b = $print_format, cin = \%u, sum = $print_format, cout = \%u, Pass\\n",
            test + 1, top->a, top->b, static_cast<unsigned>(top->cin), top->sum, static_cast<unsigned>(top->cout));
 
-        if (top->sum != (expected_sum & 0xFFFFFFFFFFFFFFFF) || top->cout != expected_cout) {
-            printf(\"Mismatch detected!\\n\");
+        if (top->sum != (expected_sum & $max_value) || top->cout != expected_cout) {
+            printf("Mismatch detected!\\n");
             
-            // Print the bits that mismatch
-            for (int i = 0; i < 64; i++) {
-                uint64_t mask = 1ull << i;
+            for (int i = 0; i < $bits; i++) {
+                $data_type mask = 1ull << i;
                 if ((top->sum & mask) != (expected_sum & mask)) {
-                    printf(\"Bit \%d is incorrect\\n\", i + 1);
+                    printf("Bit \%d is incorrect\\n", i + 1);
                 }
             }
 
-            // Uncomment the lines below if you want to stop the test and exit on mismatch
             top->final();
             delete top;
             return 1;
         }
     }
 
-    printf(\"Random tests completed\\n\");
+    printf("Random tests completed\\n");
     top->final();
     delete top;
     return 0;
 }
-";
+END
 
 open(DATA2, ">>./adder_veri/_source.sh") or die ">./adder_veri/_source.sh文件无法打开, $!";
-print DATA2 "
+print DATA2 <<END2;
 verilator -Wall -j 0 -Wno-DECLFILENAME --cc /home/shi/research/adder_project/adder_gen/${name}.v --exe --build /home/shi/research/adder_project/adder_veri/tb_${name}.cpp
-";
+END2
 
 open(DATA3, ">>./adder_veri/_run.sh") or die ">./adder_veri/_run.sh文件无法打开, $!";
-print DATA3 "
+print DATA3 <<END3;
 ./obj_dir/V${name}
-";
+END3

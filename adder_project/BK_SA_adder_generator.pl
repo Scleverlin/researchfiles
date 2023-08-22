@@ -18,7 +18,7 @@ open(DATA3 , ">>./adder_path.txt");
 print DATA3 "./adder_gen/Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}.v\n";
 $max_of_pg=$bit-1;
 open(DATA4 , ">>./adder_veri.txt");
-print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_SA${depthofsa} \n";
+print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_SA${depthofsa} ${bit}  \n";
 print DATA "
 /* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top (a,b,cin,sum,cout,clk,rst);
