@@ -22,14 +22,14 @@ print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_
 print DATA "
 /* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top (a,b,cin,sum,cout,clk,rst);
-input [63:0]a;
-input [63:0]b;
+input [${max_of_pg}:0]a;
+input [${max_of_pg}:0]b;
 input cin;
-output reg [63:0]sum;
+output reg [${max_of_pg}:0]sum;
 output reg cout;
 input clk;
 input rst;
-wire [63:0] sum_w;
+wire [${max_of_pg}:0] sum_w;
 wire cout_w;
 reg cin_r;
 Hybrid_${bit}_BK${depthofbk}_SA${depthofsa} u0 (a,b,cin_r,sum_w,cout_w);

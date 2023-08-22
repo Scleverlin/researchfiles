@@ -4,6 +4,7 @@
 
 #include "verilated.h"
 
+#include "VHybrid_64_BK0_KL6_Fanout32__Syms.h"
 #include "VHybrid_64_BK0_KL6_Fanout32___024root.h"
 
 VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___eval_static(VHybrid_64_BK0_KL6_Fanout32___024root* vlSelf) {
@@ -17,7 +18,7 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___eval_initial(VHybrid_6
     VHybrid_64_BK0_KL6_Fanout32__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VHybrid_64_BK0_KL6_Fanout32___024root___eval_initial\n"); );
     // Body
-    vlSelf->__Vtrigrprev__TOP__clk = vlSelf->clk;
+    vlSelf->__Vtrigprevexpr___TOP__clk__0 = vlSelf->clk;
 }
 
 VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___eval_final(VHybrid_64_BK0_KL6_Fanout32___024root* vlSelf) {
@@ -68,7 +69,7 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___dump_triggers__stl(VHy
     if ((1U & (~ (IData)(vlSelf->__VstlTriggered.any())))) {
         VL_DBG_MSGF("         No triggers active\n");
     }
-    if (vlSelf->__VstlTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
         VL_DBG_MSGF("         'stl' region trigger index 0 is active: Internal 'stl' trigger - first iteration\n");
     }
 }
@@ -81,7 +82,7 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___eval_stl(VHybrid_64_BK
     VHybrid_64_BK0_KL6_Fanout32__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VHybrid_64_BK0_KL6_Fanout32___024root___eval_stl\n"); );
     // Body
-    if (vlSelf->__VstlTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
         VHybrid_64_BK0_KL6_Fanout32___024root___ico_sequent__TOP__0(vlSelf);
     }
 }
@@ -95,7 +96,7 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___dump_triggers__ico(VHy
     if ((1U & (~ (IData)(vlSelf->__VicoTriggered.any())))) {
         VL_DBG_MSGF("         No triggers active\n");
     }
-    if (vlSelf->__VicoTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VicoTriggered.word(0U))) {
         VL_DBG_MSGF("         'ico' region trigger index 0 is active: Internal 'ico' trigger - first iteration\n");
     }
 }
@@ -110,7 +111,7 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___dump_triggers__act(VHy
     if ((1U & (~ (IData)(vlSelf->__VactTriggered.any())))) {
         VL_DBG_MSGF("         No triggers active\n");
     }
-    if (vlSelf->__VactTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VactTriggered.word(0U))) {
         VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge clk)\n");
     }
 }
@@ -125,7 +126,7 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___dump_triggers__nba(VHy
     if ((1U & (~ (IData)(vlSelf->__VnbaTriggered.any())))) {
         VL_DBG_MSGF("         No triggers active\n");
     }
-    if (vlSelf->__VnbaTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
         VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge clk)\n");
     }
 }
@@ -326,5 +327,5 @@ VL_ATTR_COLD void VHybrid_64_BK0_KL6_Fanout32___024root___ctor_var_reset(VHybrid
     vlSelf->Hybrid_64_BK0_KL6_Fanout32_top__DOT__u0__DOT____VdfgTmp_h6e577051__0 = 0;
     vlSelf->__VdfgTmp_hece3181c__0 = 0;
     vlSelf->__VdfgTmp_h37e33924__0 = 0;
-    vlSelf->__Vtrigrprev__TOP__clk = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__clk__0 = VL_RAND_RESET_I(1);
 }

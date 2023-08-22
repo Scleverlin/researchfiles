@@ -14,7 +14,7 @@ class VHybrid_64_BK0_KL6_Fanout32__Syms;
 class VHybrid_64_BK0_KL6_Fanout32___024root;
 
 // This class is the main interface to the Verilated model
-class VHybrid_64_BK0_KL6_Fanout32 VL_NOT_FINAL : public VerilatedModel {
+class alignas(VL_CACHE_LINE_BYTES) VHybrid_64_BK0_KL6_Fanout32 VL_NOT_FINAL : public VerilatedModel {
   private:
     // Symbol table holding complete model state (owned by this class)
     VHybrid_64_BK0_KL6_Fanout32__Syms* const vlSymsp;
@@ -74,6 +74,6 @@ class VHybrid_64_BK0_KL6_Fanout32 VL_NOT_FINAL : public VerilatedModel {
     const char* hierName() const override final;
     const char* modelName() const override final;
     unsigned threads() const override final;
-} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+};
 
 #endif  // guard

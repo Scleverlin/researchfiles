@@ -5,6 +5,7 @@
 #include "verilated.h"
 
 #include "VHybrid_64_BK0_KL6_Fanout32__Syms.h"
+#include "VHybrid_64_BK0_KL6_Fanout32__Syms.h"
 #include "VHybrid_64_BK0_KL6_Fanout32___024root.h"
 
 void VHybrid_64_BK0_KL6_Fanout32___024root___ctor_var_reset(VHybrid_64_BK0_KL6_Fanout32___024root* vlSelf);

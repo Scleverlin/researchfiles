@@ -1,14 +1,14 @@
 
 /* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_16_BK2_SA2_top (a,b,cin,sum,cout,clk,rst);
-input [63:0]a;
-input [63:0]b;
+input [15:0]a;
+input [15:0]b;
 input cin;
-output reg [63:0]sum;
+output reg [15:0]sum;
 output reg cout;
 input clk;
 input rst;
-wire [63:0] sum_w;
+wire [15:0] sum_w;
 wire cout_w;
 reg cin_r;
 Hybrid_16_BK2_SA2 u0 (a,b,cin_r,sum_w,cout_w);

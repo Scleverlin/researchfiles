@@ -30,14 +30,14 @@ $max_of_pg=$bit-1;
 print DATA "
 /* verilator lint_off UNUSEDSIGNAL */
 module Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}_top (a,b,cin,sum,cout,clk,rst);
-input [63:0]a;
-input [63:0]b;
+input [${max_of_pg}:0]a;
+input [${max_of_pg}:0]b;
 input cin;
-output reg [63:0]sum;
+output reg [${max_of_pg}:0]sum;
 output reg cout;
 input clk;
 input rst;
-wire [63:0] sum_w;
+wire [${max_of_pg}:0] sum_w;
 wire cout_w;
 reg cin_r;
 Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout} u0 (a,b,cin_r,sum_w,cout_w);

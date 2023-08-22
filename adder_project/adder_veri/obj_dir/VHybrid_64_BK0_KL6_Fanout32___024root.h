@@ -7,9 +7,10 @@
 
 #include "verilated.h"
 
+
 class VHybrid_64_BK0_KL6_Fanout32__Syms;
 
-class VHybrid_64_BK0_KL6_Fanout32___024root final : public VerilatedModule {
+class alignas(VL_CACHE_LINE_BYTES) VHybrid_64_BK0_KL6_Fanout32___024root final : public VerilatedModule {
   public:
 
     // DESIGN SPECIFIC STATE
@@ -203,7 +204,7 @@ class VHybrid_64_BK0_KL6_Fanout32___024root final : public VerilatedModule {
         CData/*0:0*/ Hybrid_64_BK0_KL6_Fanout32_top__DOT__u0__DOT____VdfgTmp_hf7ee08e9__0;
         CData/*0:0*/ Hybrid_64_BK0_KL6_Fanout32_top__DOT__u0__DOT____VdfgTmp_h40434066__0;
         CData/*0:0*/ Hybrid_64_BK0_KL6_Fanout32_top__DOT__u0__DOT____VdfgTmp_h6e577051__0;
-        CData/*0:0*/ __Vtrigrprev__TOP__clk;
+        CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
         CData/*0:0*/ __VactContinue;
         IData/*31:0*/ __VstlIterCount;
         IData/*31:0*/ __VicoIterCount;
@@ -232,7 +233,7 @@ class VHybrid_64_BK0_KL6_Fanout32___024root final : public VerilatedModule {
 
     // INTERNAL METHODS
     void __Vconfigure(bool first);
-} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+};
 
 
 #endif  // guard

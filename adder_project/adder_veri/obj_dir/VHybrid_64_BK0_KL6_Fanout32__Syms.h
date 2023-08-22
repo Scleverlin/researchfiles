@@ -17,7 +17,7 @@
 #include "VHybrid_64_BK0_KL6_Fanout32___024root.h"
 
 // SYMS CLASS (contains all model state)
-class VHybrid_64_BK0_KL6_Fanout32__Syms final : public VerilatedSyms {
+class alignas(VL_CACHE_LINE_BYTES)VHybrid_64_BK0_KL6_Fanout32__Syms final : public VerilatedSyms {
   public:
     // INTERNAL STATE
     VHybrid_64_BK0_KL6_Fanout32* const __Vm_modelp;
@@ -33,6 +33,6 @@ class VHybrid_64_BK0_KL6_Fanout32__Syms final : public VerilatedSyms {
 
     // METHODS
     const char* name() { return TOP.name(); }
-} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+};
 
 #endif  // guard

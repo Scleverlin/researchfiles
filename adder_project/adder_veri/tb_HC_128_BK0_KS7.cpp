@@ -10,14 +10,22 @@
 int main(int argc, char** argv) {
     Verilated::commandArgs(argc, argv);
     Verilated::traceEverOn(true);
-    VHC_128_BK0_KS7 * top = new VHC_128_BK0_KS7 ;
+    VHC_128_BK0_KS7 * top = new VHC_128_BK0_KS7;
 
     std::mt19937_64 rng(std::random_device{}());
-    std::uniform_int_distribution<uint64_t> distribution(0, UINT64_MAX);
+    std::uniform_int_distribution<__int128> distribution(0, ~((__int128)0));
 
-    for (int test = 0; test < 100000; ++test) {
-        top->a = distribution(rng);
-        top->b = distribution(rng);
+ for (int test = 0; test < 100000; ++test) {
+        __int128 random_a = distribution(rng);
+        __int128 random_b = distribution(rng);
+
+        // Assign the 128-bit value split into two 64-bit values
+        top->a[0] = static_cast<uint64_t>(random_a);
+        top->a[1] = static_cast<uint64_t>(random_a >> 64);
+        
+        top->b[0] = static_cast<uint64_t>(random_b);
+        top->b[1] = static_cast<uint64_t>(random_b >> 64);
+
         top->cin = rand() & 0x1;
 
         // Toggle clock twice to account for the cin_r delay
@@ -31,24 +39,30 @@ int main(int argc, char** argv) {
         top->clk = 1;
         top->eval();
 
-        unsigned __int128 expected_sum = static_cast<unsigned __int128>(top->a) + static_cast<unsigned __int128>(top->b) + static_cast<unsigned __int128>(top->cin);
-        uint8_t expected_cout = (expected_sum >> 64) & 0x1;
+               __int128 expected_sum = random_a + random_b + top->cin;
+        uint8_t expected_cout = (expected_sum >> 127) & 0x1;
 
-        printf("Test %4d: a = %20lu, b = %20lu, cin = %u, sum = %20lu, cout = %u, Pass\n",
-           test + 1, top->a, top->b, static_cast<unsigned>(top->cin), top->sum, static_cast<unsigned>(top->cout));
+        printf("Test %4d: a = %20llu%20llu, b = %20llu%20llu, cin = %u, sum = %20llu%20llu, cout = %u, Pass\n",
+           test + 1,
+           static_cast<unsigned long long>(top->a[1]), static_cast<unsigned long long>(top->a[0]),
+           static_cast<unsigned long long>(top->b[1]), static_cast<unsigned long long>(top->b[0]),
+           static_cast<unsigned>(top->cin),
+           static_cast<unsigned long long>(top->sum[1]), static_cast<unsigned long long>(top->sum[0]),
+           static_cast<unsigned>(top->cout)
+        );
 
-        if (top->sum != (expected_sum & 0xFFFFFFFFFFFFFFFF) || top->cout != expected_cout) {
+        __int128 top_sum = static_cast<__int128>(top->sum[1]) << 64 | top->sum[0];
+
+        if (top_sum != expected_sum || top->cout != expected_cout) {
             printf("Mismatch detected!\n");
-            
-            // Print the bits that mismatch
-            for (int i = 0; i < 64; i++) {
-                uint64_t mask = 1ull << i;
-                if ((top->sum & mask) != (expected_sum & mask)) {
+
+            for (int i = 0; i < 128; i++) {
+                __int128 mask = static_cast<__int128>(1) << i;
+                if ((top_sum & mask) != (expected_sum & mask)) {
                     printf("Bit %d is incorrect\n", i + 1);
                 }
             }
 
-            // Uncomment the lines below if you want to stop the test and exit on mismatch
             top->final();
             delete top;
             return 1;
@@ -60,3 +74,6 @@ int main(int argc, char** argv) {
     delete top;
     return 0;
 }
+
+
+

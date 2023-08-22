@@ -1,14 +1,14 @@
 
 /* verilator lint_off UNUSEDSIGNAL */
 module HC_32_BK5_KS0_top (a,b,cin,sum,cout,clk,rst);
-input [63:0]a;
-input [63:0]b;
+input [31:0]a;
+input [31:0]b;
 input cin;
-output reg [63:0]sum;
+output reg [31:0]sum;
 output reg cout;
 input clk;
 input rst;
-wire [63:0] sum_w;
+wire [31:0] sum_w;
 wire cout_w;
 reg cin_r;
 HC_32_BK5_KS0 u0 (a,b,cin_r,sum_w,cout_w);

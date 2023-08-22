@@ -4,6 +4,7 @@
 
 #include "verilated.h"
 
+#include "VHybrid_64_BK0_KL6_Fanout32__Syms.h"
 #include "VHybrid_64_BK0_KL6_Fanout32___024root.h"
 
 VL_INLINE_OPT void VHybrid_64_BK0_KL6_Fanout32___024root___ico_sequent__TOP__0(VHybrid_64_BK0_KL6_Fanout32___024root* vlSelf) {
@@ -2494,7 +2495,7 @@ void VHybrid_64_BK0_KL6_Fanout32___024root___eval_ico(VHybrid_64_BK0_KL6_Fanout3
     VHybrid_64_BK0_KL6_Fanout32__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VHybrid_64_BK0_KL6_Fanout32___024root___eval_ico\n"); );
     // Body
-    if (vlSelf->__VicoTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VicoTriggered.word(0U))) {
         VHybrid_64_BK0_KL6_Fanout32___024root___ico_sequent__TOP__0(vlSelf);
     }
 }
@@ -3391,7 +3392,7 @@ void VHybrid_64_BK0_KL6_Fanout32___024root___eval_nba(VHybrid_64_BK0_KL6_Fanout3
     VHybrid_64_BK0_KL6_Fanout32__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VHybrid_64_BK0_KL6_Fanout32___024root___eval_nba\n"); );
     // Body
-    if (vlSelf->__VnbaTriggered.at(0U)) {
+    if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
         VHybrid_64_BK0_KL6_Fanout32___024root___nba_sequent__TOP__0(vlSelf);
         VHybrid_64_BK0_KL6_Fanout32___024root___nba_sequent__TOP__1(vlSelf);
     }
@@ -3458,7 +3459,7 @@ void VHybrid_64_BK0_KL6_Fanout32___024root___eval(VHybrid_64_BK0_KL6_Fanout32___
                 vlSelf->__VactIterCount = ((IData)(1U) 
                                            + vlSelf->__VactIterCount);
                 __VpreTriggered.andNot(vlSelf->__VactTriggered, vlSelf->__VnbaTriggered);
-                vlSelf->__VnbaTriggered.set(vlSelf->__VactTriggered);
+                vlSelf->__VnbaTriggered.thisOr(vlSelf->__VactTriggered);
                 VHybrid_64_BK0_KL6_Fanout32___024root___eval_act(vlSelf);
             }
         }

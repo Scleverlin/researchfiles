@@ -1,14 +1,14 @@
 
 /* verilator lint_off UNUSEDSIGNAL */
 module HC_128_BK4_KS3_top (a,b,cin,sum,cout,clk,rst);
-input [63:0]a;
-input [63:0]b;
+input [127:0]a;
+input [127:0]b;
 input cin;
-output reg [63:0]sum;
+output reg [127:0]sum;
 output reg cout;
 input clk;
 input rst;
-wire [63:0] sum_w;
+wire [127:0] sum_w;
 wire cout_w;
 reg cin_r;
 HC_128_BK4_KS3 u0 (a,b,cin_r,sum_w,cout_w);

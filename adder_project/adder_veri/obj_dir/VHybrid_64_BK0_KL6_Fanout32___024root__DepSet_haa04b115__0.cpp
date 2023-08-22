@@ -5,6 +5,7 @@
 #include "verilated.h"
 
 #include "VHybrid_64_BK0_KL6_Fanout32__Syms.h"
+#include "VHybrid_64_BK0_KL6_Fanout32__Syms.h"
 #include "VHybrid_64_BK0_KL6_Fanout32___024root.h"
 
 #ifdef VL_DEBUG
@@ -16,7 +17,7 @@ void VHybrid_64_BK0_KL6_Fanout32___024root___eval_triggers__ico(VHybrid_64_BK0_K
     VHybrid_64_BK0_KL6_Fanout32__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VHybrid_64_BK0_KL6_Fanout32___024root___eval_triggers__ico\n"); );
     // Body
-    vlSelf->__VicoTriggered.at(0U) = (0U == vlSelf->__VicoIterCount);
+    vlSelf->__VicoTriggered.set(0U, (0U == vlSelf->__VicoIterCount));
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
         VHybrid_64_BK0_KL6_Fanout32___024root___dump_triggers__ico(vlSelf);
@@ -33,9 +34,9 @@ void VHybrid_64_BK0_KL6_Fanout32___024root___eval_triggers__act(VHybrid_64_BK0_K
     VHybrid_64_BK0_KL6_Fanout32__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VHybrid_64_BK0_KL6_Fanout32___024root___eval_triggers__act\n"); );
     // Body
-    vlSelf->__VactTriggered.at(0U) = ((IData)(vlSelf->clk) 
-                                      & (~ (IData)(vlSelf->__Vtrigrprev__TOP__clk)));
-    vlSelf->__Vtrigrprev__TOP__clk = vlSelf->clk;
+    vlSelf->__VactTriggered.set(0U, ((IData)(vlSelf->clk) 
+                                     & (~ (IData)(vlSelf->__Vtrigprevexpr___TOP__clk__0))));
+    vlSelf->__Vtrigprevexpr___TOP__clk__0 = vlSelf->clk;
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
         VHybrid_64_BK0_KL6_Fanout32___024root___dump_triggers__act(vlSelf);
