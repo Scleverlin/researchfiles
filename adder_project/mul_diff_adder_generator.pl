@@ -1,15 +1,20 @@
 $name =  $ARGV[1];
 
-open(DATA, ">/home/shi/research/adder_project/adder_gen/Mul_32_${name}.v") or die "Mul_32_${name}.v 文件无法打开, $!";
-open(DATA2, ">/home/shi/research/adder_project/adder_veri/tb_Mul_32_${name}.cpp") or die "tb_Mul_32_${name}.cpp 文件无法打开, $!";
-open(DATA3, ">>/home/shi/research/adder_project/adder_veri/_source_mul.txt") or die "_source_mul.txt 文件无法打开, $!";
-print DATA3 "verilator -Wall -j 0 -Wno-DECLFILENAME --cc /home/shi/research/adder_project/adder_gen/Mul_32_${name}.v --exe --build /home/shi/research/adder_project/adder_veri/tb_Mul_32_${name}.cpp\n";
-open(DATA4, ">>/home/shi/research/adder_project/adder_veri/_run_mul.txt") or die "_run_mul.txt 文件无法打开, $!";
+open(DATA, ">/home/shi/research/adder_project/mul_gen/Mul_32_${name}.v") or die "Mul_32_${name}.v 文件无法打开, $!";
+open(DATA2, ">/home/shi/research/adder_project/mul_veri/tb_Mul_32_${name}.cpp") or die "tb_Mul_32_${name}.cpp 文件无法打开, $!";
+open(DATA3, ">>/home/shi/research/adder_project/mul_veri/_source_mul.txt") or die "_source_mul.txt 文件无法打开, $!";
+print DATA3 "verilator -I/home/shi/research/adder_project/mul_gen/ -Wall -j 0 -Wno-DECLFILENAME --cc /home/shi/research/adder_project/mul_gen/Mul_32_${name}.v --exe --build /home/shi/research/adder_project/mul_veri/tb_Mul_32_${name}.cpp\n";
+open(DATA4, ">>/home/shi/research/adder_project/mul_veri/_run_mul.txt") or die "_run_mul.txt 文件无法打开, $!";
 print DATA4 "./obj_dir/VMul_32_${name}\n";
 
 print DATA "
-`include \"./${name}.v\"
-
+/* verilator lint_off EOFNEWLINE */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off WIDTHEXPAND */
+/* verilator lint_off INCABSPATH */
+`include \"${name}.v\"
+/* verilator lint_on INCABSPATH */
 module Mul_32_${name} (
     a,b,out
 );
@@ -107,7 +112,7 @@ endmodule
 ";
 
 print DATA2 "
-#include \"V${name}.h\"
+#include \"VMul_32_${name}.h\"
 #include \"verilated.h\"
 #include <iostream>
 #include <cstdlib>
@@ -115,7 +120,7 @@ print DATA2 "
 int main(int argc, char** argv, char** env) {
     Verilated::commandArgs(argc, argv);
 
-    V${name}* top = new V${name};
+    VMul_32_${name}* top = new VMul_32_${name};
     for(int i = 0; i < 100000; i++) {
         top->a = rand();
         top->b = rand();
@@ -125,6 +130,7 @@ int main(int argc, char** argv, char** env) {
             std::cerr << \"Mismatch: \" << top->out << \" != \" << expected << \"\\n\";
             exit(EXIT_FAILURE);
         }
+        printf(\"%d * %d = %d, Pass \\n\", top->a, top->b, top->out);
     }
 
     top->final();

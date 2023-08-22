@@ -1,5 +1,9 @@
 
-`include "./HC_64_BK1_KS5.v"
+/* verilator lint_off EOFNEWLINE */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off WIDTHEXPAND */
+`include "/home/shi/research/adder_project/adder_gen/HC_64_BK1_KS5.v"
 
 module Mul_32_HC_64_BK1_KS5 (
     a,b,out

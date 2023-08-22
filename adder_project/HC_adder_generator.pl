@@ -46,7 +46,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule
+endmodule 
 
 module P_G_gen_hc_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;

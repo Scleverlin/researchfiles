@@ -1,5 +1,9 @@
 
-`include "./Hybrid_64_BK4_SA2.v"
+/* verilator lint_off EOFNEWLINE */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off WIDTHEXPAND */
+`include "/home/shi/research/adder_project/adder_gen/Hybrid_64_BK4_SA2.v"
 
 module Mul_32_Hybrid_64_BK4_SA2 (
     a,b,out

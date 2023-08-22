@@ -1,5 +1,9 @@
 
-`include "./Hybrid_64_BK0_KL6_Fanout2.v"
+/* verilator lint_off EOFNEWLINE */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off INCABSPATH */
+/* verilator lint_off WIDTHEXPAND */
+`include "/home/shi/research/adder_project/adder_gen/Hybrid_64_BK0_KL6_Fanout2.v"
 
 module Mul_32_Hybrid_64_BK0_KL6_Fanout2 (
     a,b,out
