@@ -1,0 +1,7 @@
+ncverilog(64): 15.20-s071: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s071: Started on Aug 23, 2023 at 02:34:44 JST
+ncverilog
+	adder_128bit.v
+	+access+r
+ncverilog: *E,FILEMIS: Cannot find the provided file adder_128bit.v.
+TOOL:	ncverilog	15.20-s071: Exiting on Aug 23, 2023 at 02:34:44 JST  (total: 00:00:00)
