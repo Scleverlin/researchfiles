@@ -6,6 +6,27 @@
 /* verilator lint_off INCABSPATH */
 `include "Hybrid_64_BK0_SA6.v"
 /* verilator lint_on INCABSPATH */
+
+module  Mul_32_Hybrid_64_BK0_SA6_top (a,b,out,clk,rst);
+input [31:0]a;
+input [31:0]b;
+output reg [63:0]out;
+input clk;
+input rst;
+wire [63:0] out_w;
+
+
+Mul_32_Hybrid_64_BK0_SA6  u0 (a,b,out_w);
+always @(posedge clk ) begin
+    if (rst) begin
+        out<=0;
+    end
+    else begin
+     out<= out_w;
+    end
+end
+endmodule
+
 module Mul_32_Hybrid_64_BK0_SA6 (
     a,b,out
 );

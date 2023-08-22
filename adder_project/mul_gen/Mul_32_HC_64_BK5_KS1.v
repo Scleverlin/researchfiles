@@ -6,6 +6,27 @@
 /* verilator lint_off INCABSPATH */
 `include "HC_64_BK5_KS1.v"
 /* verilator lint_on INCABSPATH */
+
+module  Mul_32_HC_64_BK5_KS1_top (a,b,out,clk,rst);
+input [31:0]a;
+input [31:0]b;
+output reg [63:0]out;
+input clk;
+input rst;
+wire [63:0] out_w;
+
+
+Mul_32_HC_64_BK5_KS1  u0 (a,b,out_w);
+always @(posedge clk ) begin
+    if (rst) begin
+        out<=0;
+    end
+    else begin
+     out<= out_w;
+    end
+end
+endmodule
+
 module Mul_32_HC_64_BK5_KS1 (
     a,b,out
 );

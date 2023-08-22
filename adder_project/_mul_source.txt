@@ -27,3 +27,5 @@ perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_B
 perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout16
 perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK1_KL5_Fanout16
 perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout32
+
+	

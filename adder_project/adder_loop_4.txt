@@ -1,0 +1,27 @@
+
+perl ./HC_adder_generator.pl -w 0 4 16
+perl ./BK_SA_adder_generator.pl -w 0 4 16
+
+perl ./HC_adder_generator.pl -w 1 3 16
+perl ./BK_SA_adder_generator.pl -w 1 3 16
+
+perl ./HC_adder_generator.pl -w 2 2 16
+perl ./BK_SA_adder_generator.pl -w 2 2 16
+
+perl ./HC_adder_generator.pl -w 3 1 16
+perl ./BK_SA_adder_generator.pl -w 3 1 16
+
+perl ./HC_adder_generator.pl -w 4 0 16
+perl ./BK_SA_adder_generator.pl -w 4 0 16
+
+perl ./BK_Knowles_adder_generator.pl -w 0 4 2 16
+
+perl ./BK_Knowles_adder_generator.pl -w 1 3 2 16
+
+perl ./BK_Knowles_adder_generator.pl -w 2 2 2 16
+
+perl ./BK_Knowles_adder_generator.pl -w 0 4 4 16
+
+perl ./BK_Knowles_adder_generator.pl -w 1 3 4 16
+
+perl ./BK_Knowles_adder_generator.pl -w 0 4 8 16
