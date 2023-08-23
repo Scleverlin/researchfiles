@@ -1,620 +1,706 @@
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK0_KS6_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_SA6_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK1_KS5_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK1_SA5_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK2_KS4_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK2_SA4_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK3_KS3_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK3_SA3_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK4_KS2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK4_SA2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK5_KS1_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK5_SA1_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w HC_64_BK5_KS0_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK5_SA0_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK1_KL5_Fanout2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK2_KL4_Fanout2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK3_KL3_Fanout2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK4_KL2_Fanout2_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout4_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK1_KL5_Fanout4_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK2_KL4_Fanout4_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK3_KL3_Fanout4_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout8_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK1_KL5_Fanout8_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK2_KL4_Fanout8_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout16_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK1_KL5_Fanout16_top
-perl /home/shi/research/adder_project/mul_diff_adder_generator.pl -w Hybrid_64_BK0_KL6_Fanout32_top
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK0_KS6_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK0_SA6_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK1_KS5_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK1_SA5_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK2_KS4_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK2_SA4_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK3_KS3_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK3_SA3_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK4_KS2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK4_SA2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK5_KS1_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK5_SA1_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 HC_64_BK5_KS0_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK5_SA0_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK3_KL3_Fanout2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK4_KL2_Fanout2_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout4_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout4_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout4_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK3_KL3_Fanout4_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout8_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout8_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout8_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout16_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout16_top $(FREQUENCY)
+    perl /  perl ./test.pl -w cnfet7 home/s    perl ./test.pl -w cnfet7 hi/researc  perl ./test.pl -w cnfet7 h/adder_project/mul_diff_adder_generator.pl -w    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout32_top $(FREQUENCY)
 
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK0_KS6.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK0_SA6.v
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK1_KS5.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK1_SA5.v
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK2_KS4.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK2_SA4.v
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK3_KS3.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK3_SA3.v
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK4_KS2.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK4_SA2.v
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK5_KS1.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK5_SA1.v
-/home/shi/research/adder_project/mul_gen Mul_32_HC_64_BK5_KS0.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK5_SA0.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK0_KL6_Fanout2.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK1_KL5_Fanout2.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK2_KL4_Fanout2.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK3_KL3_Fanout2.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK4_KL2_Fanout2.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK0_KL6_Fanout4.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK1_KL5_Fanout4.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK2_KL4_Fanout4.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK3_KL3_Fanout4.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK0_KL6_Fanout8.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK1_KL5_Fanout8.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK2_KL4_Fanout8.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK0_KL6_Fanout16.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK1_KL5_Fanout16.v
-/home/shi/research/adder_project/mul_gen Mul_32_Hybrid_64_BK0_KL6_Fanout32.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK0_KS6.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK0_SA6.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK1_KS5.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK1_SA5.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK2_KS4.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK2_SA4.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK3_KS3.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK3_SA3.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK4_KS2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK4_SA2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK5_KS1.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK5_SA1.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 HC_64_BK5_KS0.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK5_SA0.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK3_KL3_Fanout2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK4_KL2_Fanout2.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout4.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout4.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout4.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK3_KL3_Fanout4.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout8.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout8.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout8.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout16.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout16.v
+/   perl ./test.pl -w cnfet7 home/s perl ./test.pl -w cnfet7 hi/researc   perl ./test.pl -w cnfet7 h/adder_project/mul_gen Mul_32_    perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout32.v
 
-Mul_32_HC_64_BK0_KS6_top
-Mul_32_Hybrid_64_BK0_SA6_top
-Mul_32_HC_64_BK1_KS5_top
-Mul_32_Hybrid_64_BK1_SA5_top
-Mul_32_HC_64_BK2_KS4_top
-Mul_32_Hybrid_64_BK2_SA4_top
-Mul_32_HC_64_BK3_KS3_top
-Mul_32_Hybrid_64_BK3_SA3_top
-Mul_32_HC_64_BK4_KS2_top
-Mul_32_Hybrid_64_BK4_SA2_top
-Mul_32_HC_64_BK5_KS1_top
-Mul_32_Hybrid_64_BK5_SA1_top
-Mul_32_HC_64_BK5_KS0_top
-Mul_32_Hybrid_64_BK5_SA0_top
-Mul_32_Hybrid_64_BK0_KL6_Fanout2_top
-Mul_32_Hybrid_64_BK1_KL5_Fanout2_top
-Mul_32_Hybrid_64_BK2_KL4_Fanout2_top
-Mul_32_Hybrid_64_BK3_KL3_Fanout2_top
-Mul_32_Hybrid_64_BK4_KL2_Fanout2_top
-Mul_32_Hybrid_64_BK0_KL6_Fanout4_top
-Mul_32_Hybrid_64_BK1_KL5_Fanout4_top
-Mul_32_Hybrid_64_BK2_KL4_Fanout4_top
-Mul_32_Hybrid_64_BK3_KL3_Fanout4_top
-Mul_32_Hybrid_64_BK0_KL6_Fanout8_top
-Mul_32_Hybrid_64_BK1_KL5_Fanout8_top
-Mul_32_Hybrid_64_BK2_KL4_Fanout8_top
-Mul_32_Hybrid_64_BK0_KL6_Fanout16_top
-Mul_32_Hybrid_64_BK1_KL5_Fanout16_top
-Mul_32_Hybrid_64_BK0_KL6_Fanout32_topHC_8_BK0_KS3_top
-Hybrid_8_BK0_SA3_top
-HC_8_BK1_KS2_top
-Hybrid_8_BK1_SA2_top
-HC_8_BK2_KS1_top
-Hybrid_8_BK2_SA1_top
-HC_8_BK3_KS0_top
-Hybrid_8_BK3_SA0_top
-Hybrid_8_BK0_KL3_Fanout2_top
-Hybrid_8_BK1_KL2_Fanout2_top
-Hybrid_8_BK0_KL3_Fanout4_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_32_BK0_KS5_top
-Hybrid_32_BK0_SA5_top
-HC_32_BK1_KS4_top
-Hybrid_32_BK1_SA4_top
-HC_32_BK2_KS3_top
-Hybrid_32_BK2_SA3_top
-HC_32_BK3_KS2_top
-Hybrid_32_BK3_SA2_top
-HC_32_BK4_KS1_top
-Hybrid_32_BK4_SA1_top
-HC_32_BK5_KS0_top
-Hybrid_32_BK5_SA0_top
-Hybrid_32_BK0_KL5_Fanout2_top
-Hybrid_32_BK1_KL4_Fanout2_top
-Hybrid_32_BK2_KL3_Fanout2_top
-Hybrid_32_BK3_KL2_Fanout2_top
-Hybrid_32_BK0_KL5_Fanout4_top
-Hybrid_32_BK1_KL4_Fanout4_top
-Hybrid_32_BK2_KL3_Fanout4_top
-Hybrid_32_BK0_KL5_Fanout8_top
-Hybrid_32_BK1_KL4_Fanout8_top
-Hybrid_32_BK0_KL5_Fanout16_top
-HC_128_BK0_KS7_top
-Hybrid_128_BK0_SA7_top
-HC_128_BK1_KS6_top
-Hybrid_128_BK1_SA6_top
-HC_128_BK2_KS5_top
-Hybrid_128_BK2_SA5_top
-HC_128_BK3_KS4_top
-Hybrid_128_BK3_SA4_top
-HC_128_BK4_KS3_top
-Hybrid_128_BK4_SA3_top
-HC_128_BK5_KS2_top
-Hybrid_128_BK5_SA2_top
-HC_128_BK6_KS1_top
-Hybrid_128_BK6_SA1_top
-HC_128_BK7_KS0_top
-Hybrid_128_BK7_SA0_top
-Hybrid_128_BK0_KL7_Fanout2_top
-Hybrid_128_BK1_KL6_Fanout2_top
-Hybrid_128_BK2_KL5_Fanout2_top
-Hybrid_128_BK3_KL4_Fanout2_top
-Hybrid_128_BK4_KL3_Fanout2_top
-Hybrid_128_BK5_KL2_Fanout2_top
-Hybrid_128_BK0_KL7_Fanout4_top
-Hybrid_128_BK1_KL6_Fanout4_top
-Hybrid_128_BK2_KL5_Fanout4_top
-Hybrid_128_BK3_KL4_Fanout4_top
-Hybrid_128_BK4_KL3_Fanout4_top
-Hybrid_128_BK0_KL7_Fanout8_top
-Hybrid_128_BK1_KL6_Fanout8_top
-Hybrid_128_BK2_KL5_Fanout8_top
-Hybrid_128_BK3_KL4_Fanout8_top
-Hybrid_128_BK0_KL7_Fanout16_top
-Hybrid_128_BK1_KL6_Fanout16_top
-Hybrid_128_BK2_KL5_Fanout16_top
-Hybrid_128_BK0_KL7_Fanout32_top
-Hybrid_128_BK1_KL6_Fanout32_top
-Hybrid_128_BK0_KL7_Fanout64_top
-HC_8_BK0_KS3_top
-Hybrid_8_BK0_SA3_top
-HC_8_BK1_KS2_top
-Hybrid_8_BK1_SA2_top
-HC_8_BK2_KS1_top
-Hybrid_8_BK2_SA1_top
-HC_8_BK3_KS0_top
-Hybrid_8_BK3_SA0_top
-Hybrid_8_BK0_KL3_Fanout2_top
-Hybrid_8_BK1_KL2_Fanout2_top
-Hybrid_8_BK0_KL3_Fanout4_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_32_BK0_KS5_top
-Hybrid_32_BK0_SA5_top
-HC_32_BK1_KS4_top
-Hybrid_32_BK1_SA4_top
-HC_32_BK2_KS3_top
-Hybrid_32_BK2_SA3_top
-HC_32_BK3_KS2_top
-Hybrid_32_BK3_SA2_top
-HC_32_BK4_KS1_top
-Hybrid_32_BK4_SA1_top
-HC_32_BK5_KS0_top
-Hybrid_32_BK5_SA0_top
-Hybrid_32_BK0_KL5_Fanout2_top
-Hybrid_32_BK1_KL4_Fanout2_top
-Hybrid_32_BK2_KL3_Fanout2_top
-Hybrid_32_BK3_KL2_Fanout2_top
-Hybrid_32_BK0_KL5_Fanout4_top
-Hybrid_32_BK1_KL4_Fanout4_top
-Hybrid_32_BK2_KL3_Fanout4_top
-Hybrid_32_BK0_KL5_Fanout8_top
-Hybrid_32_BK1_KL4_Fanout8_top
-Hybrid_32_BK0_KL5_Fanout16_top
-HC_128_BK0_KS7_top
-Hybrid_128_BK0_SA7_top
-HC_128_BK1_KS6_top
-Hybrid_128_BK1_SA6_top
-HC_128_BK2_KS5_top
-Hybrid_128_BK2_SA5_top
-HC_128_BK3_KS4_top
-Hybrid_128_BK3_SA4_top
-HC_128_BK4_KS3_top
-Hybrid_128_BK4_SA3_top
-HC_128_BK5_KS2_top
-Hybrid_128_BK5_SA2_top
-HC_128_BK6_KS1_top
-Hybrid_128_BK6_SA1_top
-HC_128_BK7_KS0_top
-Hybrid_128_BK7_SA0_top
-Hybrid_128_BK0_KL7_Fanout2_top
-Hybrid_128_BK1_KL6_Fanout2_top
-Hybrid_128_BK2_KL5_Fanout2_top
-Hybrid_128_BK3_KL4_Fanout2_top
-Hybrid_128_BK4_KL3_Fanout2_top
-Hybrid_128_BK5_KL2_Fanout2_top
-Hybrid_128_BK0_KL7_Fanout4_top
-Hybrid_128_BK1_KL6_Fanout4_top
-Hybrid_128_BK2_KL5_Fanout4_top
-Hybrid_128_BK3_KL4_Fanout4_top
-Hybrid_128_BK4_KL3_Fanout4_top
-Hybrid_128_BK0_KL7_Fanout8_top
-Hybrid_128_BK1_KL6_Fanout8_top
-Hybrid_128_BK2_KL5_Fanout8_top
-Hybrid_128_BK3_KL4_Fanout8_top
-Hybrid_128_BK0_KL7_Fanout16_top
-Hybrid_128_BK1_KL6_Fanout16_top
-Hybrid_128_BK2_KL5_Fanout16_top
-Hybrid_128_BK0_KL7_Fanout32_top
-Hybrid_128_BK1_KL6_Fanout32_top
-Hybrid_128_BK0_KL7_Fanout64_top
-HC_8_BK0_KS3_top
-Hybrid_8_BK0_SA3_top
-HC_8_BK1_KS2_top
-Hybrid_8_BK1_SA2_top
-HC_8_BK2_KS1_top
-Hybrid_8_BK2_SA1_top
-HC_8_BK3_KS0_top
-Hybrid_8_BK3_SA0_top
-Hybrid_8_BK0_KL3_Fanout2_top
-Hybrid_8_BK1_KL2_Fanout2_top
-Hybrid_8_BK0_KL3_Fanout4_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_32_BK0_KS5_top
-Hybrid_32_BK0_SA5_top
-HC_32_BK1_KS4_top
-Hybrid_32_BK1_SA4_top
-HC_32_BK2_KS3_top
-Hybrid_32_BK2_SA3_top
-HC_32_BK3_KS2_top
-Hybrid_32_BK3_SA2_top
-HC_32_BK4_KS1_top
-Hybrid_32_BK4_SA1_top
-HC_32_BK5_KS0_top
-Hybrid_32_BK5_SA0_top
-Hybrid_32_BK0_KL5_Fanout2_top
-Hybrid_32_BK1_KL4_Fanout2_top
-Hybrid_32_BK2_KL3_Fanout2_top
-Hybrid_32_BK3_KL2_Fanout2_top
-Hybrid_32_BK0_KL5_Fanout4_top
-Hybrid_32_BK1_KL4_Fanout4_top
-Hybrid_32_BK2_KL3_Fanout4_top
-Hybrid_32_BK0_KL5_Fanout8_top
-Hybrid_32_BK1_KL4_Fanout8_top
-Hybrid_32_BK0_KL5_Fanout16_top
-HC_128_BK0_KS7_top
-Hybrid_128_BK0_SA7_top
-HC_128_BK1_KS6_top
-Hybrid_128_BK1_SA6_top
-HC_128_BK2_KS5_top
-Hybrid_128_BK2_SA5_top
-HC_128_BK3_KS4_top
-Hybrid_128_BK3_SA4_top
-HC_128_BK4_KS3_top
-Hybrid_128_BK4_SA3_top
-HC_128_BK5_KS2_top
-Hybrid_128_BK5_SA2_top
-HC_128_BK6_KS1_top
-Hybrid_128_BK6_SA1_top
-HC_128_BK7_KS0_top
-Hybrid_128_BK7_SA0_top
-Hybrid_128_BK0_KL7_Fanout2_top
-Hybrid_128_BK1_KL6_Fanout2_top
-Hybrid_128_BK2_KL5_Fanout2_top
-Hybrid_128_BK3_KL4_Fanout2_top
-Hybrid_128_BK4_KL3_Fanout2_top
-Hybrid_128_BK5_KL2_Fanout2_top
-Hybrid_128_BK0_KL7_Fanout4_top
-Hybrid_128_BK1_KL6_Fanout4_top
-Hybrid_128_BK2_KL5_Fanout4_top
-Hybrid_128_BK3_KL4_Fanout4_top
-Hybrid_128_BK4_KL3_Fanout4_top
-Hybrid_128_BK0_KL7_Fanout8_top
-Hybrid_128_BK1_KL6_Fanout8_top
-Hybrid_128_BK2_KL5_Fanout8_top
-Hybrid_128_BK3_KL4_Fanout8_top
-Hybrid_128_BK0_KL7_Fanout16_top
-Hybrid_128_BK1_KL6_Fanout16_top
-Hybrid_128_BK2_KL5_Fanout16_top
-Hybrid_128_BK0_KL7_Fanout32_top
-Hybrid_128_BK1_KL6_Fanout32_top
-Hybrid_128_BK0_KL7_Fanout64_top
-HC_8_BK0_KS3_top
-Hybrid_8_BK0_SA3_top
-HC_8_BK1_KS2_top
-Hybrid_8_BK1_SA2_top
-HC_8_BK2_KS1_top
-Hybrid_8_BK2_SA1_top
-HC_8_BK3_KS0_top
-Hybrid_8_BK3_SA0_top
-Hybrid_8_BK0_KL3_Fanout2_top
-Hybrid_8_BK1_KL2_Fanout2_top
-Hybrid_8_BK0_KL3_Fanout4_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_32_BK0_KS5_top
-Hybrid_32_BK0_SA5_top
-HC_32_BK1_KS4_top
-Hybrid_32_BK1_SA4_top
-HC_32_BK2_KS3_top
-Hybrid_32_BK2_SA3_top
-HC_32_BK3_KS2_top
-Hybrid_32_BK3_SA2_top
-HC_32_BK4_KS1_top
-Hybrid_32_BK4_SA1_top
-HC_32_BK5_KS0_top
-Hybrid_32_BK5_SA0_top
-Hybrid_32_BK0_KL5_Fanout2_top
-Hybrid_32_BK1_KL4_Fanout2_top
-Hybrid_32_BK2_KL3_Fanout2_top
-Hybrid_32_BK3_KL2_Fanout2_top
-Hybrid_32_BK0_KL5_Fanout4_top
-Hybrid_32_BK1_KL4_Fanout4_top
-Hybrid_32_BK2_KL3_Fanout4_top
-Hybrid_32_BK0_KL5_Fanout8_top
-Hybrid_32_BK1_KL4_Fanout8_top
-Hybrid_32_BK0_KL5_Fanout16_top
-HC_128_BK0_KS7_top
-Hybrid_128_BK0_SA7_top
-HC_128_BK1_KS6_top
-Hybrid_128_BK1_SA6_top
-HC_128_BK2_KS5_top
-Hybrid_128_BK2_SA5_top
-HC_128_BK3_KS4_top
-Hybrid_128_BK3_SA4_top
-HC_128_BK4_KS3_top
-Hybrid_128_BK4_SA3_top
-HC_128_BK5_KS2_top
-Hybrid_128_BK5_SA2_top
-HC_128_BK6_KS1_top
-Hybrid_128_BK6_SA1_top
-HC_128_BK7_KS0_top
-Hybrid_128_BK7_SA0_top
-Hybrid_128_BK0_KL7_Fanout2_top
-Hybrid_128_BK1_KL6_Fanout2_top
-Hybrid_128_BK2_KL5_Fanout2_top
-Hybrid_128_BK3_KL4_Fanout2_top
-Hybrid_128_BK4_KL3_Fanout2_top
-Hybrid_128_BK5_KL2_Fanout2_top
-Hybrid_128_BK0_KL7_Fanout4_top
-Hybrid_128_BK1_KL6_Fanout4_top
-Hybrid_128_BK2_KL5_Fanout4_top
-Hybrid_128_BK3_KL4_Fanout4_top
-Hybrid_128_BK4_KL3_Fanout4_top
-Hybrid_128_BK0_KL7_Fanout8_top
-Hybrid_128_BK1_KL6_Fanout8_top
-Hybrid_128_BK2_KL5_Fanout8_top
-Hybrid_128_BK3_KL4_Fanout8_top
-Hybrid_128_BK0_KL7_Fanout16_top
-Hybrid_128_BK1_KL6_Fanout16_top
-Hybrid_128_BK2_KL5_Fanout16_top
-Hybrid_128_BK0_KL7_Fanout32_top
-Hybrid_128_BK1_KL6_Fanout32_top
-Hybrid_128_BK0_KL7_Fanout64_top
-HC_8_BK0_KS3_top
-Hybrid_8_BK0_SA3_top
-HC_8_BK1_KS2_top
-Hybrid_8_BK1_SA2_top
-HC_8_BK2_KS1_top
-Hybrid_8_BK2_SA1_top
-HC_8_BK3_KS0_top
-Hybrid_8_BK3_SA0_top
-Hybrid_8_BK0_KL3_Fanout2_top
-Hybrid_8_BK1_KL2_Fanout2_top
-Hybrid_8_BK0_KL3_Fanout4_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_32_BK0_KS5_top
-Hybrid_32_BK0_SA5_top
-HC_32_BK1_KS4_top
-Hybrid_32_BK1_SA4_top
-HC_32_BK2_KS3_top
-Hybrid_32_BK2_SA3_top
-HC_32_BK3_KS2_top
-Hybrid_32_BK3_SA2_top
-HC_32_BK4_KS1_top
-Hybrid_32_BK4_SA1_top
-HC_32_BK5_KS0_top
-Hybrid_32_BK5_SA0_top
-Hybrid_32_BK0_KL5_Fanout2_top
-Hybrid_32_BK1_KL4_Fanout2_top
-Hybrid_32_BK2_KL3_Fanout2_top
-Hybrid_32_BK3_KL2_Fanout2_top
-Hybrid_32_BK0_KL5_Fanout4_top
-Hybrid_32_BK1_KL4_Fanout4_top
-Hybrid_32_BK2_KL3_Fanout4_top
-Hybrid_32_BK0_KL5_Fanout8_top
-Hybrid_32_BK1_KL4_Fanout8_top
-Hybrid_32_BK0_KL5_Fanout16_top
-HC_128_BK0_KS7_top
-Hybrid_128_BK0_SA7_top
-HC_128_BK1_KS6_top
-Hybrid_128_BK1_SA6_top
-HC_128_BK2_KS5_top
-Hybrid_128_BK2_SA5_top
-HC_128_BK3_KS4_top
-Hybrid_128_BK3_SA4_top
-HC_128_BK4_KS3_top
-Hybrid_128_BK4_SA3_top
-HC_128_BK5_KS2_top
-Hybrid_128_BK5_SA2_top
-HC_128_BK6_KS1_top
-Hybrid_128_BK6_SA1_top
-HC_128_BK7_KS0_top
-Hybrid_128_BK7_SA0_top
-Hybrid_128_BK0_KL7_Fanout2_top
-Hybrid_128_BK1_KL6_Fanout2_top
-Hybrid_128_BK2_KL5_Fanout2_top
-Hybrid_128_BK3_KL4_Fanout2_top
-Hybrid_128_BK4_KL3_Fanout2_top
-Hybrid_128_BK5_KL2_Fanout2_top
-Hybrid_128_BK0_KL7_Fanout4_top
-Hybrid_128_BK1_KL6_Fanout4_top
-Hybrid_128_BK2_KL5_Fanout4_top
-Hybrid_128_BK3_KL4_Fanout4_top
-Hybrid_128_BK4_KL3_Fanout4_top
-Hybrid_128_BK0_KL7_Fanout8_top
-Hybrid_128_BK1_KL6_Fanout8_top
-Hybrid_128_BK2_KL5_Fanout8_top
-Hybrid_128_BK3_KL4_Fanout8_top
-Hybrid_128_BK0_KL7_Fanout16_top
-Hybrid_128_BK1_KL6_Fanout16_top
-Hybrid_128_BK2_KL5_Fanout16_top
-Hybrid_128_BK0_KL7_Fanout32_top
-Hybrid_128_BK1_KL6_Fanout32_top
-Hybrid_128_BK0_KL7_Fanout64_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_8_BK0_KS3_top
-Hybrid_8_BK0_SA3_top
-HC_8_BK1_KS2_top
-Hybrid_8_BK1_SA2_top
-HC_8_BK2_KS1_top
-Hybrid_8_BK2_SA1_top
-HC_8_BK3_KS0_top
-Hybrid_8_BK3_SA0_top
-Hybrid_8_BK0_KL3_Fanout2_top
-Hybrid_8_BK1_KL2_Fanout2_top
-Hybrid_8_BK0_KL3_Fanout4_top
-HC_16_BK0_KS4_top
-Hybrid_16_BK0_SA4_top
-HC_16_BK1_KS3_top
-Hybrid_16_BK1_SA3_top
-HC_16_BK2_KS2_top
-Hybrid_16_BK2_SA2_top
-HC_16_BK3_KS1_top
-Hybrid_16_BK3_SA1_top
-HC_16_BK4_KS0_top
-Hybrid_16_BK4_SA0_top
-Hybrid_16_BK0_KL4_Fanout2_top
-Hybrid_16_BK1_KL3_Fanout2_top
-Hybrid_16_BK2_KL2_Fanout2_top
-Hybrid_16_BK0_KL4_Fanout4_top
-Hybrid_16_BK1_KL3_Fanout4_top
-Hybrid_16_BK0_KL4_Fanout8_top
-HC_32_BK0_KS5_top
-Hybrid_32_BK0_SA5_top
-HC_32_BK1_KS4_top
-Hybrid_32_BK1_SA4_top
-HC_32_BK2_KS3_top
-Hybrid_32_BK2_SA3_top
-HC_32_BK3_KS2_top
-Hybrid_32_BK3_SA2_top
-HC_32_BK4_KS1_top
-Hybrid_32_BK4_SA1_top
-HC_32_BK5_KS0_top
-Hybrid_32_BK5_SA0_top
-Hybrid_32_BK0_KL5_Fanout2_top
-Hybrid_32_BK1_KL4_Fanout2_top
-Hybrid_32_BK2_KL3_Fanout2_top
-Hybrid_32_BK3_KL2_Fanout2_top
-Hybrid_32_BK0_KL5_Fanout4_top
-Hybrid_32_BK1_KL4_Fanout4_top
-Hybrid_32_BK2_KL3_Fanout4_top
-Hybrid_32_BK0_KL5_Fanout8_top
-Hybrid_32_BK1_KL4_Fanout8_top
-Hybrid_32_BK0_KL5_Fanout16_top
-HC_128_BK0_KS7_top
-Hybrid_128_BK0_SA7_top
-HC_128_BK1_KS6_top
-Hybrid_128_BK1_SA6_top
-HC_128_BK2_KS5_top
-Hybrid_128_BK2_SA5_top
-HC_128_BK3_KS4_top
-Hybrid_128_BK3_SA4_top
-HC_128_BK4_KS3_top
-Hybrid_128_BK4_SA3_top
-HC_128_BK5_KS2_top
-Hybrid_128_BK5_SA2_top
-HC_128_BK6_KS1_top
-Hybrid_128_BK6_SA1_top
-HC_128_BK7_KS0_top
-Hybrid_128_BK7_SA0_top
-Hybrid_128_BK0_KL7_Fanout2_top
-Hybrid_128_BK1_KL6_Fanout2_top
-Hybrid_128_BK2_KL5_Fanout2_top
-Hybrid_128_BK3_KL4_Fanout2_top
-Hybrid_128_BK4_KL3_Fanout2_top
-Hybrid_128_BK5_KL2_Fanout2_top
-Hybrid_128_BK0_KL7_Fanout4_top
-Hybrid_128_BK1_KL6_Fanout4_top
-Hybrid_128_BK2_KL5_Fanout4_top
-Hybrid_128_BK3_KL4_Fanout4_top
-Hybrid_128_BK4_KL3_Fanout4_top
-Hybrid_128_BK0_KL7_Fanout8_top
-Hybrid_128_BK1_KL6_Fanout8_top
-Hybrid_128_BK2_KL5_Fanout8_top
-Hybrid_128_BK3_KL4_Fanout8_top
-Hybrid_128_BK0_KL7_Fanout16_top
-Hybrid_128_BK1_KL6_Fanout16_top
-Hybrid_128_BK2_KL5_Fanout16_top
-Hybrid_128_BK0_KL7_Fanout32_top
-Hybrid_128_BK1_KL6_Fanout32_top
-Hybrid_128_BK0_KL7_Fanout64_top
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK0_KS6_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK0_SA6_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK1_KS5_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK1_SA5_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK2_KS4_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK2_SA4_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK3_KS3_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK3_SA3_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK4_KS2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK4_SA2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK5_KS1_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK5_SA1_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 HC_64_BK5_KS0_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK5_SA0_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK3_KL3_Fanout2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK4_KL2_Fanout2_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout4_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout4_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout4_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK3_KL3_Fanout4_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout8_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout8_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK2_KL4_Fanout8_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout16_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK1_KL5_Fanout16_top $(FREQUENCY)
+Mul_32_ perl ./test.pl -w cnfet7 Hybrid_64_BK0_KL6_Fanout32_top $(FREQUENCY)  perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK0_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK1_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK2_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK2_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_8_BK3_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK3_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK1_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_8_BK0_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK0_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK1_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK2_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK3_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK3_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_16_BK4_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK4_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK2_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK1_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_16_BK0_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK0_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK1_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK2_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK3_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK4_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK4_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_32_BK5_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK5_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK3_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK2_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK1_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_32_BK0_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK0_KS7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_SA7_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK1_KS6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_SA6_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK2_KS5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_SA5_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK3_KS4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_SA4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK4_KS3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_SA3_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK5_KS2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_SA2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK6_KS1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK6_SA1_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 HC_128_BK7_KS0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK7_SA0_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK5_KL2_Fanout2_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK4_KL3_Fanout4_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK3_KL4_Fanout8_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK2_KL5_Fanout16_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK1_KL6_Fanout32_top $(FREQUENCY)
+    perl ./test.pl -w cnfet7 Hybrid_128_BK0_KL7_Fanout64_top $(FREQUENCY)

@@ -6,7 +6,7 @@ input [127:0]b;
 input cin;
 output reg [127:0]sum;
 output reg cout;
-input clk;Q
+input clk;
 input rst;
 wire [127:0] sum_w;
 wire cout_w;
