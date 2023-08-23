@@ -17,7 +17,11 @@ if ($log2_fanout + $depthofbk >= int($log2_bit)) {
 }
 
 open(DATA, ">./Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}.v") or die "BK${depthofbk}_KL${depthofkl}_Fanout${fanout}.v 文件无法打开, $!";
-
+open(DATA4, ">>./_mul_names.txt");
+print DATA4"
+perl /home/shi/research/adder_project/mul_flex_gen.pl -w Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout} ${bit} \n
+";
+close(DATA4);
 $max_of_pg=$bit-1;
 
 print DATA "

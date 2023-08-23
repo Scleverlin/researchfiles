@@ -1,21 +1,14 @@
 
-/* verilator lint_off EOFNEWLINE */
-/* verilator lint_off INCABSPATH */
-/* verilator lint_off INCABSPATH */
-/* verilator lint_off WIDTHEXPAND */
-/* verilator lint_off INCABSPATH */
-`include "Hybrid_64_BK3_SA3.v"
-/* verilator lint_on INCABSPATH */
 
-module  Mul_32_Hybrid_64_BK3_SA3_top (a,b,out,clk,rst);
-input [31:0]a;
-input [31:0]b;
+`include "Hybrid_64_BK3_SA3.v"
+
+/* module  Mul_32_Hybrid_64_BK3_SA3_top (a,b,out,clk,rst);
+ input [31:0]a;
+ input [31:0]b;
 output reg [63:0]out;
 input clk;
 input rst;
 wire [63:0] out_w;
-
-
 Mul_32_Hybrid_64_BK3_SA3  u0 (a,b,out_w);
 always @(posedge clk ) begin
     if (rst) begin
@@ -25,7 +18,7 @@ always @(posedge clk ) begin
      out<= out_w;
     end
 end
-endmodule
+endmodule*/
 
 module Mul_32_Hybrid_64_BK3_SA3 (
     a,b,out
@@ -37,7 +30,6 @@ output  [63:0] out;
 
 
 wire [63:0] bit_mux [31:0] ;
-
 assign bit_mux[0]=(a[0])?b:0;
 assign bit_mux[1]=(a[1])?{b,1'b0}:0;
 assign bit_mux[2]=(a[2])?{b,2'b0}:0;
@@ -71,53 +63,48 @@ assign bit_mux[29]=(a[29])?{b,29'b0}:0;
 assign bit_mux[30]=(a[30])?{b,30'b0}:0;
 assign bit_mux[31]=(a[31])?{b,31'b0}:0;
 
+    wire [63:0] bit_level2_sum[15:0];
+    wire cout_2;
+    Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_0 (bit_mux[0],bit_mux[1],1'b0,bit_level2_sum[0],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_1 (bit_mux[2],bit_mux[3],1'b0,bit_level2_sum[1],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_2 (bit_mux[4],bit_mux[5],1'b0,bit_level2_sum[2],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_3 (bit_mux[6],bit_mux[7],1'b0,bit_level2_sum[3],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_4 (bit_mux[8],bit_mux[9],1'b0,bit_level2_sum[4],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_5 (bit_mux[10],bit_mux[11],1'b0,bit_level2_sum[5],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_6 (bit_mux[12],bit_mux[13],1'b0,bit_level2_sum[6],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_7 (bit_mux[14],bit_mux[15],1'b0,bit_level2_sum[7],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_8 (bit_mux[16],bit_mux[17],1'b0,bit_level2_sum[8],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_9 (bit_mux[18],bit_mux[19],1'b0,bit_level2_sum[9],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_10 (bit_mux[20],bit_mux[21],1'b0,bit_level2_sum[10],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_11 (bit_mux[22],bit_mux[23],1'b0,bit_level2_sum[11],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_12 (bit_mux[24],bit_mux[25],1'b0,bit_level2_sum[12],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_13 (bit_mux[26],bit_mux[27],1'b0,bit_level2_sum[13],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_14 (bit_mux[28],bit_mux[29],1'b0,bit_level2_sum[14],cout_2);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2_15 (bit_mux[30],bit_mux[31],1'b0,bit_level2_sum[15],cout_2);
 
-wire [63:0] bit_level2_mux[15:0];
-wire cout;
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_0 (bit_mux[0],bit_mux[1],1'b0,bit_level2_mux[0],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_1 (bit_mux[2],bit_mux[3],1'b0,bit_level2_mux[1],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_2 (bit_mux[4],bit_mux[5],1'b0,bit_level2_mux[2],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3 (bit_mux[6],bit_mux[7],1'b0,bit_level2_mux[3],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_4 (bit_mux[8],bit_mux[9],1'b0,bit_level2_mux[4],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_5 (bit_mux[10],bit_mux[11],1'b0,bit_level2_mux[5],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_6 (bit_mux[12],bit_mux[13],1'b0,bit_level2_mux[6],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_7 (bit_mux[14],bit_mux[15],1'b0,bit_level2_mux[7],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_8 (bit_mux[16],bit_mux[17],1'b0,bit_level2_mux[8],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_9 (bit_mux[18],bit_mux[19],1'b0,bit_level2_mux[9],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_10 (bit_mux[20],bit_mux[21],1'b0,bit_level2_mux[10],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_11 (bit_mux[22],bit_mux[23],1'b0,bit_level2_mux[11],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_12 (bit_mux[24],bit_mux[25],1'b0,bit_level2_mux[12],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_13 (bit_mux[26],bit_mux[27],1'b0,bit_level2_mux[13],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_14 (bit_mux[28],bit_mux[29],1'b0,bit_level2_mux[14],cout);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_15 (bit_mux[30],bit_mux[31],1'b0,bit_level2_mux[15],cout);
+    wire [63:0] bit_level3_sum[7:0];
+    wire cout_3;
+    Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_0 (bit_level2_sum[0],bit_level2_sum[1],1'b0,bit_level3_sum[0],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_1 (bit_level2_sum[2],bit_level2_sum[3],1'b0,bit_level3_sum[1],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_2 (bit_level2_sum[4],bit_level2_sum[5],1'b0,bit_level3_sum[2],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_3 (bit_level2_sum[6],bit_level2_sum[7],1'b0,bit_level3_sum[3],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_4 (bit_level2_sum[8],bit_level2_sum[9],1'b0,bit_level3_sum[4],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_5 (bit_level2_sum[10],bit_level2_sum[11],1'b0,bit_level3_sum[5],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_6 (bit_level2_sum[12],bit_level2_sum[13],1'b0,bit_level3_sum[6],cout_3);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_3_7 (bit_level2_sum[14],bit_level2_sum[15],1'b0,bit_level3_sum[7],cout_3);
 
-wire [63:0] bit_level3_mux[7:0];
-wire cout1;
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_16 (bit_level2_mux[0],bit_level2_mux[1],1'b0,bit_level3_mux[0],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_17 (bit_level2_mux[2],bit_level2_mux[3],1'b0,bit_level3_mux[1],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_18 (bit_level2_mux[4],bit_level2_mux[5],1'b0,bit_level3_mux[2],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_19 (bit_level2_mux[6],bit_level2_mux[7],1'b0,bit_level3_mux[3],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_20 (bit_level2_mux[8],bit_level2_mux[9],1'b0,bit_level3_mux[4],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_21 (bit_level2_mux[10],bit_level2_mux[11],1'b0,bit_level3_mux[5],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_22 (bit_level2_mux[12],bit_level2_mux[13],1'b0,bit_level3_mux[6],cout1);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_23 (bit_level2_mux[14],bit_level2_mux[15],1'b0,bit_level3_mux[7],cout1);
+    wire [63:0] bit_level4_sum[3:0];
+    wire cout_4;
+    Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_4_0 (bit_level3_sum[0],bit_level3_sum[1],1'b0,bit_level4_sum[0],cout_4);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_4_1 (bit_level3_sum[2],bit_level3_sum[3],1'b0,bit_level4_sum[1],cout_4);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_4_2 (bit_level3_sum[4],bit_level3_sum[5],1'b0,bit_level4_sum[2],cout_4);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_4_3 (bit_level3_sum[6],bit_level3_sum[7],1'b0,bit_level4_sum[3],cout_4);
 
-wire [63:0] bit_level4_mux[3:0];
-wire cout2;
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_24 (bit_level3_mux[0],bit_level3_mux[1],1'b0,bit_level4_mux[0],cout2);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_25 (bit_level3_mux[2],bit_level3_mux[3],1'b0,bit_level4_mux[1],cout2);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_26 (bit_level3_mux[4],bit_level3_mux[5],1'b0,bit_level4_mux[2],cout2);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_27 (bit_level3_mux[6],bit_level3_mux[7],1'b0,bit_level4_mux[3],cout2);
+    wire [63:0] bit_level5_sum[1:0];
+    wire cout_5;
+    Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_5_0 (bit_level4_sum[0],bit_level4_sum[1],1'b0,bit_level5_sum[0],cout_5);
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_5_1 (bit_level4_sum[2],bit_level4_sum[3],1'b0,bit_level5_sum[1],cout_5);
 
-wire [63:0] bit_level5_mux[1:0];
-wire cout3;
-
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_28 (bit_level4_mux[0],bit_level4_mux[1],1'b0,bit_level5_mux[0],cout3);
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_29 (bit_level4_mux[2],bit_level4_mux[3],1'b0,bit_level5_mux[1],cout3);
-
-// output
-Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_30 (bit_level5_mux[0],bit_level5_mux[1],1'b0,out,cout3);
-
-
+wire cout_last;
+Hybrid_64_BK3_SA3 Hybrid_64_BK3_SA3_last (bit_level5_sum[0],bit_level5_sum[1],1'b0,out,cout_last);
 endmodule
-

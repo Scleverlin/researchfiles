@@ -13,7 +13,10 @@ if ($depthofks + $depthofbk != int($log2_bit)) {
 
 open(DATA, ">./HC_${bit}_BK${depthofbk}_KS${depthofks}.v") or die "${depthofbk}_${depthofks}.v 文件无法打开, $!";
 $max_of_pg=$bit-1;
-
+open(DATA4, ">>./_mul_names.txt");
+print DATA4"
+perl /home/shi/research/adder_project/mul_flex_gen.pl -w HC_${bit}_BK${depthofbk}_KS${depthofks}  ${bit} \n
+";
 print DATA "
 /* verilator lint_off UNUSEDSIGNAL */
 

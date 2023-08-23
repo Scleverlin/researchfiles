@@ -31,10 +31,11 @@ initial begin
         if(sum != expected_sum || cout != expected_cout) begin
             $display("ERROR: a=%h, b=%h, cin=%b, Expected: sum=%h, cout=%b, Actual: sum=%h, cout=%b", a, b, cin, expected_sum, expected_cout, sum, cout);
         end
-        $display(" a=%h, b=%h, cin=%b, Expected: sum=%h, cout=%b, Actual: sum=%h, cout=%b, pass", a, b, cin, expected_sum, expected_cout, sum, cout);
+        // $display(" a=%h, b=%h, cin=%b, Expected: sum=%h, cout=%b, Actual: sum=%h, cout=%b, pass", a, b, cin, expected_sum, expected_cout, sum, cout);
         
         i = i + 1; // 更新循环计数器
     end
+    $display("Test finished.");
     $finish;
 end
 

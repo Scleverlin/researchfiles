@@ -5,15 +5,20 @@ $bitsofMul=$bitofadder/2;
 $bitsofinput=$bitsofMul-1;
 $bitsofout=$bitofadder-1;
 $depth= int(log($bitsofMul)/log(2));
-open(DATA, ">/home/shi/research/adder_project/mul_gen/Mul_${bitsofMul}_${name}.v") or die "Mul_${bitsofMul}${name}.v 文件无法打开, $!";
-open(DATA2, ">/home/shi/research/adder_project/mul_veri/_tb_Mul_${bitsofMul}${name}.v") or die "tb_Mul_${bitsofMul}${name}.v 文件无法打开, $!";
-# open(DATA3, ">>/home/shi/research/adder_project/mul_veri/_source_mul.txt") or die "_source_mul.txt 文件无法打开, $!";
+$logofbit= int(log($bitofadder)/log(2));
 
+open(DATA, ">/home/shi/research/adder_project/mul_gen/Mul_${bitsofMul}_${name}.v") or die "Mul_${bitsofMul}${name}.v 文件无法打开, $!";
+open(DATA2, ">/home/shi/research/adder_project/mul_gen/_tb_Mul_${bitsofMul}${name}.v") or die "tb_Mul_${bitsofMul}${name}.v 文件无法打开, $!";
+# open(DATA3, ">>/home/shi/research/adder_project/mul_veri/_source_mul.txt") or die "_source_mul.txt 文件无法打开, $!";
+open (DATA3, ">>/home/shi/research/adder_project/mul_gen/_mul_mod_name.txt") ;
+print DATA3 "Mul_${bitsofMul}_${name}_top \n";
+open (DATA4, ">>/home/shi/research/adder_project/mul_gen/_mul_PATH.txt") ;
+print DATA4 "/home/shi/research/adder_project/mul_gen/Mul_${bitsofMul}_${name}.v \n";
 print DATA "
 
 `include \"${name}.v\"
 
-/* module  Mul_${bitsofMul}_${name}_top (a,b,out,clk,rst);
+module  Mul_${bitsofMul}_${name}_top (a,b,out,clk,rst);
  input [${bitsofinput}:0]a;
  input [${bitsofinput}:0]b;
 output reg [${bitsofout}:0]out;
@@ -29,7 +34,7 @@ always @(posedge clk ) begin
      out<= out_w;
     end
 end
-endmodule*/
+endmodule
 
 module Mul_${bitsofMul}_${name} (
     a,b,out
@@ -74,7 +79,54 @@ for ($k=2;$k<=$depth;$k++){
 
 print DATA "
 wire cout_last;
-${name} ${name}_last (bit_level${depth}_mux[0],bit_level${depth}_mux[1],1'b0,out,cout_last);
+${name} ${name}_last (bit_level${depth}_sum[0],bit_level${depth}_sum[1],1'b0,out,cout_last);
 endmodule
 ";
 
+print DATA2"
+`include \"Mul_${bitsofMul}_${name}.v\"
+module adder_tb;
+
+reg [${bitsofinput}:0] a, b;
+wire [${bitsofinput}:0] sum;
+wire [${bitsofout}:0] out;
+reg [${bitsofout}:0] expect_out;
+integer i; // 使用integer替代int
+// 实例化加法器
+Mul_${bitsofMul}_${name} u0 (a,b,out);
+
+initial begin
+    // 随机测试
+    i = 0;
+    while(i < 1000) begin
+        ";
+        if ($logofbit==7)
+        { print DATA2"
+        a = {\$random,\$random};
+        b = {\$random,\$random,\$random,\$random};";}
+        else {
+        print DATA2"
+        a=\$random;
+        b=\$random;
+        ";
+        }
+print DATA2"
+        expect_out = a * b ;
+
+        #10;  // 延迟以让加法器处理输入
+        if(out != expect_out ) begin
+            \$display(\"ERROR: a=\%h, b=\%h, Expected: out=\%h, Actual: out=\%h\", a, b, expect_out ,  out);
+                \$finish;
+        end
+      \$display(\"a=\%h, b=\%h, Expected: out=\%h, Actual: out=\%h, Pass\", a, b, expect_out ,  out);
+        
+        i = i + 1; // 更新循环计数器
+    end
+    
+    \$finish;
+end
+
+endmodule
+
+
+"
