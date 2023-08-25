@@ -1,15 +1,21 @@
 {
-    "Hybrid_128_BK3_SA4_0000": [
-        "Hybrid_128_BK3_SA4_0000",
-        "x7m5W",
+    "std": [
+        "std",
+        "reYIK",
         "module",
-        1
+        4
     ],
-    "adder_tb": [
-        "adder_tb",
-        "tqbtF",
+    "HC_64_BK2_KS4_0000": [
+        "HC_64_BK2_KS4_0000",
+        "e5eKt",
         "module",
-        2
+        5
+    ],
+    "FMA_tb": [
+        "FMA_tb",
+        "FqFj3",
+        "module",
+        6
     ],
     "...MASTER...": [
         "SIM",
