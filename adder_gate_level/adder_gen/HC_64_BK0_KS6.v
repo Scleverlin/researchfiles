@@ -1,5 +1,5 @@
 
-/* verilator lint_off UNUSEDSIGNAL 
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_64_BK0_KS6_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -23,7 +23,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule */
+endmodule 
 
 module P_G_gen_hc_64 (a,b,cin,p,g);
 input [63:0]a;
@@ -65,7 +65,7 @@ wire [63:0] pp_level2;
        generate
          for (i = 2;i<64 ;i=i+1 ) begin:gen_2
            // assign gnpg_level2[i]=gnpg_level1[i]|pp_level1[i]&gnpg_level1[i-2];  
-             AO21 a2 (pp_level1[i],gnpg_level1[i-2],gnpg_level1[i],gnpg_level2[i]);
+             AO21 a22 (pp_level1[i],gnpg_level1[i-2],gnpg_level1[i],gnpg_level2[i]);
            assign pp_level2[i]=pp_level1[i]&pp_level1[i-2];            
          end
        endgenerate
@@ -81,7 +81,7 @@ wire [63:0] pp_level3;
        generate
          for (i = 4;i<64 ;i=i+1 ) begin:gen_3
            // assign gnpg_level3[i]=gnpg_level2[i]|pp_level2[i]&gnpg_level2[i-4];  
-             AO21 a2 (pp_level2[i],gnpg_level2[i-4],gnpg_level2[i],gnpg_level3[i]);
+             AO21 a23 (pp_level2[i],gnpg_level2[i-4],gnpg_level2[i],gnpg_level3[i]);
            assign pp_level3[i]=pp_level2[i]&pp_level2[i-4];            
          end
        endgenerate
@@ -97,7 +97,7 @@ wire [63:0] pp_level4;
        generate
          for (i = 8;i<64 ;i=i+1 ) begin:gen_4
            // assign gnpg_level4[i]=gnpg_level3[i]|pp_level3[i]&gnpg_level3[i-8];  
-             AO21 a2 (pp_level3[i],gnpg_level3[i-8],gnpg_level3[i],gnpg_level4[i]);
+             AO21 a24 (pp_level3[i],gnpg_level3[i-8],gnpg_level3[i],gnpg_level4[i]);
            assign pp_level4[i]=pp_level3[i]&pp_level3[i-8];            
          end
        endgenerate
@@ -113,7 +113,7 @@ wire [63:0] pp_level5;
        generate
          for (i = 16;i<64 ;i=i+1 ) begin:gen_5
            // assign gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[i-16];  
-             AO21 a2 (pp_level4[i],gnpg_level4[i-16],gnpg_level4[i],gnpg_level5[i]);
+             AO21 a25 (pp_level4[i],gnpg_level4[i-16],gnpg_level4[i],gnpg_level5[i]);
            assign pp_level5[i]=pp_level4[i]&pp_level4[i-16];            
          end
        endgenerate
@@ -129,7 +129,7 @@ wire [63:0] pp_level6;
        generate
          for (i = 32;i<64 ;i=i+1 ) begin:gen_6
            // assign gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[i-32];  
-             AO21 a2 (pp_level5[i],gnpg_level5[i-32],gnpg_level5[i],gnpg_level6[i]);
+             AO21 a26 (pp_level5[i],gnpg_level5[i-32],gnpg_level5[i],gnpg_level6[i]);
            assign pp_level6[i]=pp_level5[i]&pp_level5[i-32];            
          end
        endgenerate

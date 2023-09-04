@@ -28,7 +28,7 @@ print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_
 $max_of_pg=$bit-1;
 
 print DATA "
-/* verilator lint_off UNUSEDSIGNAL
+/* verilator lint_off UNUSEDSIGNAL*/
 module Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}_top (a,b,cin,sum,cout,clk,rst);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
@@ -52,7 +52,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule */
+endmodule 
 
 module pg_gen_bk_kl_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;

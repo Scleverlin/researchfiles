@@ -22,7 +22,7 @@ print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w HC_${bi
 $max_of_pg=$bit-1;
 
 print DATA "
-/* verilator lint_off UNUSEDSIGNAL 
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_${bit}_BK${depthofbk}_KS${depthofks}_top (a,b,cin,sum,cout,clk,rst);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
@@ -46,7 +46,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule */
+endmodule 
 
 module P_G_gen_hc_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;
@@ -105,7 +105,7 @@ wire [${max_of_pg}:0] pp_level${i};
        generate
          for (i = ${minux_index};i<${for_index} ;i=i+1 ) begin:gen_${i}
            // assign gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[i-${minux_index}];  
-             AO21 a2 (pp_level${j}[i],gnpg_level${j}[i-${minux_index}],gnpg_level${j}[i],gnpg_level${i}[i]);
+             AO21 a2${i} (pp_level${j}[i],gnpg_level${j}[i-${minux_index}],gnpg_level${j}[i],gnpg_level${i}[i]);
            assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minux_index}];            
          end
        endgenerate

@@ -1,5 +1,5 @@
 
-/* verilator lint_off UNUSEDSIGNAL 
+/* verilator lint_off UNUSEDSIGNAL */
 module HC_64_BK2_KS4_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -23,7 +23,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule */
+endmodule 
 
 module P_G_gen_hc_64 (a,b,cin,p,g);
 input [63:0]a;
