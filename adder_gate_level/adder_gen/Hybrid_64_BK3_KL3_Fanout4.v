@@ -472,11 +472,11 @@ generate
 endgenerate
 
 endmodule
-module AO21 ( a, b, d, y );
+module AO21 ( a, b, d, y_bar );
   input a, b, d;
-  output y;
-  wire   y_bar;
+  wire y;
+  output   y_bar;
 
-  AOI21_X1 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
-  INV_X1 inv_1 ( .I(y), .ZN(y_bar) );
+  AOI21_X2 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
+  INV_X2 inv_1 ( .I(y), .ZN(y_bar) );
 endmodule

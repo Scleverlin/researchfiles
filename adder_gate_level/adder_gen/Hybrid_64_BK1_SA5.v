@@ -1484,10 +1484,10 @@ assign sum[64:1]=p[64:1]^gnpg_level7[64-1:0];
 assign cout =g[64]|p[64]&gnpg_level7[64-1];
    
 endmodule
-module AO21 ( a, b, d, y );
+module AO21 ( a, b, d, y_bar );
   input a, b, d;
-  output y;
-  wire   y_bar;
+  wire y;
+  output   y_bar;
 
   AOI21_X2 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
   INV_X2 inv_1 ( .I(y), .ZN(y_bar) );
