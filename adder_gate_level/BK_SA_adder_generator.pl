@@ -20,7 +20,7 @@ $max_of_pg=$bit-1;
 open(DATA4 , ">>./adder_veri.txt");
 print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_${bit}_BK${depthofbk}_SA${depthofsa} ${bit}  \n";
 print DATA "
-/* verilator lint_off UNUSEDSIGNAL*/
+/* verilator lint_off UNUSEDSIGNAL
 module Hybrid_${bit}_BK${depthofbk}_SA${depthofsa}_top (a,b,cin,sum,cout,clk,rst);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
@@ -44,7 +44,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule 
+endmodule */
 
 module pg_gen_bk_sa_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;
@@ -92,7 +92,8 @@ if ($depthofbk==0){
             for (i = 1;i<${for_index} ;i=i+2 ) begin:gen_1
              // assign gnpg_level${i}[i]=g[i]|p[i]&g[i-1];  
              AO21 a1 (p[i],g[i-1],g[i],gnpg_level${i}[i]);
-             assign pp_level${i}[i]=p[i]&p[i-1];            
+             // assign pp_level${i}[i]=p[i]&p[i-1];  
+             AND2_X1 aND1 (p[i],p[i-1],pp_level${i}[i]);          
             end
         endgenerate
         generate
@@ -119,7 +120,8 @@ if ($depthofbk==0){
              for (i = ${starting_point};i<${for_index} ;i=i+${add_index}) begin:gen_block_2${i}${k}
             // assign gnpg_level${i}[i+${k}]=gnpg_level${j}[i+${k}]|pp_level${j}[i+${k}]&gnpg_level${j}[i-1];  
             AO21 a2 (pp_level${j}[i+${k}],gnpg_level${j}[i-1],gnpg_level${j}[i+${k}],gnpg_level${i}[i+${k}]);
-             assign pp_level${i}[i+${k}]=pp_level${j}[i+${k}]&pp_level${j}[i-1];            
+             // assign pp_level${i}[i+${k}]=pp_level${j}[i+${k}]&pp_level${j}[i-1];       
+            AND2_X1 and2 (pp_level${j}[i+${k}],pp_level${j}[i-1],pp_level${i}[i+${k}]);     
          end
        endgenerate";} 
 
@@ -163,7 +165,8 @@ wire [${max_of_pg}:0] pp_level${i};";}
                for (i = 1;i<${bit} ;i=i+${skip_index} ) begin:gen_block_sa1${i}
                 // assign gnpg_level${i}[i]=g[i]|p${j}[i]&g[i-${minus_index}];  
                   AO21 a3 (p[i],g[i-${minus_index}],g[i],gnpg_level${i}[i]);
-                assign pp_level${i}[i]=p[i]&p[i-${minus_index}];     
+               // assign pp_level${i}[i]=p[i]&p[i-${minus_index}];     
+               AND2_X1 and3 (p[i],p[i-${minus_index}],pp_level${i}[i]);
                end
             endgenerate
              generate
@@ -180,7 +183,8 @@ wire [${max_of_pg}:0] pp_level${i};";}
               for (i = $skip_index-1 ;i<${bit};i=i+${skip_index}) begin:gen_block_sa2${i}
                 //assign gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[i-${minus_index}];  
                   AO21 a4 (pp_level${j}[i],gnpg_level${j}[i-${minus_index}],gnpg_level${j}[i],gnpg_level${i}[i]);
-                assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minus_index}];            
+               // assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minus_index}];           
+               AND2_X1 and4 (pp_level${j}[i],pp_level${j}[i-${minus_index}],pp_level${i}[i]);
               end
             endgenerate ";
             for (my $k = 0; $k <$old_pass_index ; $k++) {
@@ -211,7 +215,8 @@ $a=2**$depthofbk-1;
              for (i = ${initial_index};i<${for_index} ;i=i+${add_index}) begin:gen_block_sa3${i}${k}
             // assign gnpg_level${assign_index}[i+${k}]=gnpg_level${j}[i+${k}]|pp_level${j}[i+${k}]&gnpg_level${j}[i-${w}];  
             AO21 a5 (pp_level${j}[i+${k}],gnpg_level${j}[i-${w}],gnpg_level${j}[i+${k}],gnpg_level${assign_index}[i+${k}]);
-             assign pp_level${assign_index}[i+${k}]=pp_level${j}[i+${k}]&pp_level${j}[i-${w}];            
+           //  assign pp_level${assign_index}[i+${k}]=pp_level${j}[i+${k}]&pp_level${j}[i-${w}];     
+              AND2_X1 and5 (pp_level${j}[i+${k}],pp_level${j}[i-${w}],pp_level${assign_index}[i+${k}]);       
          end
        endgenerate
        //old_value_pass

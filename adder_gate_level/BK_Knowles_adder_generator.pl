@@ -28,7 +28,7 @@ print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w Hybrid_
 $max_of_pg=$bit-1;
 
 print DATA "
-/* verilator lint_off UNUSEDSIGNAL*/
+/* verilator lint_off UNUSEDSIGNAL
 module Hybrid_${bit}_BK${depthofbk}_KL${depthofkl}_Fanout${fanout}_top (a,b,cin,sum,cout,clk,rst);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
@@ -52,7 +52,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule 
+endmodule */
 
 module pg_gen_bk_kl_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;
@@ -104,7 +104,8 @@ if ($depthofbk==0){
             for (i = 1;i<${fanout} ;i=i+1 ) begin:genblock${i}${k}
             //   assign  gnpg_level${i}[${k}+i]=g[${k}+i]|p[${k}+i]&g[i+${k}-1]; 
             AO21 a1 (p[${k}+i],g[i+${k}-1],g[${k}+i],gnpg_level${i}[${k}+i]);
-              assign  pp_level${i}[${k}+i]=p[${k}+i]&p[i+${k}-1];
+            //   assign  pp_level${i}[${k}+i]=p[${k}+i]&p[i+${k}-1];
+            AND2_X1 and1 (p[${k}+i],p[i+${k}-1],pp_level${i}[${k}+i]);
             end
            endgenerate
 
@@ -134,7 +135,8 @@ if ($depthofbk==0){
             for (i = ${starting_point};i<${fanout} ;i=i+1 ) begin:gen_kl_block${i}${k}
    //         assign  gnpg_level${i}[${k}+i]=gnpg_level${j}[${k}+i]|pp_level${j}[${k}+i]&gnpg_level${j}[i+${k}-${minux_index}]; 
             AO21 a2 (pp_level${j}[${k}+i],gnpg_level${j}[i+${k}-${minux_index}],gnpg_level${j}[${k}+i],gnpg_level${i}[${k}+i]);
-              assign  pp_level${i}[${k}+i]=pp_level${j}[${k}+i]&pp_level${j}[i+${k}-${minux_index}];
+            //  assign  pp_level${i}[${k}+i]=pp_level${j}[${k}+i]&pp_level${j}[i+${k}-${minux_index}];
+            AND2_X1 and2 (pp_level${j}[${k}+i],pp_level${j}[i+${k}-${minux_index}],pp_level${i}[${k}+i]);
             end
            endgenerate
           ";}
@@ -167,7 +169,8 @@ if ($depthofbk==0){
            for (i = ${k};i<${fanout}+${k} ;i=i+1) begin:gen_mul_kl_block${i}${k}
              // assign  gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[${k}+${fanout}-1-${tmp}];
               AO21 a3 (pp_level${j}[i],gnpg_level${j}[${k}+${fanout}-1-${tmp}],gnpg_level${j}[i],gnpg_level${i}[i]);
-              assign  pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[${k}+${fanout}-1-${tmp}];
+            //   assign  pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[${k}+${fanout}-1-${tmp}];
+            AND2_X1 and3 (pp_level${j}[i],pp_level${j}[${k}+${fanout}-1-${tmp}],pp_level${i}[i]);
            end 
          endgenerate
          ";
@@ -206,7 +209,8 @@ wire [${max_of_pg}:0] pp_level${i};";}
                for (i = 1;i<${bit} ;i=i+${skip_index} ) begin:gen_hybrid_block${i}
                 // assign gnpg_level${i}[i]=g[i]|p${j}[i]&g[i-${minus_index}];  
                 AO21 a4 (p[i],g[i-${minus_index}],g[i],gnpg_level${i}[i]);
-                assign pp_level${i}[i]=p[i]&p[i-${minus_index}];     
+               //  assign pp_level${i}[i]=p[i]&p[i-${minus_index}];
+               AND2_X1 and4 (p[i],p[i-${minus_index}],pp_level${i}[i]);     
                end
             endgenerate
              generate
@@ -223,7 +227,8 @@ wire [${max_of_pg}:0] pp_level${i};";}
               for (i = $skip_index-1 ;i<${bit};i=i+${skip_index}) begin:gen_hybrid_block2${i}
                //  assign gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[i-${minus_index}];  
                 AO21 a5 (pp_level${j}[i],gnpg_level${j}[i-${minus_index}],gnpg_level${j}[i],gnpg_level${i}[i]);
-                assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minus_index}];            
+               // assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minus_index}];    
+               AND2_X1 and5 (pp_level${j}[i],pp_level${j}[i-${minus_index}],pp_level${i}[i]);        
               end
             endgenerate ";
             for (my $k = 0; $k <$old_pass_index ; $k++) {
@@ -261,7 +266,8 @@ for (my $i=1;$i<$depthofkl+1;$i++) {
             for (i = ${minux_index};i<${w}*${fanout} ;i=i+${w}) begin:gen_kl_block3${i}${k}
               //assign  gnpg_level${assign_index}[${k}+i]=gnpg_level${j}[${k}+i]|pp_level${j}[${k}+i]&gnpg_level${j}[i+${k}-${minux_index}]; 
               AO21 a6 (pp_level${j}[${k}+i],gnpg_level${j}[i+${k}-${minux_index}],gnpg_level${j}[${k}+i],gnpg_level${assign_index}[${k}+i]);
-              assign  pp_level${assign_index}[${k}+i]=pp_level${j}[${k}+i]&pp_level${j}[i+${k}-${minux_index}];
+             // assign  pp_level${assign_index}[${k}+i]=pp_level${j}[${k}+i]&pp_level${j}[i+${k}-${minux_index}];
+               AND2_X1 and6 (pp_level${j}[${k}+i],pp_level${j}[i+${k}-${minux_index}],pp_level${assign_index}[${k}+i]);
             end
            endgenerate
           ";}
@@ -319,7 +325,8 @@ for (my $i=1;$i<$depthofkl+1;$i++) {
            for (i = ${k};i<${w}*${fanout}+${k} ;i=i+${w}) begin:gen_mul_kl_block2${i}${k}
               // assign  gnpg_level${assign_index}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}];
               AO21 a7 (pp_level${j}[i],gnpg_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}],gnpg_level${j}[i],gnpg_level${assign_index}[i]);
-              assign  pp_level${assign_index}[i]=pp_level${j}[i]&pp_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}];
+              // assign  pp_level${assign_index}[i]=pp_level${j}[i]&pp_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}];
+               AND2_X1 and7 (pp_level${j}[i],pp_level${j}[${k}+${w}*${fanout}-${w}-${w}*${tmp}],pp_level${assign_index}[i]);
            end 
          endgenerate
          ";
@@ -485,7 +492,7 @@ module AO21 ( a, b, d, y );
   output y;
   wire   y_bar;
 
-  AOI21_X2 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
-  INV_X2 inv_1 ( .I(y), .ZN(y_bar) );
+  AOI21_X1 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
+  INV_X1 inv_1 ( .I(y), .ZN(y_bar) );
 endmodule
 ";

@@ -1,5 +1,5 @@
 
-/* verilator lint_off UNUSEDSIGNAL*/
+/* verilator lint_off UNUSEDSIGNAL
 module Hybrid_64_BK0_KL6_Fanout16_top (a,b,cin,sum,cout,clk,rst);
 input [63:0]a;
 input [63:0]b;
@@ -23,7 +23,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule 
+endmodule */
 
 module pg_gen_bk_kl_64 (a,b,cin,p,g);
 input [63:0]a;
@@ -56,7 +56,8 @@ genvar i;
             for (i = 1;i<16 ;i=i+1 ) begin:genblock10
             //   assign  gnpg_level1[0+i]=g[0+i]|p[0+i]&g[i+0-1]; 
             AO21 a1 (p[0+i],g[i+0-1],g[0+i],gnpg_level1[0+i]);
-              assign  pp_level1[0+i]=p[0+i]&p[i+0-1];
+            //   assign  pp_level1[0+i]=p[0+i]&p[i+0-1];
+            AND2_X1 and1 (p[0+i],p[i+0-1],pp_level1[0+i]);
             end
            endgenerate
 
@@ -66,7 +67,8 @@ genvar i;
             for (i = 1;i<16 ;i=i+1 ) begin:genblock116
             //   assign  gnpg_level1[16+i]=g[16+i]|p[16+i]&g[i+16-1]; 
             AO21 a1 (p[16+i],g[i+16-1],g[16+i],gnpg_level1[16+i]);
-              assign  pp_level1[16+i]=p[16+i]&p[i+16-1];
+            //   assign  pp_level1[16+i]=p[16+i]&p[i+16-1];
+            AND2_X1 and1 (p[16+i],p[i+16-1],pp_level1[16+i]);
             end
            endgenerate
 
@@ -76,7 +78,8 @@ genvar i;
             for (i = 1;i<16 ;i=i+1 ) begin:genblock132
             //   assign  gnpg_level1[32+i]=g[32+i]|p[32+i]&g[i+32-1]; 
             AO21 a1 (p[32+i],g[i+32-1],g[32+i],gnpg_level1[32+i]);
-              assign  pp_level1[32+i]=p[32+i]&p[i+32-1];
+            //   assign  pp_level1[32+i]=p[32+i]&p[i+32-1];
+            AND2_X1 and1 (p[32+i],p[i+32-1],pp_level1[32+i]);
             end
            endgenerate
 
@@ -86,7 +89,8 @@ genvar i;
             for (i = 1;i<16 ;i=i+1 ) begin:genblock148
             //   assign  gnpg_level1[48+i]=g[48+i]|p[48+i]&g[i+48-1]; 
             AO21 a1 (p[48+i],g[i+48-1],g[48+i],gnpg_level1[48+i]);
-              assign  pp_level1[48+i]=p[48+i]&p[i+48-1];
+            //   assign  pp_level1[48+i]=p[48+i]&p[i+48-1];
+            AND2_X1 and1 (p[48+i],p[i+48-1],pp_level1[48+i]);
             end
            endgenerate
 
@@ -126,7 +130,8 @@ genvar i;
             for (i = 2;i<16 ;i=i+1 ) begin:gen_kl_block20
    //         assign  gnpg_level2[0+i]=gnpg_level1[0+i]|pp_level1[0+i]&gnpg_level1[i+0-2]; 
             AO21 a2 (pp_level1[0+i],gnpg_level1[i+0-2],gnpg_level1[0+i],gnpg_level2[0+i]);
-              assign  pp_level2[0+i]=pp_level1[0+i]&pp_level1[i+0-2];
+            //  assign  pp_level2[0+i]=pp_level1[0+i]&pp_level1[i+0-2];
+            AND2_X1 and2 (pp_level1[0+i],pp_level1[i+0-2],pp_level2[0+i]);
             end
            endgenerate
           
@@ -135,7 +140,8 @@ genvar i;
             for (i = 2;i<16 ;i=i+1 ) begin:gen_kl_block216
    //         assign  gnpg_level2[16+i]=gnpg_level1[16+i]|pp_level1[16+i]&gnpg_level1[i+16-2]; 
             AO21 a2 (pp_level1[16+i],gnpg_level1[i+16-2],gnpg_level1[16+i],gnpg_level2[16+i]);
-              assign  pp_level2[16+i]=pp_level1[16+i]&pp_level1[i+16-2];
+            //  assign  pp_level2[16+i]=pp_level1[16+i]&pp_level1[i+16-2];
+            AND2_X1 and2 (pp_level1[16+i],pp_level1[i+16-2],pp_level2[16+i]);
             end
            endgenerate
           
@@ -144,7 +150,8 @@ genvar i;
             for (i = 2;i<16 ;i=i+1 ) begin:gen_kl_block232
    //         assign  gnpg_level2[32+i]=gnpg_level1[32+i]|pp_level1[32+i]&gnpg_level1[i+32-2]; 
             AO21 a2 (pp_level1[32+i],gnpg_level1[i+32-2],gnpg_level1[32+i],gnpg_level2[32+i]);
-              assign  pp_level2[32+i]=pp_level1[32+i]&pp_level1[i+32-2];
+            //  assign  pp_level2[32+i]=pp_level1[32+i]&pp_level1[i+32-2];
+            AND2_X1 and2 (pp_level1[32+i],pp_level1[i+32-2],pp_level2[32+i]);
             end
            endgenerate
           
@@ -153,7 +160,8 @@ genvar i;
             for (i = 2;i<16 ;i=i+1 ) begin:gen_kl_block248
    //         assign  gnpg_level2[48+i]=gnpg_level1[48+i]|pp_level1[48+i]&gnpg_level1[i+48-2]; 
             AO21 a2 (pp_level1[48+i],gnpg_level1[i+48-2],gnpg_level1[48+i],gnpg_level2[48+i]);
-              assign  pp_level2[48+i]=pp_level1[48+i]&pp_level1[i+48-2];
+            //  assign  pp_level2[48+i]=pp_level1[48+i]&pp_level1[i+48-2];
+            AND2_X1 and2 (pp_level1[48+i],pp_level1[i+48-2],pp_level2[48+i]);
             end
            endgenerate
           
@@ -188,7 +196,8 @@ genvar i;
             for (i = 4;i<16 ;i=i+1 ) begin:gen_kl_block30
    //         assign  gnpg_level3[0+i]=gnpg_level2[0+i]|pp_level2[0+i]&gnpg_level2[i+0-4]; 
             AO21 a2 (pp_level2[0+i],gnpg_level2[i+0-4],gnpg_level2[0+i],gnpg_level3[0+i]);
-              assign  pp_level3[0+i]=pp_level2[0+i]&pp_level2[i+0-4];
+            //  assign  pp_level3[0+i]=pp_level2[0+i]&pp_level2[i+0-4];
+            AND2_X1 and2 (pp_level2[0+i],pp_level2[i+0-4],pp_level3[0+i]);
             end
            endgenerate
           
@@ -197,7 +206,8 @@ genvar i;
             for (i = 4;i<16 ;i=i+1 ) begin:gen_kl_block316
    //         assign  gnpg_level3[16+i]=gnpg_level2[16+i]|pp_level2[16+i]&gnpg_level2[i+16-4]; 
             AO21 a2 (pp_level2[16+i],gnpg_level2[i+16-4],gnpg_level2[16+i],gnpg_level3[16+i]);
-              assign  pp_level3[16+i]=pp_level2[16+i]&pp_level2[i+16-4];
+            //  assign  pp_level3[16+i]=pp_level2[16+i]&pp_level2[i+16-4];
+            AND2_X1 and2 (pp_level2[16+i],pp_level2[i+16-4],pp_level3[16+i]);
             end
            endgenerate
           
@@ -206,7 +216,8 @@ genvar i;
             for (i = 4;i<16 ;i=i+1 ) begin:gen_kl_block332
    //         assign  gnpg_level3[32+i]=gnpg_level2[32+i]|pp_level2[32+i]&gnpg_level2[i+32-4]; 
             AO21 a2 (pp_level2[32+i],gnpg_level2[i+32-4],gnpg_level2[32+i],gnpg_level3[32+i]);
-              assign  pp_level3[32+i]=pp_level2[32+i]&pp_level2[i+32-4];
+            //  assign  pp_level3[32+i]=pp_level2[32+i]&pp_level2[i+32-4];
+            AND2_X1 and2 (pp_level2[32+i],pp_level2[i+32-4],pp_level3[32+i]);
             end
            endgenerate
           
@@ -215,7 +226,8 @@ genvar i;
             for (i = 4;i<16 ;i=i+1 ) begin:gen_kl_block348
    //         assign  gnpg_level3[48+i]=gnpg_level2[48+i]|pp_level2[48+i]&gnpg_level2[i+48-4]; 
             AO21 a2 (pp_level2[48+i],gnpg_level2[i+48-4],gnpg_level2[48+i],gnpg_level3[48+i]);
-              assign  pp_level3[48+i]=pp_level2[48+i]&pp_level2[i+48-4];
+            //  assign  pp_level3[48+i]=pp_level2[48+i]&pp_level2[i+48-4];
+            AND2_X1 and2 (pp_level2[48+i],pp_level2[i+48-4],pp_level3[48+i]);
             end
            endgenerate
           
@@ -250,7 +262,8 @@ genvar i;
             for (i = 8;i<16 ;i=i+1 ) begin:gen_kl_block40
    //         assign  gnpg_level4[0+i]=gnpg_level3[0+i]|pp_level3[0+i]&gnpg_level3[i+0-8]; 
             AO21 a2 (pp_level3[0+i],gnpg_level3[i+0-8],gnpg_level3[0+i],gnpg_level4[0+i]);
-              assign  pp_level4[0+i]=pp_level3[0+i]&pp_level3[i+0-8];
+            //  assign  pp_level4[0+i]=pp_level3[0+i]&pp_level3[i+0-8];
+            AND2_X1 and2 (pp_level3[0+i],pp_level3[i+0-8],pp_level4[0+i]);
             end
            endgenerate
           
@@ -259,7 +272,8 @@ genvar i;
             for (i = 8;i<16 ;i=i+1 ) begin:gen_kl_block416
    //         assign  gnpg_level4[16+i]=gnpg_level3[16+i]|pp_level3[16+i]&gnpg_level3[i+16-8]; 
             AO21 a2 (pp_level3[16+i],gnpg_level3[i+16-8],gnpg_level3[16+i],gnpg_level4[16+i]);
-              assign  pp_level4[16+i]=pp_level3[16+i]&pp_level3[i+16-8];
+            //  assign  pp_level4[16+i]=pp_level3[16+i]&pp_level3[i+16-8];
+            AND2_X1 and2 (pp_level3[16+i],pp_level3[i+16-8],pp_level4[16+i]);
             end
            endgenerate
           
@@ -268,7 +282,8 @@ genvar i;
             for (i = 8;i<16 ;i=i+1 ) begin:gen_kl_block432
    //         assign  gnpg_level4[32+i]=gnpg_level3[32+i]|pp_level3[32+i]&gnpg_level3[i+32-8]; 
             AO21 a2 (pp_level3[32+i],gnpg_level3[i+32-8],gnpg_level3[32+i],gnpg_level4[32+i]);
-              assign  pp_level4[32+i]=pp_level3[32+i]&pp_level3[i+32-8];
+            //  assign  pp_level4[32+i]=pp_level3[32+i]&pp_level3[i+32-8];
+            AND2_X1 and2 (pp_level3[32+i],pp_level3[i+32-8],pp_level4[32+i]);
             end
            endgenerate
           
@@ -277,7 +292,8 @@ genvar i;
             for (i = 8;i<16 ;i=i+1 ) begin:gen_kl_block448
    //         assign  gnpg_level4[48+i]=gnpg_level3[48+i]|pp_level3[48+i]&gnpg_level3[i+48-8]; 
             AO21 a2 (pp_level3[48+i],gnpg_level3[i+48-8],gnpg_level3[48+i],gnpg_level4[48+i]);
-              assign  pp_level4[48+i]=pp_level3[48+i]&pp_level3[i+48-8];
+            //  assign  pp_level4[48+i]=pp_level3[48+i]&pp_level3[i+48-8];
+            AND2_X1 and2 (pp_level3[48+i],pp_level3[i+48-8],pp_level4[48+i]);
             end
            endgenerate
           
@@ -319,7 +335,8 @@ genvar i;
            for (i = 16;i<16+16 ;i=i+1) begin:gen_mul_kl_block516
              // assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[16+16-1-16];
               AO21 a3 (pp_level4[i],gnpg_level4[16+16-1-16],gnpg_level4[i],gnpg_level5[i]);
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[16+16-1-16];
+            //   assign  pp_level5[i]=pp_level4[i]&pp_level4[16+16-1-16];
+            AND2_X1 and3 (pp_level4[i],pp_level4[16+16-1-16],pp_level5[i]);
            end 
          endgenerate
          
@@ -328,7 +345,8 @@ genvar i;
            for (i = 32;i<16+32 ;i=i+1) begin:gen_mul_kl_block532
              // assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[32+16-1-16];
               AO21 a3 (pp_level4[i],gnpg_level4[32+16-1-16],gnpg_level4[i],gnpg_level5[i]);
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[32+16-1-16];
+            //   assign  pp_level5[i]=pp_level4[i]&pp_level4[32+16-1-16];
+            AND2_X1 and3 (pp_level4[i],pp_level4[32+16-1-16],pp_level5[i]);
            end 
          endgenerate
          
@@ -337,7 +355,8 @@ genvar i;
            for (i = 48;i<16+48 ;i=i+1) begin:gen_mul_kl_block548
              // assign  gnpg_level5[i]=gnpg_level4[i]|pp_level4[i]&gnpg_level4[48+16-1-16];
               AO21 a3 (pp_level4[i],gnpg_level4[48+16-1-16],gnpg_level4[i],gnpg_level5[i]);
-              assign  pp_level5[i]=pp_level4[i]&pp_level4[48+16-1-16];
+            //   assign  pp_level5[i]=pp_level4[i]&pp_level4[48+16-1-16];
+            AND2_X1 and3 (pp_level4[i],pp_level4[48+16-1-16],pp_level5[i]);
            end 
          endgenerate
          
@@ -355,7 +374,8 @@ genvar i;
            for (i = 32;i<16+32 ;i=i+1) begin:gen_mul_kl_block632
              // assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[32+16-1-32];
               AO21 a3 (pp_level5[i],gnpg_level5[32+16-1-32],gnpg_level5[i],gnpg_level6[i]);
-              assign  pp_level6[i]=pp_level5[i]&pp_level5[32+16-1-32];
+            //   assign  pp_level6[i]=pp_level5[i]&pp_level5[32+16-1-32];
+            AND2_X1 and3 (pp_level5[i],pp_level5[32+16-1-32],pp_level6[i]);
            end 
          endgenerate
          
@@ -364,7 +384,8 @@ genvar i;
            for (i = 48;i<16+48 ;i=i+1) begin:gen_mul_kl_block648
              // assign  gnpg_level6[i]=gnpg_level5[i]|pp_level5[i]&gnpg_level5[48+16-1-32];
               AO21 a3 (pp_level5[i],gnpg_level5[48+16-1-32],gnpg_level5[i],gnpg_level6[i]);
-              assign  pp_level6[i]=pp_level5[i]&pp_level5[48+16-1-32];
+            //   assign  pp_level6[i]=pp_level5[i]&pp_level5[48+16-1-32];
+            AND2_X1 and3 (pp_level5[i],pp_level5[48+16-1-32],pp_level6[i]);
            end 
          endgenerate
          
@@ -380,6 +401,6 @@ module AO21 ( a, b, d, y );
   output y;
   wire   y_bar;
 
-  AOI21_X2 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
-  INV_X2 inv_1 ( .I(y), .ZN(y_bar) );
+  AOI21_X1 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
+  INV_X1 inv_1 ( .I(y), .ZN(y_bar) );
 endmodule

@@ -22,7 +22,7 @@ print DATA4 "perl /home/shi/research/adder_project/verfication_gen.pl -w HC_${bi
 $max_of_pg=$bit-1;
 
 print DATA "
-/* verilator lint_off UNUSEDSIGNAL */
+/* verilator lint_off UNUSEDSIGNAL 
 module HC_${bit}_BK${depthofbk}_KS${depthofks}_top (a,b,cin,sum,cout,clk,rst);
 input [${max_of_pg}:0]a;
 input [${max_of_pg}:0]b;
@@ -46,7 +46,7 @@ always @(posedge clk ) begin
         cin_r <= cin;
     end
 end
-endmodule 
+endmodule */
 
 module P_G_gen_hc_${bit} (a,b,cin,p,g);
 input [${max_of_pg}:0]a;
@@ -92,7 +92,8 @@ assign pp_level1[0]=p[0];
             for (i = 1;i<${for_index} ;i=i+1 ) begin:gen_1
              //assign gnpg_level${i}[i]=g[i]|p[i]&g[i-${minux_index}]; 
              AO21 a1 (p[i],g[i-${minux_index}],g[i],gnpg_level${i}[i]); 
-             assign pp_level${i}[i]=p[i]&p[i-${minux_index}];            
+            //  assign pp_level${i}[i]=p[i]&p[i-${minux_index}];    
+            AND2_X1 and1 (p[i],p[i-${minux_index}],pp_level${i}[i]);   
             end
         endgenerate";
     }     
@@ -106,7 +107,8 @@ wire [${max_of_pg}:0] pp_level${i};
          for (i = ${minux_index};i<${for_index} ;i=i+1 ) begin:gen_${i}
            // assign gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[i-${minux_index}];  
              AO21 a2${i} (pp_level${j}[i],gnpg_level${j}[i-${minux_index}],gnpg_level${j}[i],gnpg_level${i}[i]);
-           assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minux_index}];            
+          //  assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minux_index}];  
+             AND2_X1 and2 (pp_level${j}[i],pp_level${j}[i-${minux_index}],pp_level${i}[i]);          
          end
        endgenerate
        generate 
@@ -146,7 +148,8 @@ wire [${max_of_pg}:0] pp_level${i};";}
                for (i = 1;i<${bit} ;i=i+${skip_index} ) begin:gen_ks_1_${i}
               //  assign gnpg_level${i}[i]=g${j}[i]|p${j}[i]&g${j}[i-${minus_index}];  
                   AO21 a3 (p${j}[i],g${j}[i-${minus_index}],g${j}[i],gnpg_level${i}[i]);
-                assign pp_level${i}[i]=p${j}[i]&p${j}[i-${minus_index}];     
+                // assign pp_level${i}[i]=p${j}[i]&p${j}[i-${minus_index}];     
+                  AND2_X1 and3 (p${j}[i],p${j}[i-${minus_index}],pp_level${i}[i]);
                end
             endgenerate
              generate
@@ -163,7 +166,8 @@ wire [${max_of_pg}:0] pp_level${i};";}
               for (i = $skip_index-1 ;i<${bit};i=i+${skip_index}) begin:gen_ks_2_${i}
                 // assign gnpg_level${i}[i]=gnpg_level${j}[i]|pp_level${j}[i]&gnpg_level${j}[i-${minus_index}]; 
                 AO21 a4 (pp_level${j}[i],gnpg_level${j}[i-${minus_index}],gnpg_level${j}[i],gnpg_level${i}[i]); 
-                assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minus_index}];            
+               // assign pp_level${i}[i]=pp_level${j}[i]&pp_level${j}[i-${minus_index}];     
+                  AND2_X1 and4 (pp_level${j}[i],pp_level${j}[i-${minus_index}],pp_level${i}[i]);        
               end
             endgenerate ";
             for (my $k = 0; $k <$old_pass_index ; $k++) {
@@ -188,7 +192,8 @@ $skip_index=2**($depthofbk+1)-1;
               for (i = 0;i<(${bit}-${skip_index}) ;i=i+${add_index}) begin:gen_ks_4_${i}
                // assign gnpg_level${assign_index}[${skip_index}+i]=gnpg_level${last_index}[${skip_index}+i]|pp_level${last_index}[${skip_index}+i]&gnpg_level${last_index}[${skip_index}+i-${mul}*${add_index}];
                AO21 a5 (pp_level${last_index}[${skip_index}+i],gnpg_level${last_index}[${skip_index}+i-${mul}*${add_index}],gnpg_level${last_index}[${skip_index}+i],gnpg_level${assign_index}[${skip_index}+i]);
-                assign pp_level${assign_index}[${skip_index}+i]=pp_level${last_index}[${skip_index}+i]&pp_level${last_index}[${skip_index}+i-${mul}*${add_index}];
+              //  assign pp_level${assign_index}[${skip_index}+i]=pp_level${last_index}[${skip_index}+i]&pp_level${last_index}[${skip_index}+i-${mul}*${add_index}];
+               AND2_X1 and5 (pp_level${last_index}[${skip_index}+i],pp_level${last_index}[${skip_index}+i-${mul}*${add_index}],pp_level${assign_index}[${skip_index}+i]);
                end
             endgenerate";
             print DATA"
