@@ -1781,9 +1781,34 @@ assign cout =g[64]|p[64]&gnpg_level7[64-1];
 endmodule
 module AO21 ( a, b, d, y_bar );
   input a, b, d;
-  wire y;
+   // wire y;
   output   y_bar;
 
-  AOI21_X2 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
-  INV_X2 inv_1 ( .I(y), .ZN(y_bar) );
+   //AOI21_X2 aoi21_1 ( .A1(a), .A2(b), .B(d), .ZN(y) );
+   // INV_X2 inv_1 ( .I(y), .ZN(y_bar) );
+   AO21x1_ASAP7_75t_SL aoi21_1 (y_bar,a,b,d);
 endmodule
+ module AND2_X1 (A,B,Y);
+input A,B;
+output Y;
+
+AND2x2_ASAP7_75t_SL and2 (Y,A,B);
+
+endmodule 
+/* module AND2x2_ASAP7_75t_SL (Y, A, B);
+	output Y;
+	input A, B;
+	// Function
+	and (Y, A, B);
+endmodule
+
+module AO21x1_ASAP7_75t_SL (Y, A1, A2, B);
+	output Y;
+	input A1, A2, B;
+
+	// Function
+	wire int_fwire_0;
+
+	and (int_fwire_0, A1, A2);
+	or (Y, int_fwire_0, B);
+endmodule*/
